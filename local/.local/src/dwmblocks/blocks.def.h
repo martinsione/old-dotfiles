@@ -7,6 +7,7 @@ static const Block blocks[] = {
 	{"", "disk",			3600,	0},
 	{"", "cpuavg",			6,		0},
 	{"", "memory",			6,		0},
+	{"", "volume",			0,		10},
 	{"🗓️", "clock",			15,		0},
 };
 

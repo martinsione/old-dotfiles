@@ -1,67 +1,36 @@
-# Colors (One Darker)
+# Set colorscheme
 colors:
   cursor:
     text: "#191919"
     cursor: "#d8dee9"
 
-  vi_mode_cursor:
-    text: CellBackground
-    cursor: CellForeground # # # Default colors
-
-  # primary: background: "#1e2127"
-  #   foreground: "#abb2bf"
-
-  # # Normal colors
-  # normal:
-  #  black: "#1e2127"
-  #  red: "#e06c75"
-  #  green: "#98c379"
-  #  yellow: "#d19a66"
-  #  blue: "#61afef"
-  #  magenta: "#c678dd"
-  #  cyan: "#56b6c2"
-  #  white: "#abb2bf"
-
-  # # Bright colors
-  # bright:
-  #  black: "#5c6370"
-  #  red: "#e06c75"
-  #  green: "#98c379"
-  #  yellow: "#d19a66"
-  #  blue: "#61afef"
-  #  magenta: "#c678dd"
-  #  white: "#ffffff"
-  #  cyan: "#56b6c2"
-
-  #GruvBox
+# Gruvbox dark
   primary:
-    # background: "#282828" # hard contrast: #1d2021 / soft contrast: #32302f
-    background: "#282828"
-    foreground: "#ebdbb2"
-
-    # Normal colors
+    # background: '#282828'
+    background: '#202020'
+    foreground: '#ebdbb2'
   normal:
-    black: "#282828" #"#38312b"  #"#928374"
-    red: "#cc241d"
-    green: "#98971a"
-    yellow: "#d79921"
-    blue: "#458588"
-    magenta: "#b16286"
-    cyan: "#689d6a"
-    white: "#cecece" #"#a89984"
-
-    # Bright colors
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
   bright:
-    black: "#928374" #"#594f45"
-    red: "#fb4934"
-    green: "#b8bb26"
-    yellow: "#fabd2f"
-    blue: "#83a598"
-    magenta: "#d3869b"
-    cyan: "#8ec07c"
-    white: "#eaeaeb" # "#ebdbb2"
+    # black: '#928374'
+    black:    '#b5ada6'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
 
-background_opacity: 0.8
+background_opacity: 0.9
+
 
 # font:
 #   normal:
@@ -100,8 +69,8 @@ font:
 
 window:
   padding:
-    x: 0
-    y: 0
+    x: 2
+    y: 2
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -117,10 +86,6 @@ draw_bold_text_with_bright_colors: true
 
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
-
-  # When set to `true`, selected text will be copied to both the primary and
-  # the selection clipboard. Otherwise, it will only be copied to the selection
-  # clipboard.
   save_to_clipboard: true
 
 # Live config reload (changes require restart)
@@ -135,4 +100,3 @@ key_bindings:
   - { key: Equals, mods: Control, action: IncreaseFontSize }
   - { key: Add, mods: Control, action: IncreaseFontSize }
   - { key: Subtract, mods: Control, action: DecreaseFontSize }
-  - { key: Minus, mods: Control, action: DecreaseFontSize }

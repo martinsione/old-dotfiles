@@ -2,13 +2,14 @@
 
 # Adds `~/.local/bin` to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
+export PATH="$PATH:$(du "$HOME/.local/bin/statusbar" | cut -f2 | paste -sd ':')"
 
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
 export READER="zathura"
-export FILE="lf"
+export FILE="ranger"
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -42,6 +43,5 @@ export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
 export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
-
 # Switch escape and caps if tty and no passwd required:
-sudo -n loadkeys ${XDG_DATA_HOME:-$HOME/.local/share}/larbs/ttymaps.kmap 2>/dev/null
+sudo -n loadkeys $HOME/.local/bin/ttymaps.kmap 2>/dev/null
