@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mkd="mkdir -pv" \
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	ll="ls -a -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"\
+
+#-----------------------------------------------------------
+alias \
+	bld="make && sudo make clean install" \
+	f="$FILE" \
+	ka="killall" \
+	live="live-server" \
+	p="sudo pacman" \
+	v="$EDITOR" \
+	z="$READER" \
+
+# Git commands
+alias \
+	g="git" \
+	gs="git status" \
+	ga="git add" \
+	gc="git commit" \
+	gcl="git clone" \
+	gp='git push'  \
+	gP='git pull'  \
+
+# Tmux commands
+alias \
+	t="tmux -u" \
+	ta="tmux -u a" \
+	tls="tmux ls" \
+	tks="tmux kill-session -t" \
+
+# Directories aliases
+alias \
+	esc="cd ~/storage/study/escuela" \
+	facu="cd ~/storage/study/facu" \
+	htd="cd /opt/lampp/htdocs" \
+	js="cd ~/storage/programming/js" \
+	web="cd ~/storage/programming/webmaster" \
