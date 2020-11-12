@@ -47,6 +47,7 @@ alias \
 
 # Directories aliases
 alias \
+	gD="cd ~/dotfiles" \
 	esc="cd ~/storage/study/escuela" \
 	facu="cd ~/storage/study/facu" \
 	htd="cd /opt/lampp/htdocs" \
