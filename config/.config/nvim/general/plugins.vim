@@ -26,7 +26,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround'               " Change sorrounding tags
   " Appearance
     Plug 'junegunn/goyo.vim'                " Zen mode
-    Plug 'psliwka/vim-smoothie'             " Smooth scroll
+    " Plug 'psliwka/vim-smoothie'             " Smooth scroll
     Plug 'ryanoasis/vim-devicons'           " Cool Icons
     Plug 'vim-airline/vim-airline'          " Status line
   " Themes
