@@ -1,9 +1,7 @@
 config/.config/nvim/autoload/plugged/*
 config/.config/nvim/.netrwhist
 local/.local/src/dwm/dwm
-local/.local/src/dwm/config.h
 local/.local/src/dwmblocks/dwmblocks
-local/.local/src/dwmblocks/blocks.h
 local/.local/src/st/st
 *.o
 *.pkg.tar.xz

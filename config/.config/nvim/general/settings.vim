@@ -1,5 +1,5 @@
-" General
-syntax enable                           " Enable syntax highlighing
+" " General
+" syntax enable                           " Enable syntax highlighing
 set autoindent                          " Good auto indent
 set clipboard=unnamedplus               " Set to your default clipboard
 set cmdheight=1                         " Change command height
@@ -47,4 +47,6 @@ set t_ut=
 
 " Autocmd
 autocmd BufWritePre * %s/\s\+$//e       " Remove extra whitespace on save
+autocmd BufWritePost ~/.local/src/dwmblocks/blocks.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
+autocmd BufWritePost ~/.local/src/dwm/config.h !cd ~/.local/src/dwm/ && {sudo make install}
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

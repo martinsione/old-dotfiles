@@ -6,10 +6,12 @@ export PATH="$PATH:$(du "$HOME/.local/bin/statusbar" | cut -f2 | paste -sd ':')"
 
 # Default programs:
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="brave"
 export READER="zathura"
 export FILE="ranger"
+export GUIFILE="pcmanfm"
+export MAIL="thunderbird"
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"

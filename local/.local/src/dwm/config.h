@@ -33,13 +33,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-/*		class    instance      title       	 tags mask   isfloating   isterminal  noswallow  monitor */
-	{ "discord",	NULL,		NULL,           1 << 8,    0,          0,			0,        -1 },
-	{ "zoom",		NULL,		NULL,           1 << 1,    0,          0,			0,        -1 },
-	{ "Gimp",		NULL,		NULL,           1 << 4,    0,          0,           0,        -1 },
-	{ "St",			NULL,		NULL,           0,         0,          1,           0,        -1 },
-	{ "alacritty",			NULL,		NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,			NULL,     "Event Tester",	0,         0,          0,           1,        -1 }, /* xev */
+/*		class		instance      title       	 tags mask   isfloating   isterminal  noswallow  monitor */
+	{ "zoom",			NULL,		NULL,           1 << 1,    0,          0,			0,        -1 },
+	{ "Pcmanfm",		NULL,		NULL,           1 << 3,    0,          0,			0,        -1 },
+	{ "Gimp",			NULL,		NULL,           1 << 3,    0,          0,           0,        -1 },
+	{ "Thunderbird",	NULL,		NULL,           1 << 3,    0,          0,			0,        -1 },
+	{ "discord",		NULL,		NULL,           1 << 8,    0,          0,			0,        -1 },
+	{ "St",				NULL,		NULL,           0,         0,          1,           0,        -1 },
+	{ "Alacritty",		NULL,		NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,				NULL,     "Event Tester",	0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -75,22 +77,30 @@ static const char *discord[] = { "discord", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d, 	   spawn,		   {.v = dmenucmd } },
+	{ MODKEY,                       XK_F2, 	   spawn,		   {.v = discord } },
 	{ MODKEY,                       XK_Return, spawn,	 	   SHCMD("$TERMINAL") },
 	{ MODKEY,                       XK_w,      spawn,	 	   SHCMD("$BROWSER") },
-	{ MODKEY,                       XK_e,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
-	{ MODKEY,                       XK_d, 	   spawn,		   {.v = discord } },
+	{ MODKEY,                       XK_m,      spawn,	 	   SHCMD("$MAIL") },
+	{ MODKEY,                       XK_e,      spawn,	 	   SHCMD("$GUIFILE") },
+	{ MODKEY,                       XK_p,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,	 	   SHCMD("pavucontrol") },
+	{ MODKEY|ShiftMask,             XK_h,      spawn,	 	   SHCMD(TERMINAL " -e htop") },
+	{ MODKEY|ShiftMask,             XK_a,      spawn,	 	   SHCMD(TERMINAL " -e alsamixer") },
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_o,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_y,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_y,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,						XK_p,	   zoom,           {0} },
+	{ MODKEY,						XK_space,  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,						XK_q,      killclient,     {0} },
+	{ 0,							XK_Print,  spawn,	 	   SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png") },
+	{ ShiftMask,					XK_Print,  spawn,	 	   SHCMD("maim ~/img/$(date '+%y%m%d-%H%M-%S').png") },
+
 
 	/* Layouts */
 	/* { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, */
@@ -107,13 +117,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
 	/* Gaps */
+	{ MODKEY|ShiftMask,				XK_0,      togglegaps,     {0} },
 	/* { MODKEY|Mod4Mask,              XK_h,      incrgaps,       {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_l,      incrgaps,       {.i = -1 } }, */
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_h,      incrogaps,      {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_l,      incrogaps,      {.i = -1 } }, */
 	/* { MODKEY|Mod4Mask|ControlMask,  XK_h,      incrigaps,      {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } }, */
-	{ MODKEY|ShiftMask,				XK_0,      togglegaps,     {0} },
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} }, */
 	/* { MODKEY,                       XK_y,      incrihgaps,     {.i = +1 } }, */
 	/* { MODKEY,                       XK_o,      incrihgaps,     {.i = -1 } }, */
