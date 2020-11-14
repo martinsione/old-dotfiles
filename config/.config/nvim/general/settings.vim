@@ -34,8 +34,8 @@ set softtabstop=4                       " Tab acting as tab when deleting
 set tabstop=4
 
 " Appearance
-set cursorline                          " Enable highlighting of the current line
 " set guicursor=                          " Set the cursor to block always
+set cursorline                          " Enable highlighting of the current line
 set nowrap                              " Display long lines as just one line
 set number relativenumber               " Relative line numbers
 set pumheight=10                        " Makes popup menu smaller
@@ -47,6 +47,4 @@ set t_ut=
 
 " Autocmd
 autocmd BufWritePre * %s/\s\+$//e       " Remove extra whitespace on save
-autocmd BufWritePost ~/.local/src/dwmblocks/blocks.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
-autocmd BufWritePost ~/.local/src/dwm/config.h !cd ~/.local/src/dwm/ && {sudo make install}
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

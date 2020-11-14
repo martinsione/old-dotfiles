@@ -8,7 +8,6 @@
     \ 'coc-pairs',
     \ 'coc-prettier',
     \ 'coc-sh',
-    \ 'coc-tabnine',
     \ 'coc-tsserver',
     \ 'coc-phpls',
     \ 'coc-vimlsp',

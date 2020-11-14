@@ -810,7 +810,6 @@
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.overviewRulerBorder": true,
-  "editor.scrollbar.horizontal": "hidden",
   "editor.snippetSuggestions": "bottom",
   "editor.suggestSelection": "first",
   "git.autofetch": true,

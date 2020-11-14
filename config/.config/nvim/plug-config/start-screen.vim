@@ -38,5 +38,3 @@ let g:startify_bookmarks = [
             " \ '~/.config/dwm',
 
 let g:startify_enable_special = 0
-
-
