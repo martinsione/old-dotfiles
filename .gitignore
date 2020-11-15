@@ -1,5 +1,6 @@
 config/.config/nvim/autoload/plugged/*
 config/.config/nvim/.netrwhist
+config/.config/pcmanfm/default/pcmanfm.conf
 local/.local/src/dwm/dwm
 local/.local/src/dwmblocks/dwmblocks
 local/.local/src/st/st
