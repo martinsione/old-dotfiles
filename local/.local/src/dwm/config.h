@@ -101,7 +101,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 
-	//
+	// Change how windows are displayed
 	{ Mod1Mask,                     XK_i,      incnmaster,     {.i = +1 } },
 	{ Mod1Mask,                     XK_o,      incnmaster,     {.i = -1 } },
 
@@ -115,9 +115,17 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 
 	{ MODKEY,                       XK_f,      togglebar,      {0} },
+
+	// Toggle client to master place
 	{ MODKEY,                       XK_space,  zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
+
+	// Go to last workspace
+	{ Mod1Mask,                     XK_Tab,    view,           {0} },
+
+	// Kill a client
 	{ MODKEY,						XK_q,      killclient,     {0} },
+
+	// Exit dwm
 	{ MODKEY|Mod1Mask,				XK_q,      quit,           {0} },
 
 	// Screenshot
@@ -129,11 +137,19 @@ static Key keys[] = {
 	/* { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, */
 	/* { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} }, */
 	/* { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} }, */
-	{ MODKEY|Mod1Mask,              XK_space,  setlayout,      {0} },
-	{ Mod1Mask,						XK_space,  togglefloating, {0} },
+
+	// Toggle layout / toggle floating
+	{ Mod1Mask|ControlMask,         XK_space,  setlayout,      {0} },
+	{ Mod1Mask|ShiftMask,			XK_space,  togglefloating, {0} },
+
+	// Toggle fullscreen
 	{ MODKEY,						XK_f,      togglefullscr,  {0} },
+
+	// View all tags
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	/* { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } }, */
+
+	// Multiple monitors
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
@@ -141,7 +157,7 @@ static Key keys[] = {
 
 
 
-	//-------------------------- Workspaces ----------------------------
+	//-------------------------- Tags ----------------------------------
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -155,7 +171,7 @@ static Key keys[] = {
 
 	//-------------------------- Gaps ----------------------------------
 
-	{ Mod4Mask,						XK_0,      togglegaps,     {0} },
+	{ Mod1Mask,						XK_0,      togglegaps,     {0} },
 	/* { MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } }, */
@@ -174,16 +190,22 @@ static Key keys[] = {
 
 
 	//-------------------------- Apps ----------------------------------
-	{ Mod1Mask,						XK_Return, spawn,		   {.v = dmenucmd } },
+
+	// Ctrl + Key
 	{ MODKEY,						XK_Return, spawn,	 	   SHCMD("$TERMINAL") },
-	{ MODKEY,                       XK_F2, 	   spawn,		   {.v = discord } },
-	{ MODKEY,                       XK_b,      spawn,	 	   SHCMD("$BROWSER") },
-	{ MODKEY,                       XK_m,      spawn,	 	   SHCMD("$MAIL") },
-	{ Mod1Mask,                     XK_e,      spawn,	 	   SHCMD("$GUIFILE") },
 	{ MODKEY,                       XK_p,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
-	{ Mod1Mask|ShiftMask,           XK_p,      spawn,	 	   SHCMD("pavucontrol") },
-	{ Mod1Mask|ShiftMask,           XK_h ,     spawn,	 	   SHCMD(TERMINAL " -e htop") },
-	{ Mod1Mask|ShiftMask,           XK_a,      spawn,	 	   SHCMD(TERMINAL " -e alsamixer") },
+
+	// Alt + Key
+	{ Mod1Mask,						XK_space,  spawn,		   {.v = dmenucmd } },
+	{ Mod1Mask,                     XK_F2, 	   spawn,		   {.v = discord } },
+	{ Mod1Mask,                     XK_w,      spawn,	 	   SHCMD("$BROWSER") },
+	{ Mod1Mask,                     XK_e,      spawn,	 	   SHCMD("$GUIFILE") },
+	{ Mod1Mask,                     XK_m,      spawn,	 	   SHCMD("$MAIL") },
+
+	// Ctrl + Alt + Key
+	{ MODKEY|Mod1Mask,				XK_p,      spawn,	 	   SHCMD("pavucontrol") },
+	{ MODKEY|Mod1Mask,				XK_h ,     spawn,	 	   SHCMD(TERMINAL " -e htop") },
+	{ MODKEY|Mod1Mask,				XK_a,      spawn,	 	   SHCMD(TERMINAL " -e alsamixer") },
 
 
 	//-------------------------- Hardware ------------------------------
