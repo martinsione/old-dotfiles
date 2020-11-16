@@ -11,14 +11,13 @@ HISTFILE=~/.cache/zsh/history
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/icons" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/icons"
 
 #------------------ Enable colors and change prompt --------------------
-export LANG=en_US.UTF-8             # Set encoding to UTF-8
 autoload -U colors && colors	    # Load colors
 setopt autocd		                # Automatically cd into typed directory.
 stty stop undef		                # Disable ctrl-s to freeze terminal.
-autoload -U compinit                # Basic uto/tab complete
-zstyle ':completion:*' menu select  # Basic uto/tab complete
-zmodload zsh/complist               # Basic uto/tab complete
-compinit                            # Basic uto/tab complete
+autoload -U compinit                # Basic auto/tab complete
+zstyle ':completion:*' menu select  # Basic auto/tab complete
+zmodload zsh/complist               # Basic auto/tab complete
+compinit                            # Basic auto/tab complete
 bindkey -v                          # Vi mode
 export KEYTIMEOUT=1                 # Reduce vi timeout
 _comp_options+=(globdots)		    # Include hidden files.
