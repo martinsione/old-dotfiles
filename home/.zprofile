@@ -1,10 +1,9 @@
 #!/bin/zsh
-
-# Adds `~/.local/bin` to $PATH
+#----------------------------- Add a path ------------------------------
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 export PATH="$PATH:$(du "$HOME/.local/bin/statusbar" | cut -f2 | paste -sd ':')"
 
-# Default programs:
+#---------------------------- Default Apps -----------------------------
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
@@ -13,6 +12,7 @@ export FILE="ranger"
 export GUIFILE="pcmanfm"
 export MAIL="thunderbird"
 
+#----------------------------- Exports ---------------------------------
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -41,9 +41,19 @@ export LESS_TERMCAP_se="$(printf '%b' '[0m')"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
-export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
 export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
-# Switch escape and caps if tty and no passwd required:
+
+#------------------------ Auto startx on login -------------------------
+	# Start graphical server on user's current tty if not already running.
+	[[ -n "$(tty)" && -z $(pgrep -u $USER "\bXorg$") ]] && exec startx
+else
+	echo "\033[31mIMPORTANT\033[0m: Note that \033[32m\`libxft-bgra\`\033[0m must be installed for this build of dwm.
+Please run:
+	\033[32myay -S libxft-bgra-git\033[0m
+and replace \`libxft\`"
+fi
+
+#------------------------ Change Caps to Escape ------------------------
 sudo -n loadkeys $HOME/.local/bin/ttymaps.kmap 2>/dev/null
