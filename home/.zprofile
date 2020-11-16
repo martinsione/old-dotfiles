@@ -1,4 +1,7 @@
 #!/bin/zsh
+#----------------------------- Set encoding ----------------------------
+export LANG=en_US.UTF-8
+
 #----------------------------- Add a path ------------------------------
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 export PATH="$PATH:$(du "$HOME/.local/bin/statusbar" | cut -f2 | paste -sd ':')"
