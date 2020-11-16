@@ -8,7 +8,7 @@ static const unsigned int gappih    = 10;       /* horiz inner gap between windo
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static int smartgaps				= 0;        /* 1 means no outer gap when there is only one window */
+static int smartgaps                = 0;        /* 1 means no outer gap when there is only one window */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -26,8 +26,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-/* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
-static const char *tags[] = { "  ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   " };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+/* static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " " }; */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -114,12 +114,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_k,      setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 
+	// Toggle status bar
 	{ MODKEY,                       XK_f,      togglebar,      {0} },
 
 	// Toggle client to master place
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 
-	// Go to last workspace
+	// Go to last used workspace
 	{ Mod1Mask,                     XK_Tab,    view,           {0} },
 
 	// Kill a client
@@ -139,13 +140,13 @@ static Key keys[] = {
 	/* { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} }, */
 
 	// Toggle layout / toggle floating
-	{ Mod1Mask|ControlMask,         XK_space,  setlayout,      {0} },
-	{ Mod1Mask|ShiftMask,			XK_space,  togglefloating, {0} },
+	{ Mod1Mask|ShiftMask,			XK_space,  setlayout,      {0} },
+	{ Mod1Mask|ControlMask,			XK_space,  togglefloating, {0} },
 
 	// Toggle fullscreen
 	{ MODKEY,						XK_f,      togglefullscr,  {0} },
 
-	// View all tags
+	// View tags
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	/* { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } }, */
 
@@ -197,21 +198,21 @@ static Key keys[] = {
 
 	// Alt + Key
 	{ Mod1Mask,						XK_space,  spawn,		   {.v = dmenucmd } },
-	{ Mod1Mask,                     XK_F2, 	   spawn,		   {.v = discord } },
+	{ Mod1Mask,                     XK_d, 	   spawn,		   {.v = discord } },
+	{ Mod1Mask,						XK_p,      spawn,	 	   SHCMD("pavucontrol") },
 	{ Mod1Mask,                     XK_w,      spawn,	 	   SHCMD("$BROWSER") },
 	{ Mod1Mask,                     XK_e,      spawn,	 	   SHCMD("$GUIFILE") },
 	{ Mod1Mask,                     XK_m,      spawn,	 	   SHCMD("$MAIL") },
 
-	// Ctrl + Alt + Key
-	{ MODKEY|Mod1Mask,				XK_p,      spawn,	 	   SHCMD("pavucontrol") },
+	// Ctrl + Alt + Key (Generally cli apps)
 	{ MODKEY|Mod1Mask,				XK_h ,     spawn,	 	   SHCMD(TERMINAL " -e htop") },
 	{ MODKEY|Mod1Mask,				XK_a,      spawn,	 	   SHCMD(TERMINAL " -e alsamixer") },
 
 
 	//-------------------------- Hardware ------------------------------
 	{ 0, XF86XK_AudioMute,			spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 3; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 3; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
 
 
 };
