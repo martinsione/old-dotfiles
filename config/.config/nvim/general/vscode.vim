@@ -103,3 +103,5 @@ xmap gc  <Plug>VSCodeCommentary
 nmap gc  <Plug>VSCodeCommentary
 omap gc  <Plug>VSCodeCommentary
 nmap gcc <Plug>VSCodeCommentaryLine
+
+set timeoutlen=100                      " So which key shows up faster
