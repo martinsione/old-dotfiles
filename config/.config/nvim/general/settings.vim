@@ -4,6 +4,7 @@ set autoindent                          " Good auto indent
 set clipboard=unnamedplus               " Set to your default clipboard
 set cmdheight=1                         " Change command height
 set encoding=utf-8
+set fileencoding=utf-8                  " The encoding written to file
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set nobackup                            " Recommended by coc
@@ -14,9 +15,9 @@ set smartindent                         " Makes indenting smart
 set splitbelow splitright               " Fixes splitting
 set timeoutlen=300                      " By default timeoutlen is 1000 ms
 set updatetime=100                      " Default is set to 4000
-set formatoptions-=cro                  " Stop newline continution of comments
 set ttyfast                             " Make vim go faster
 set nocompatible                        " Is set by default in neovim
+set formatoptions-=cro                  " Stop newline continution of comments
 
 " Searching
 set nohlsearch                          " Don't Highlight matches
@@ -27,16 +28,17 @@ set path+=**                            " Search down into subfolders provides t
 set wildmenu                            " Display all matching files when we tab complete
 
 " Tabs
-set expandtab
 set shiftwidth=4
-set showtabline=4                       " Always show tabs
-set softtabstop=4                       " Tab acting as tab when deleting
+set softtabstop=4
 set tabstop=4
+set expandtab                           " Insert spaces instead of tab characters.
+set smarttab                            " Insert spaces or tabs to go to the next indent of the next tabstop when the cursor is at the beginning of a line
 
 " Appearance
 " set guicursor=                          " Set the cursor to block always
 set cursorline                          " Enable highlighting of the current line
 set nowrap                              " Display long lines as just one line
+set whichwrap+=<,>,[,],h,l
 set number relativenumber               " Relative line numbers
 set pumheight=10                        " Makes popup menu smaller
 set ruler              		            " Show the cursor position all the time
@@ -47,4 +49,5 @@ set t_ut=
 
 " Autocmd
 autocmd BufWritePre * %s/\s\+$//e       " Remove extra whitespace on save
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
