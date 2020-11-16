@@ -15,6 +15,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Git
     Plug 'airblade/vim-gitgutter'           " GIT integration
     Plug 'tpope/vim-fugitive'               " Best plugin ever
+  " Grafical Explorer
+    Plug 'preservim/nerdtree'               " Grafical explorer
   " General
     Plug 'AndrewRadev/tagalong.vim'         " Auto change HTML tags
     Plug 'luochen1990/rainbow'              " Rainbow brackets
@@ -26,7 +28,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround'               " Change sorrounding tags
   " Appearance
     Plug 'junegunn/goyo.vim'                " Zen mode
-    " Plug 'psliwka/vim-smoothie'             " Smooth scroll
+    Plug 'psliwka/vim-smoothie'             " Smooth scroll
     Plug 'ryanoasis/vim-devicons'           " Cool Icons
     Plug 'vim-airline/vim-airline'          " Status line
   " Themes
