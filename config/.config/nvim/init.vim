@@ -1,12 +1,11 @@
 " General
-source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/plugins.vim
+source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/mappings.vim
 
 if exists('g:vscode')
   source $HOME/.config/nvim/general/vscode.vim
   source $HOME/.config/nvim/plug-config/polyglot.vim
-  set timeoutlen=100 " So which key shows faster
 else
 
 "Theme
