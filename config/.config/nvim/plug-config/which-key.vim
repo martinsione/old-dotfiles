@@ -1,6 +1,3 @@
-" Leader Key Maps
-let @s = 'veS"'
-
 " Timeout
 let g:which_key_timeout = 100
 
