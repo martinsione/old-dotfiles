@@ -1,6 +1,6 @@
-" " General
-" syntax enable                           " Enable syntax highlighing
-set autoindent                          " Good auto indent
+" General
+syntax enable                           " Enable syntax highlighing
+set autoindent                          " Copy the indentation from previous line
 set clipboard=unnamedplus               " Set to your default clipboard
 set cmdheight=1                         " Change command height
 set encoding=utf-8
@@ -11,10 +11,10 @@ set nobackup                            " Recommended by coc
 set nowritebackup                       " Recommended by coc
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
-set smartindent                         " Makes indenting smart
+set smartindent                         " Automatically inserts one extra level of indentation in some cases
 set splitbelow splitright               " Fixes splitting
 set timeoutlen=300                      " By default timeoutlen is 1000 ms
-set updatetime=100                      " Default is set to 4000
+set updatetime=50                       " Default is set to 4000
 set ttyfast                             " Make vim go faster
 set nocompatible                        " Is set by default in neovim
 set formatoptions-=cro                  " Stop newline continution of comments
