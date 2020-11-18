@@ -245,7 +245,7 @@ static int updategeom(void);
 static void updatenumlockmask(void);
 static void updatesizehints(Client *c);
 static void updatestatus(void);
-static void updatetitle(Client *c);
+/* static void updatetitle(Client *c); */
 static void updatewindowtype(Client *c);
 static void updatewmhints(Client *c);
 static void view(const Arg *arg);
@@ -487,7 +487,7 @@ swallow(Client *p, Client *c)
 	Window w = p->win;
 	p->win = c->win;
 	c->win = w;
-	updatetitle(p);
+	/* updatetitle(p); */
 	XMoveResizeWindow(dpy, p->win, p->x, p->y, p->w, p->h);
 	arrange(p->mon);
 	configure(p);
@@ -504,7 +504,7 @@ unswallow(Client *c)
 
 	/* unfullscreen the client */
 	setfullscreen(c, 0);
-	updatetitle(c);
+	/* updatetitle(c); */
 	arrange(c->mon);
 	XMapWindow(dpy, c->win);
 	XMoveResizeWindow(dpy, c->win, c->x, c->y, c->w, c->h);
@@ -852,7 +852,8 @@ drawbar(Monitor *m)
 
 	if ((w = m->ww - tw - x) > bh) {
 		if (m->sel) {
-			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
+			/* drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]); */
+			drw_setscheme(drw, scheme[m == SchemeNorm]);
 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
@@ -1154,7 +1155,7 @@ manage(Window w, XWindowAttributes *wa)
 	c->oldbw = wa->border_width;
 	c->cfact = 1.0;
 
-	updatetitle(c);
+	/* updatetitle(c); */
 	if (XGetTransientForHint(dpy, w, &trans) && (t = wintoclient(trans))) {
 		c->mon = t->mon;
 		c->tags = t->tags;
@@ -1373,7 +1374,7 @@ propertynotify(XEvent *e)
 			break;
 		}
 		if (ev->atom == XA_WM_NAME || ev->atom == netatom[NetWMName]) {
-			updatetitle(c);
+			/* updatetitle(c); */
 			if (c == c->mon->sel)
 				drawbar(c->mon);
 		}
@@ -2170,14 +2171,14 @@ updatestatus(void)
 	drawbar(selmon);
 }
 
-void
-updatetitle(Client *c)
-{
-	if (!gettextprop(c->win, netatom[NetWMName], c->name, sizeof c->name))
-		gettextprop(c->win, XA_WM_NAME, c->name, sizeof c->name);
-	if (c->name[0] == '\0') /* hack to mark broken clients */
-		strcpy(c->name, broken);
-}
+/* void */
+/* updatetitle(Client *c) */
+/* { */
+/* 	if (!gettextprop(c->win, netatom[NetWMName], c->name, sizeof c->name)) */
+/* 		gettextprop(c->win, XA_WM_NAME, c->name, sizeof c->name); */
+/* 	if (c->name[0] == '\0') /1* hack to mark broken clients *1/ */
+/* 		strcpy(c->name, broken); */
+/* } */
 
 void
 updatewindowtype(Client *c)
