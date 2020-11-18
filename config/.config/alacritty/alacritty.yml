@@ -6,8 +6,7 @@ colors:
 
 # Gruvbox dark
   primary:
-    # background: '#282828'
-    background: '#202020'
+    background: '#282828'
     foreground: '#ebdbb2'
   normal:
     black:   '#282828'
@@ -20,7 +19,7 @@ colors:
     white:   '#a89984'
   bright:
     # black: '#928374'
-    black:    '#b5ada6'
+    black:   '#b5ada6'
     red:     '#fb4934'
     green:   '#b8bb26'
     yellow:  '#fabd2f'
@@ -32,35 +31,37 @@ colors:
 background_opacity: 0.8
 
 
-# font:
-#   normal:
-#     family: "Hack"
-#     style: Regular
-#   bold:
-#     family: "Hack"
-#     style: Bold
-#   italic:
-#     family: "Hack"
-#     style: Italic
-#   bold_italic:
-#     family: "Hack"
-#     style: Bold Italic
-
 font:
+
+# UbuntuMono
   normal:
-    family: "FiraCode"
+    family: "UbuntuMono Nerd Font"
     style: Regular
   bold:
-    family: "FiraCode"
+    family: "UbuntuMono Nerd Font"
     style: Bold
   italic:
-    family: "FiraCode"
+    family: "UbuntuMono Nerd Font"
     style: Italic
   bold_italic:
-    family: "FiraCode"
+    family: "UbuntuMono Nerd Font"
     style: Bold Italic
 
-  size: 14.0
+# FiraCode
+  # normal:
+  #   family: "FiraCode"
+  #   style: Regular
+  # bold:
+  #   family: "FiraCode"
+  #   style: Bold
+  # italic:
+  #   family: "FiraCode"
+  #   style: Italic
+  # bold_italic:
+  #   family: "FiraCode"
+  #   style: Bold Italic
+
+  size: 16.0
 
   # offset is spacing between characters
   offset:
