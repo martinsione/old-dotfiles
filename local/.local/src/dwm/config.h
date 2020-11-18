@@ -12,13 +12,13 @@ static int smartgaps                = 0;        /* 1 means no outer gap when the
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = {"UbuntuMono Nerd Font:size=10:weight=bold:antialias=true:autohint:true", "JoyPixels:size=8:antialias=true:autohint=true"};
-static const char dmenufont[]       = "UbuntuMono Nerd Font:size=10:weight=bold:antialias=true:autohint:true";
-static const char col_gray1[]       = "#1e2127";
+static const char *fonts[]          = {"UbuntuMono Nerd Font:size=11:weight=bold:antialias=true:autohint:true", "JoyPixels:size=8:antialias=true:autohint=true"};
+static const char dmenufont[]       = "UbuntuMono Nerd Font:size=11:weight=bold:antialias=true:autohint:true";
+static const char col_gray1[]       = "#202020";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#d3869b";
+static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -115,7 +115,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 
 	// Toggle status bar
-	{ MODKEY,                       XK_f,      togglebar,      {0} },
+	{ Mod1Mask,                     XK_f,      togglebar,      {0} },
 
 	// Toggle client to master place
 	{ MODKEY,                       XK_space,  zoom,           {0} },
