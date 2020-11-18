@@ -47,6 +47,12 @@ set title                               " Change the window title
 set t_Co=256
 set t_ut=
 
+" Highlight yanked text
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank{higroup="IncSearch", timeout=500}
+augroup END
+
 " Autocmd
 autocmd BufWritePre * %s/\s\+$//e       " Remove extra whitespace on save
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
