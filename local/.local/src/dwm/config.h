@@ -74,11 +74,11 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY ControlMask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+	{ ControlMask,                  KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|Mod4Mask,				KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|Mod1Mask,				KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask,			KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -98,36 +98,36 @@ static Key keys[] = {
 	//-------------------------- Defaults ------------------------------
 
 	// Move around windows
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ ControlMask,                  XK_j,      focusstack,     {.i = +1 } },
+	{ ControlMask,                  XK_k,      focusstack,     {.i = -1 } },
 
 	// Change how windows are displayed
-	{ Mod1Mask,                     XK_i,      incnmaster,     {.i = +1 } },
-	{ Mod1Mask,                     XK_o,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_o,      incnmaster,     {.i = -1 } },
 
 	// Change windows X size
-	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ControlMask,           XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY|ControlMask,           XK_l,      setmfact,       {.f = +0.05} },
 
 	// Change windows Y size
-	{ MODKEY|ShiftMask,             XK_j,      setcfact,       {.f = +0.25} },
-	{ MODKEY|ShiftMask,             XK_k,      setcfact,       {.f = -0.25} },
-	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
+	{ MODKEY|ControlMask,           XK_j,      setcfact,       {.f = +0.25} },
+	{ MODKEY|ControlMask,           XK_k,      setcfact,       {.f = -0.25} },
+	{ MODKEY|ControlMask,           XK_o,      setcfact,       {.f =  0.00} },
 
 	// Toggle status bar
-	{ Mod1Mask,                     XK_f,      togglebar,      {0} },
+	{ MODKEY,                       XK_f,      togglebar,      {0} },
 
 	// Toggle client to master place
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 
 	// Go to last used workspace
-	{ Mod1Mask,                     XK_Tab,    view,           {0} },
+	{ MODKEY,                       XK_Tab,    view,           {0} },
 
 	// Kill a client
-	{ MODKEY,						XK_q,      killclient,     {0} },
+	{ ControlMask,					XK_q,      killclient,     {0} },
 
 	// Exit dwm
-	{ MODKEY|Mod1Mask,				XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask,			XK_q,      quit,           {0} },
 
 	// Screenshot
 	{ 0,							XK_Print,  spawn,	 	   SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png") },
@@ -140,14 +140,14 @@ static Key keys[] = {
 	/* { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} }, */
 
 	// Toggle layout / toggle floating
-	{ Mod1Mask|ShiftMask,			XK_space,  setlayout,      {0} },
-	{ Mod1Mask|ControlMask,			XK_space,  togglefloating, {0} },
+	{ MODKEY|ShiftMask,			    XK_space,  setlayout,      {0} },
+	{ MODKEY|ControlMask,			XK_space,  togglefloating, {0} },
 
 	// Toggle fullscreen
-	{ MODKEY,						XK_f,      togglefullscr,  {0} },
+	{ ControlMask,					XK_f,      togglefullscr,  {0} },
 
 	// View tags
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+	{ ControlMask,                       XK_0,      view,           {.ui = ~0 } },
 	/* { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } }, */
 
 	// Multiple monitors
@@ -193,20 +193,20 @@ static Key keys[] = {
 	//-------------------------- Apps ----------------------------------
 
 	// Ctrl + Key
-	{ MODKEY,						XK_Return, spawn,	 	   SHCMD("$TERMINAL") },
-	{ MODKEY,                       XK_p,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
+	{ ControlMask,					XK_Return, spawn,	 	   SHCMD("$TERMINAL") },
+	{ ControlMask,                  XK_p,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
 
 	// Alt + Key
-	{ Mod1Mask,						XK_space,  spawn,		   {.v = dmenucmd } },
-	{ Mod1Mask,                     XK_d, 	   spawn,		   {.v = discord } },
-	{ Mod1Mask,						XK_p,      spawn,	 	   SHCMD("pavucontrol") },
-	{ Mod1Mask,                     XK_w,      spawn,	 	   SHCMD("$BROWSER") },
-	{ Mod1Mask,                     XK_e,      spawn,	 	   SHCMD("$GUIFILE") },
-	{ Mod1Mask,                     XK_m,      spawn,	 	   SHCMD("$MAIL") },
+	{ MODKEY,                       XK_p, 	   spawn,		   {.v = dmenucmd } },
+	{ MODKEY,                       XK_d, 	   spawn,		   {.v = discord } },
+	{ MODKEY,                       XK_w,      spawn,	 	   SHCMD("$BROWSER") },
+	{ MODKEY,                       XK_e,      spawn,	 	   SHCMD("$GUIFILE") },
+	{ MODKEY,                       XK_m,      spawn,	 	   SHCMD("$MAIL") },
 
-	// Ctrl + Alt + Key (Generally cli apps)
-	{ MODKEY|Mod1Mask,				XK_h ,     spawn,	 	   SHCMD(TERMINAL " -e htop") },
-	{ MODKEY|Mod1Mask,				XK_a,      spawn,	 	   SHCMD(TERMINAL " -e alsamixer") },
+	// Ctrl + Alt + Key
+	{ MODKEY|ControlMask,			XK_p,      spawn,	 	   SHCMD("pavucontrol") },
+	{ MODKEY|ControlMask,			XK_r ,     spawn,	 	   SHCMD(TERMINAL " -e htop") },
+	{ MODKEY|ControlMask,			XK_e,      spawn,	 	   SHCMD(TERMINAL " -e alsamixer") },
 
 
 	//-------------------------- Hardware ------------------------------
