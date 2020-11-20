@@ -21,23 +21,6 @@ autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
-
-" Single mappings
-let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
-let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
-let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
-let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer' ]
-let g:which_key_map['s'] = [ ':w'                                              , 'save']
-let g:which_key_map['p'] = [ ':Files'                                          , 'search files' ]
-let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
-
-" b is for buffer
-let g:which_key_map.b = {
-      \ 'name' : '+buffer' ,
-      \ 'd' : [':bd'                        , 'delete-buffer'],
-      \ 'f' : ['Buffers'                    , 'fzf-buffer'],
-      \ }
-
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,

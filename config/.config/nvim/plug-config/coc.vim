@@ -1,17 +1,13 @@
   let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-emmet',
-    \ 'coc-explorer',
-    \ 'coc-json',
     \ 'coc-html',
+    \ 'coc-json',
     \ 'coc-marketplace',
-    \ 'coc-pairs',
-    \ 'coc-prettier',
+    \ 'coc-phpls',
     \ 'coc-sh',
     \ 'coc-tsserver',
-    \ 'coc-phpls',
     \ 'coc-vimlsp',
-    \ 'coc-yank',
     \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.

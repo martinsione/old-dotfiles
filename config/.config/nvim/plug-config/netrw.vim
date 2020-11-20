@@ -1,7 +1,7 @@
 " See line number
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro signcolumn=no'
 let g:netrw_banner = 0
-let g:netrw_liststyle = 0
+let g:netrw_liststyle = 3
 let g:netrw_browse_split = 0
 let g:netrw_winsize = 30
 let g:netrw_altv = 1
@@ -26,4 +26,4 @@ function! ToggleNetrw()
     endif
 endfunction
 
-" noremap <silent> <space>e :call ToggleNetrw()<CR>
+noremap <silent> <space>e :call ToggleNetrw()<CR>

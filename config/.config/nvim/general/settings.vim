@@ -20,7 +20,7 @@ set nocompatible                        " Is set by default in neovim
 set formatoptions-=cro                  " Stop newline continution of comments
 
 " Searching
-set nohlsearch                          " Don't Highlight matches
+set hlsearch                            " Don't Highlight matches
 set incsearch                           " Allow vim to start searching before pressing enter
 set ignorecase                          " Searches are case insensitive
 set smartcase                           " Unless they contain at least one capital letter
