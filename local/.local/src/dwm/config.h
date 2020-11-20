@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 #define TERMINAL "$TERMINAL"
 
-/* appearance */
+/* Appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
@@ -12,15 +12,22 @@ static int smartgaps                = 0;        /* 1 means no outer gap when the
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = {"UbuntuMono Nerd Font:size=12:antialias=true:autohint:true", "JoyPixels:size=8:antialias=true:autohint=true"};
+
+// Fonts
+/* static const char *fonts[]          = {"UbuntuMono Nerd Font:size=12:antialias=true:autohint:true", "fontawesome:size=8", "JoyPixels:size=8:antialias=true:autohint=true"}; */
+static const char *fonts[]          = {"UbuntuMono:size=12:antialias=true:autohint:true", "JoyPixels:size=8:antialias=true:autohint=true"};
 static const char dmenufont[]       = "UbuntuMono Nerd Font:size=12:antialias=true:autohint:true";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
+
+// Opacity
+static const unsigned int baralpha = 0xc0;
+static const unsigned int borderalpha = OPAQUE;
+
+// Colorscheme
+static const char col_gray1[]       = "#202020";
+static const char col_gray2[]       = "#222222";
+static const char col_gray3[]       = "#eeeeee";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const unsigned int baralpha = 0xe0;
-static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -32,9 +39,10 @@ static const unsigned int alphas[][3]      = {
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
+
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-/* static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " " }; */
+/* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
+static const char *tags[] = { "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -63,20 +71,20 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]= ",      tile },    /* first entry is default */
-	{ "[M] ",      monocle },
-	{ "[@] ",      spiral },
-	{ "[\\] ",     dwindle },
-	{ "H[] ",      deck },
-	{ "TTT ",      bstack },
-	{ "=== ",      bstackhoriz },
-	{ "HHH ",      grid },
-	{ "### ",      nrowgrid },
-	{ "--- ",      horizgrid },
-	{ "::: ",      gaplessgrid },
-	{ "|M| ",      centeredmaster },
-	{ ">M> ",      centeredfloatingmaster },
-	{ "><> ",      NULL },    /* no layout function means floating behavior */
+	{ "[]=",      tile },    /* first entry is default */
+	{ "[M]",      monocle },
+	{ "[@]",      spiral },
+	{ "[\\]",     dwindle },
+	{ "H[]",      deck },
+	{ "TTT",      bstack },
+	{ "===",      bstackhoriz },
+	{ "HHH",      grid },
+	{ "###",      nrowgrid },
+	{ "---",      horizgrid },
+	{ ":::",      gaplessgrid },
+	{ "|M|",      centeredmaster },
+	{ ">M>",      centeredfloatingmaster },
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 
     // Esthetic layouts
