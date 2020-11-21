@@ -14,7 +14,6 @@ function! s:splitNew(...)
     let file = a:2
     call s:split(a:1, file == '' ? '__vscode_new__' : file)
 endfunction
-
 function! s:closeOtherEditors()
     call VSCodeNotify('workbench.action.closeEditorsInOtherGroups')
     call VSCodeNotify('workbench.action.closeOtherEditors')

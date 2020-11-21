@@ -1,10 +1,12 @@
   let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-emmet',
+    \ 'coc-explorer',
     \ 'coc-html',
     \ 'coc-json',
     \ 'coc-marketplace',
     \ 'coc-phpls',
+    \ 'coc-prettier',
     \ 'coc-sh',
     \ 'coc-tsserver',
     \ 'coc-vimlsp',
@@ -59,8 +61,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
