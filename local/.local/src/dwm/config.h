@@ -42,7 +42,7 @@ static const unsigned int alphas[][3]      = {
 
 /* tagging */
 /* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
-static const char *tags[] = { "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   " };
+static const char *tags[] = { "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -53,9 +53,9 @@ static const Rule rules[] = {
 	{ "Brave-browser",	NULL,     NULL,           1 << 1,		0,          0,          -1,        -1 },
 	{ "zoom",			NULL,     NULL,           1 << 2,		1,          0,           0,        -1 },
 	{ "Thunderbird",	NULL,     NULL,           1 << 4,		0,          0,          -1,        -1 },
-	{ "Gimp",			NULL,     NULL,           1 << 5,		1,          0,           0,        -1 },
-	{ "discord",		NULL,     NULL,           1 << 7,		0,          0,          -1,        -1 },
-	{ "Steam",			NULL,     NULL,           1 << 8,		0,          0,          -1,        -1 },
+	{ "Gimp",			NULL,     NULL,           1 << 4,		1,          0,           0,        -1 },
+	{ "Steam",			NULL,     NULL,           1 << 7,		0,          0,          -1,        -1 },
+	{ "discord",		NULL,     NULL,           1 << 8,		0,          0,          -1,        -1 },
 	{ "St",				NULL,     NULL,           0,			0,          1,           0,        -1 },
 	{ "Alacritty",		NULL,     NULL,           0,			0,          1,           0,        -1 },
 	{ NULL,				NULL,     "Event Tester", 0,			0,          0,           1,        -1 }, /* xev */
@@ -224,16 +224,14 @@ static Key keys[] = {
 
 	//-------------------------- Apps ----------------------------------
 
-	// Ctrl + Key
-	{ ControlMask,					XK_Return, spawn,	 	   SHCMD("$TERMINAL") },
-	{ ControlMask,                  XK_p,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
-
 	// Alt + Key
+	{ MODKEY,					    XK_Return, spawn,	 	   SHCMD("$TERMINAL") },
 	{ MODKEY,                       XK_p, 	   spawn,		   {.v = dmenucmd } },
 	{ MODKEY,                       XK_d, 	   spawn,		   {.v = discord } },
 	{ MODKEY,                       XK_w,      spawn,	 	   SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_e,      spawn,	 	   SHCMD("$GUIFILE") },
 	{ MODKEY,                       XK_m,      spawn,	 	   SHCMD("$MAIL") },
+	{ MODKEY,                       XK_r,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
 
 	// Ctrl + Alt + Key
 	{ MODKEY|ControlMask,			XK_p,      spawn,	 	   SHCMD("pavucontrol") },
