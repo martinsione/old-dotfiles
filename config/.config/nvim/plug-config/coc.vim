@@ -8,6 +8,7 @@
     \ 'coc-phpls',
     \ 'coc-prettier',
     \ 'coc-sh',
+    \ 'coc-tabnine',
     \ 'coc-tsserver',
     \ 'coc-vimlsp',
     \ ]

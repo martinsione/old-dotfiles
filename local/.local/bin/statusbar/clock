@@ -19,6 +19,8 @@ case "$clock" in
 esac
 
 calendar="🗓️ "
+# calendar=" "
+# icon = " "
 
 case $BLOCK_BUTTON in
 	1) notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")" && notify-send "Appointments" "$(calcurse -d3)" ;;
@@ -28,5 +30,5 @@ case $BLOCK_BUTTON in
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-date "+ $calendar%d/%m/%y  $icon%H:%M "
-# date "+ %d/%m/%y |  %H:%M | "
+# date "+ $calendar%d/%m/%y  $icon%H:%M "
+date "+$calendar%a, %B %d %I:%M%p"
