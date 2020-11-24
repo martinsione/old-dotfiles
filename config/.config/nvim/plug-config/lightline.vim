@@ -1,15 +1,23 @@
 set laststatus=2
 set noshowmode
+
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
+
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \             [ 'readonly', 'filename', 'gitbranch', 'showdiff' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'fileencoding', 'filetype'] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
+      \   'gitbranch': 'FugitiveHead',
+      \   'showdiff': 'GitStatus'
+      \ }
       \ }
