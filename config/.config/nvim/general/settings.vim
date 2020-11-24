@@ -5,6 +5,7 @@ set clipboard=unnamedplus               " Set to your default clipboard
 set cmdheight=1                         " Change command height
 set encoding=utf-8
 set fileencoding=utf-8                  " The encoding written to file
+set formatoptions+=cro                  " Stop newline continution of comments
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set nobackup                            " Recommended by coc
@@ -17,7 +18,6 @@ set timeoutlen=300                      " By default timeoutlen is 1000 ms
 set updatetime=50                       " Default is set to 4000
 set ttyfast                             " Make vim go faster
 set nocompatible                        " Is set by default in neovim
-set formatoptions-=cro                  " Stop newline continution of comments
 
 " Searching
 set hlsearch                            " Don't Highlight matches

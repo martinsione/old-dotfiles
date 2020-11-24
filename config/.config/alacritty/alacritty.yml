@@ -1,3 +1,6 @@
+env:
+  TERM: xterm-256color
+
 # Set colorscheme
 colors:
   cursor:
@@ -68,7 +71,7 @@ scrolling:
   multiplier: 10
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
