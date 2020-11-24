@@ -24,7 +24,7 @@ static const unsigned int borderalpha = OPAQUE;
 
 // Colorscheme
 static const char col_gray1[]       = "#202020";
-static const char col_gray2[]       = "#222222";
+static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#eeeeee";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";

@@ -1,7 +1,9 @@
 #!/bin/sh
 
 remap &					# Key remappings
-picom &					# Compositor
+xcompmgr &				# Compositor
+lxsession &				# Polkit
+dunst &					# Notifications
 nitrogen --restore &	# Wallpaper
 dwmblocks &				# status bar
 
