@@ -52,18 +52,6 @@
           "command": "workbench.action.moveEditorToRightGroup"
         },
         {
-          "key": "n",
-          "name": "Next editor",
-          "type": "command",
-          "command": "workbench.action.nextEditor"
-        },
-        {
-          "key": "p",
-          "name": "Previous editor",
-          "type": "command",
-          "command": "workbench.action.previousEditor"
-        },
-        {
           "key": "N",
           "name": "New untitled editor",
           "type": "command",
@@ -384,6 +372,18 @@
       "command": "workbench.action.splitEditorDown"
     },
     {
+      "key": "j",
+      "name": "Previous buffer",
+      "type": "command",
+      "command": "workbench.action.previousEditor"
+    },
+    {
+      "key": "k",
+      "name": "Next Buffer",
+      "type": "command",
+      "command": "workbench.action.nextEditor"
+    },
+    {
       "key": "l",
       "name": "LSP...",
       "type": "bindings",
@@ -523,13 +523,6 @@
       "type": "command",
       "command": "editor.action.toggleMinimap"
     },
-    // {
-    //   "key": "n",
-    //   "name": "No Highlight",
-    //   "type": "command",
-    //   "command": "vscode-neovim.send",
-    //   "args": ":noh<CR>"
-    // },
     {
       "key": "o",
       "name": "Open...",
@@ -557,58 +550,58 @@
     },
     {
       "key": "p",
-      "name": "Peek...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "d",
-          "name": "Definition",
-          "type": "command",
-          "command": "editor.action.peekDefinition",
-          "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-        },
-        {
-          "key": "D",
-          "name": "Declaration",
-          "type": "command",
-          "command": "editor.action.peekDeclaration"
-        },
-        {
-          "key": "i",
-          "name": "Implementation",
-          "type": "command",
-          "command": "editor.action.peekImplementation",
-          "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-        },
-        {
-          "key": "p",
-          "name": "Toggle Focus",
-          "type": "command",
-          "command": "togglePeekWidgetFocus",
-          "when": "inReferenceSearchEditor || referenceSearchVisible"
-        },
-        {
-          "key": "r",
-          "name": "References",
-          "type": "command",
-          "command": "editor.action.referenceSearch.trigger"
-        },
-        {
-          "key": "t",
-          "name": "Type Definition",
-          "type": "command",
-          "command": "editor.action.peekTypeDefinition"
-        }
-      ]
-    },
-    {
-      "key": "s",
       "name": "Search...",
       "type": "command",
       "command": "workbench.action.quickOpen"
     },
+    // {
+    //   "key": "p",
+    //   "name": "Peek...",
+    //   "type": "bindings",
+    //   "bindings": [
+    //     {
+    //       "key": "d",
+    //       "name": "Definition",
+    //       "type": "command",
+    //       "command": "editor.action.peekDefinition",
+    //       "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    //     },
+    //     {
+    //       "key": "D",
+    //       "name": "Declaration",
+    //       "type": "command",
+    //       "command": "editor.action.peekDeclaration"
+    //     },
+    //     {
+    //       "key": "i",
+    //       "name": "Implementation",
+    //       "type": "command",
+    //       "command": "editor.action.peekImplementation",
+    //       "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    //     },
+    //     {
+    //       "key": "p",
+    //       "name": "Toggle Focus",
+    //       "type": "command",
+    //       "command": "togglePeekWidgetFocus",
+    //       "when": "inReferenceSearchEditor || referenceSearchVisible"
+    //     },
+    //     {
+    //       "key": "r",
+    //       "name": "References",
+    //       "type": "command",
+    //       "command": "editor.action.referenceSearch.trigger"
+    //     },
+    //     {
+    //       "key": "t",
+    //       "name": "Type Definition",
+    //       "type": "command",
+    //       "command": "editor.action.peekTypeDefinition"
+    //     }
+    //   ]
+    // },
     {
-      "key": "S",
+      "key": "s",
       "name": "Show...",
       "type": "bindings",
       "bindings": [
@@ -801,10 +794,21 @@
     }
   ],
 
+  "workbench.colorCustomizations": {
+    "[Default Dark+]": {
+      "statusBar.background": "#2E2E2E",
+      "statusBar.foreground": "#8C8C8C",
+      "statusBarItem.remoteBackground": "#2E2E2E",
+      "statusBarItem.remoteForeground": "#8C8C8C",
+      "activityBar.background": "#2E2E2E",
+      "tab.inactiveBackground": "#2E2E2E"
+    }
+  },
+
   "breadcrumbs.enabled": false,
   "editor.cursorBlinking": "solid",
-  "editor.fontFamily": "'Fira Code'",
-  "editor.fontSize": 18,
+  "editor.fontFamily": "UbuntuMono Nerd Font",
+  "editor.fontSize": 20,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.lineNumbers": "relative",
@@ -830,17 +834,5 @@
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
-  },
-
-  "workbench.colorCustomizations": {
-    "[Default Dark+]": {
-      "statusBar.background": "#2E2E2E",
-      "statusBar.foreground": "#8C8C8C",
-      "statusBarItem.remoteBackground": "#2E2E2E",
-      "statusBarItem.remoteForeground": "#8C8C8C",
-      "activityBar.background": "#2E2E2E",
-      "tab.inactiveBackground": "#2E2E2E"
-    }
-  },
-  "tabnine.experimentalAutoImports": true
+  }
 }

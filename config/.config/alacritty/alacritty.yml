@@ -18,7 +18,6 @@ colors:
     cyan:    '#689d6a'
     white:   '#a89984'
   bright:
-    # black: '#928374'
     black:   '#b5ada6'
     red:     '#fb4934'
     green:   '#b8bb26'
@@ -28,7 +27,7 @@ colors:
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
 
-background_opacity: 0.8
+background_opacity: .8
 
 
 font:
@@ -46,20 +45,6 @@ font:
   bold_italic:
     family: "UbuntuMono Nerd Font"
     style: Bold Italic
-
-# FiraCode
-  # normal:
-  #   family: "FiraCode"
-  #   style: Regular
-  # bold:
-  #   family: "FiraCode"
-  #   style: Bold
-  # italic:
-  #   family: "FiraCode"
-  #   style: Italic
-  # bold_italic:
-  #   family: "FiraCode"
-  #   style: Bold Italic
 
   size: 16.0
 
@@ -95,8 +80,6 @@ live_config_reload: true
 key_bindings:
   # - { key: V, mods: Control|Shift, action: Paste }
   # - { key: C, mods: Control|Shift, action: Copy }
-  - { key: V, mods: Alt, action: Paste }
-  - { key: C, mods: Alt, action: Copy }
   - { key: Key0, mods: Control, action: ResetFontSize }
   - { key: Equals, mods: Control, action: IncreaseFontSize }
   - { key: Add, mods: Control, action: IncreaseFontSize }
