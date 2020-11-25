@@ -14,7 +14,7 @@ set shortmess+=c                        " Don't pass messages to |ins-completion
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
 set smartindent                         " Automatically inserts one extra level of indentation in some cases
 set splitbelow splitright               " Fixes splitting
-set timeoutlen=300                      " By default timeoutlen is 1000 ms
+set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set updatetime=50                       " Default is set to 4000
 set ttyfast                             " Make vim go faster
 set nocompatible                        " Is set by default in neovim
