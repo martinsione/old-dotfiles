@@ -11,7 +11,8 @@ let g:lightline = {
       \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'gitbranch', 'showdiff' ] ],
+      \             [ 'readonly'],
+      \             [ 'filename', 'gitbranch', 'showdiff' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'fileencoding', 'filetype'] ]
