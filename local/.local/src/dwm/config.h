@@ -42,7 +42,7 @@ static const unsigned int alphas[][3]      = {
 
 /* tagging */
 /* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
-static const char *tags[] = { "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   " };
+static const char *tags[] = { "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -53,7 +53,8 @@ static const Rule rules[] = {
 	{ "Brave-browser",	NULL,     NULL,           1 << 1,		0,          0,           0,        -1 },
 	{ "zoom",			NULL,     NULL,           1 << 2,		0,          0,           0,        -1 },
 	{ "mpv",			NULL,     NULL,           1 << 2,		0,          0,           0,        -1 },
-	{ "Pcmanfm",		NULL,     NULL,           1 << 3,		0,          0,           0,        -1 },
+	{ "VSCodium",		NULL,     NULL,           1 << 3,		0,          0,           0,        -1 },
+	{ "Pcmanfm",		NULL,     NULL,           1 << 4,		0,          0,           0,        -1 },
 	{ "Thunderbird",	NULL,     NULL,           1 << 4,		0,          0,           0,        -1 },
 	{ "Gimp",			NULL,     NULL,           1 << 4,		0,          0,           0,        -1 },
 	{ "Steam",			NULL,     NULL,           1 << 7,		0,          0,           0,        -1 },
@@ -132,8 +133,8 @@ static Key keys[] = {
 	//-------------------------- Defaults ------------------------------
 
 	// Move around windows
-	{ ControlMask,                  XK_j,      focusstack,     {.i = +1 } },
-	{ ControlMask,                  XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 
 	// Change how windows are displayed
 	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } },
@@ -158,7 +159,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 
 	// Kill a client
-	{ ControlMask,					XK_q,      killclient,     {0} },
+	{ MODKEY,					    XK_q,      killclient,     {0} },
 
 	// Exit dwm
 	{ MODKEY|ControlMask,			XK_q,      quit,           {0} },
@@ -231,6 +232,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p, 	   spawn,		   {.v = dmenucmd } },
 	{ MODKEY,                       XK_d, 	   spawn,		   {.v = discord } },
 	{ MODKEY,                       XK_w,      spawn,	 	   SHCMD("$BROWSER") },
+	{ MODKEY,                       XK_v,      spawn,	 	   SHCMD("code") },
 	{ MODKEY,                       XK_e,      spawn,	 	   SHCMD("$GUIFILE") },
 	{ MODKEY,                       XK_m,      spawn,	 	   SHCMD("$MAIL") },
 	{ MODKEY,                       XK_r,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
@@ -254,7 +256,7 @@ static Key keys[] = {
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
-	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[0]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD("$TERMINAL") },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
