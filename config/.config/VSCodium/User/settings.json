@@ -5,23 +5,6 @@
   "whichkey.delay": 0,
   "whichkey.bindings": [
     {
-      "key": "b",
-      "name": "Buffers/Editors...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "y",
-          "name": "Copy buffer to clipboard",
-          "type": "commands",
-          "commands": [
-            "editor.action.selectAll",
-            "editor.action.clipboardCopyAction",
-            "cancelSelection"
-          ]
-        }
-      ]
-    },
-    {
       "key": "d",
       "name": "Debug...",
       "type": "bindings",
@@ -464,52 +447,6 @@
         }
       ]
     },
-    // {
-    //   "key": "p",
-    //   "name": "Peek...",
-    //   "type": "bindings",
-    //   "bindings": [
-    //     {
-    //       "key": "d",
-    //       "name": "Definition",
-    //       "type": "command",
-    //       "command": "editor.action.peekDefinition",
-    //       "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-    //     },
-    //     {
-    //       "key": "D",
-    //       "name": "Declaration",
-    //       "type": "command",
-    //       "command": "editor.action.peekDeclaration"
-    //     },
-    //     {
-    //       "key": "i",
-    //       "name": "Implementation",
-    //       "type": "command",
-    //       "command": "editor.action.peekImplementation",
-    //       "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-    //     },
-    //     {
-    //       "key": "p",
-    //       "name": "Toggle Focus",
-    //       "type": "command",
-    //       "command": "togglePeekWidgetFocus",
-    //       "when": "inReferenceSearchEditor || referenceSearchVisible"
-    //     },
-    //     {
-    //       "key": "r",
-    //       "name": "References",
-    //       "type": "command",
-    //       "command": "editor.action.referenceSearch.trigger"
-    //     },
-    //     {
-    //       "key": "t",
-    //       "name": "Type Definition",
-    //       "type": "command",
-    //       "command": "editor.action.peekTypeDefinition"
-    //     }
-    //   ]
-    // },
     {
       "key": "s",
       "name": "Show...",
@@ -568,26 +505,6 @@
           "name": "Show extensions",
           "type": "command",
           "command": "workbench.view.extensions"
-        }
-      ]
-    },
-    {
-      "key": "t",
-      "name": "Terminal...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "t",
-          "name": "Toggle Terminal",
-          "type": "command",
-          "command": "workbench.action.togglePanel"
-        },
-        {
-          "key": "T",
-          "name": "Focus Terminal",
-          "type": "command",
-          "command": "workbench.action.terminal.toggleTerminal",
-          "when": "!terminalFocus"
         }
       ]
     },
@@ -671,25 +588,6 @@
         }
       ]
     },
-    {
-      "key": "y",
-      "name": "Sync...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "d",
-          "name": "Download Settings",
-          "type": "command",
-          "command": "extension.downloadSettings"
-        },
-        {
-          "key": "u",
-          "name": "Upload Settings",
-          "type": "command",
-          "command": "extension.updateSettings"
-        }
-      ]
-    }
   ],
 
   "workbench.colorCustomizations": {
@@ -706,22 +604,21 @@
   "breadcrumbs.enabled": false,
   "editor.cursorBlinking": "solid",
   "editor.fontFamily": "UbuntuMono Nerd Font",
-  "editor.fontSize": 20,
+  "editor.fontSize": 18,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.overviewRulerBorder": true,
-  "editor.snippetSuggestions": "bottom",
-  "editor.suggestSelection": "first",
+  "editor.scrollBeyondLastLine": false,
+  // "editor.snippetSuggestions": "bottom",
+  // "editor.suggestSelection": "first",
   "git.autofetch": true,
   "keyboard.dispatch": "keyCode",
-  "leetcode.defaultLanguage": "javascript",
   "material-icon-theme.showWelcomeMessage": false,
   "terminal.external.linuxExec": "/usr/bin/alacritty",
   "terminal.integrated.shell.linux": "/bin/zsh",
   "window.menuBarVisibility": "hidden",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
   "workbench.editor.showTabs": true,
   "workbench.iconTheme": "material-icon-theme",

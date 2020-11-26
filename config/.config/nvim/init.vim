@@ -1,6 +1,5 @@
-" In case GUI == vscode
 if exists('g:vscode')
-    source $HOME/.config/nvim/general/settings.vim
+    source $HOME/.config/nvim/vscode/settings.vim
     source $HOME/.config/nvim/vscode/vscode.vim
     source $HOME/.config/nvim/vscode/mappings.vim
 else
