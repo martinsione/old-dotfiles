@@ -37,19 +37,19 @@ font:
 
 # UbuntuMono
   normal:
-    family: "UbuntuMono Nerd Font"
+    family: "FiraCode Nerd Font"
     style: Regular
   bold:
-    family: "UbuntuMono Nerd Font"
+    family: "FiraCode Nerd Font"
     style: Bold
   italic:
-    family: "UbuntuMono Nerd Font"
+    family: "FiraCode Nerd Font"
     style: Italic
   bold_italic:
-    family: "UbuntuMono Nerd Font"
+    family: "FiraCode Nerd Font"
     style: Bold Italic
 
-  size: 16.0
+  size: 14.0
 
   # offset is spacing between characters
   offset:
@@ -81,9 +81,6 @@ selection:
 live_config_reload: true
 
 key_bindings:
-  # - { key: V, mods: Control|Shift, action: Paste }
-  # - { key: C, mods: Control|Shift, action: Copy }
-  - { key: Key0, mods: Control, action: ResetFontSize }
-  - { key: Equals, mods: Control, action: IncreaseFontSize }
-  - { key: Add, mods: Control, action: IncreaseFontSize }
-  - { key: Subtract, mods: Control, action: DecreaseFontSize }
+  - { key: Key0,     mods: Control,         action: ResetFontSize  }
+  - { key: Equals,   mods: Control,         action: IncreaseFontSize }
+  - { key: Minus,    mods: Control,         action: DecreaseFontSize }

@@ -182,7 +182,7 @@ static Key keys[] = {
 	{ ControlMask,					XK_f,      togglefullscr,  {0} },
 
 	// View tags
-	{ ControlMask,                       XK_0,      view,           {.ui = ~0 } },
+	/* { ControlMask,                  XK_0,      view,           {.ui = ~0 } }, */
 	/* { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } }, */
 
 	// Multiple monitors
