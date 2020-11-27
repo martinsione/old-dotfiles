@@ -1,0 +1,89 @@
+set previewer ~/.config/lf/preview
+# Basic Settings
+# set color256 true
+set icons
+set preview true
+set drawbox true
+set ignorecase true
+set incsearch
+
+#----------------------------------------------------------------------
+
+# cmds/functions
+cmd open ${{
+    case $(file --mime-type $f -b) in
+	image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
+        text/*) $EDITOR $fx;;
+	image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
+	image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
+	audio/*) mpv --audio-display=no $f ;;
+	video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+	application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+        *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
+    esac
+}}
+
+#----------------------------------------------------------------------
+
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+#----------------------------------------------------------------------
+
+# Trash cli bindings
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    # extract the substring from start of string up to delimiter.
+    # this is the first "element" of the string.
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    # if there's only one element left, set `files` to an empty string.
+    # this causes us to exit this `while` loop.
+    # else, we delete the first "element" of the string from files, and move onto the next.
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+cmd clear_trash %trash-empty
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+#----------------------------------------------------------------------
+
+# General bindings
+map <c-e> down
+map <c-y> up
+map <c-r> reload
+map <esc> reload
+map <enter> shell
+map . set hidden!
+
+# Visualize images
+map - $~/.config/lf/draw_img "$f"
+
+# Trash Mappings
+map dd trash
+map tc clear_trash
+map tr restore_trash
+
+# Cmd bindings
+map A push :mkdir<space>
+map C push r<c-u>					# new rename
+map I push r<c-a>					# at the very beginning
+map i push r<a-b><a-b><a-f>			# before extention
+
+# Movement
+map gtr cd ~/.local/share/Trash/files
+map gd cd ~/dl
+map gD cd ~/dotfiles
+map gc cd ~/.config
+map gl cd ~/.local
+map gs cd ~/.local/bin/statusbar
+map gesc cd ~/storage/study/escuela
