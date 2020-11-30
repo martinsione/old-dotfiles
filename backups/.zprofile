@@ -1,0 +1,62 @@
+#!/bin/zsh
+#----------------------------- Set encoding ----------------------------
+export LANG=en_US.UTF-8
+
+#----------------------------- Add a path ------------------------------
+export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
+export PATH="$PATH:$(du "$HOME/.local/bin/statusbar" | cut -f2 | paste -sd ':')"
+
+#---------------------------- Default Apps -----------------------------
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export BROWSER="brave"
+export READER="zathura"
+export FILE="ranger"
+export GUIFILE="pcmanfm"
+export MAIL="thunderbird"
+
+#----------------------------- Exports ---------------------------------
+# ~/ Clean-up:
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
+export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
+export LESSHISTFILE="-"
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
+export KODI_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/kodi"
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
+
+# Other program settings:
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export LESS=-R
+export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
+export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
+export LESS_TERMCAP_me="$(printf '%b' '[0m')"
+export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
+export LESS_TERMCAP_se="$(printf '%b' '[0m')"
+export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
+export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
+export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
+export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
+export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
+
+
+#------------------------ Auto startx on login -------------------------
+	# Start graphical server on user's current tty if not already running.
+	[[ -n "$(tty)" && -z $(pgrep -u $USER "\bXorg$") ]] && exec startx
+else
+	echo "\033[31mIMPORTANT\033[0m: Note that \033[32m\`libxft-bgra\`\033[0m must be installed for this build of dwm.
+Please run:
+	\033[32myay -S libxft-bgra-git\033[0m
+and replace \`libxft\`"
+fi
+
+#------------------------ Change Caps to Escape ------------------------
+sudo -n loadkeys $HOME/.local/bin/ttymaps.kmap 2>/dev/null

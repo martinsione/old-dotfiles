@@ -1,0 +1,60 @@
+#!/bin/zsh
+
+#------------------- Default settings ----------------------------------
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mkd="mkdir -pv" \
+
+#------------------- Colorize commands ---------------------------------
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	ll="ls -a -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"\
+
+#------------------- Various commands ----------------------------------
+alias \
+	bld="make && sudo make clean install" \
+	f="$FILE" \
+	ka="killall" \
+	live="live-server" \
+	p="sudo pacman" \
+	v="$EDITOR" \
+	sv="sudo $EDITOR" \
+	z="$READER" \
+
+#------------------- Config commands ----------------------------------
+alias \
+	calias="cd ~/.config/zsh && $EDITOR aliasrc" \
+	cdwm="cd ~/.local/src/dwm && $EDITOR config.h" \
+	cblocks="cd ~/.local/src/dwmblocks && $EDITOR blocks.h" \
+	cst="cd ~/.local/src/st && $EDITOR config.h" \
+
+#------------------- Git commands -------------------------------------
+alias \
+	g="git" \
+	gs="git status" \
+	ga="git add" \
+	gc="git commit" \
+	gcl="git clone" \
+	gp='git push'  \
+	gP='git pull'  \
+
+#------------------- Tmux commands -------------------------------------
+alias \
+	t="tmux -u" \
+	ta="tmux -u a" \
+	tls="tmux ls" \
+	tks="tmux kill-session -t" \
+
+#------------------- Directories aliases -------------------------------
+alias \
+	gD="cd ~/dotfiles" \
+	esc="cd ~/storage/study/escuela" \
+	facu="cd ~/storage/study/facu" \
+	htd="cd /opt/lampp/htdocs" \
+	js="cd ~/storage/programming/js" \
+	web="cd ~/storage/programming/webmaster" \
