@@ -1,9 +1,0 @@
-brave-bin
-lf
-libxft-bgra-git
-neovim-nightly
-nerd-fonts-ubuntu-mono
-vscodium-bin
-xampp
-yay-git
-zoom

@@ -1,14 +1,15 @@
+#----------------------------- ZSH config ------------------------------
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/export" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/export"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/apps" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/apps"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/alias" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/alias"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cursor" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cursor"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/icons" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/icons"
+# [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/path" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/path"
+
 #------------------ History in chache directory ------------------------
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
-
-#----------------------------- ZSH config ------------------------------
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliasrc"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/applications" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/applications"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cursor" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cursor"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/exports" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/exports"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/icons" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/icons"
 
 #------------------ Enable colors and change prompt --------------------
 autoload -U colors && colors	    # Load colors
@@ -31,6 +32,9 @@ bindkey -v '^?' backward-delete-char
 
 #----------------------------- Promp ----------------------------------
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+#------------------------ Change Caps to Escape ------------------------
+sudo -n loadkeys $HOME/.local/bin/ttymaps.kmap 2>/dev/null
 
 #-------------------------- Load Plugins -------------------------------
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

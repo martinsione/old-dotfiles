@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+#---------------------------- Default Apps -----------------------------
+
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export BROWSER="brave"
+export READER="zathura"
+export FILE="ranger"
+export GUIFILE="pcmanfm"
+export MAIL="thunderbird"

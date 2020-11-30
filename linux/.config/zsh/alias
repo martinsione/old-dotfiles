@@ -23,6 +23,7 @@ alias \
 	live="live-server" \
 	p="sudo pacman" \
 	v="$EDITOR" \
+    v="~/./nvim.appimage"
 	sv="sudo $EDITOR" \
 	z="$READER" \
 
