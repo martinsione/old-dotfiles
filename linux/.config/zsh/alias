@@ -6,6 +6,10 @@ alias \
 	mv="mv -iv" \
 	rm="rm -vI" \
 	mkd="mkdir -pv" \
+	bld="make && sudo make clean install" \
+	ka="killall" \
+	live="live-server" \
+	p="sudo pacman" \
 
 #------------------- Colorize commands ---------------------------------
 alias \
@@ -15,24 +19,13 @@ alias \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi"\
 
-#------------------- Various commands ----------------------------------
+#------------------- Cli apps  -----------------------------------------
 alias \
-	bld="make && sudo make clean install" \
 	f="$FILE" \
-	ka="killall" \
-	live="live-server" \
-	p="sudo pacman" \
+	sf="sudo $FILE" \
 	v="$EDITOR" \
-    v="~/./nvim.appimage"
 	sv="sudo $EDITOR" \
 	z="$READER" \
-
-#------------------- Config commands ----------------------------------
-alias \
-	calias="cd ~/.config/zsh && $EDITOR aliasrc" \
-	cdwm="cd ~/.local/src/dwm && $EDITOR config.h" \
-	cblocks="cd ~/.local/src/dwmblocks && $EDITOR blocks.h" \
-	cst="cd ~/.local/src/st && $EDITOR config.h" \
 
 #------------------- Git commands -------------------------------------
 alias \
@@ -50,12 +43,3 @@ alias \
 	ta="tmux -u a" \
 	tls="tmux ls" \
 	tks="tmux kill-session -t" \
-
-#------------------- Directories aliases -------------------------------
-alias \
-	gD="cd ~/dotfiles" \
-	esc="cd ~/storage/study/escuela" \
-	facu="cd ~/storage/study/facu" \
-	htd="cd /opt/lampp/htdocs" \
-	js="cd ~/storage/programming/js" \
-	web="cd ~/storage/programming/webmaster" \

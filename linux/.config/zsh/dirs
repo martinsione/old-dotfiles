@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+#------------------- XDG Dirs ------------------------------
+alias \
+    cac="${XDG_CACHE_HOME:-$HOME/.cache}" \
+    cf="${XDG_CONFIG_HOME:-$HOME/.config}" \
+    D="${XDG_DOCUMENTS_DIR:-$HOME/Downloads}" \
+    d="${XDG_DOWNLOAD_DIR:-$HOME/dotfiles}" \
+    ds="${XDG_DATA_HOME:-$HOME/.local/share}" \
+    dp="${XDG_PICTURES_DIR:-$HOME/Pictures}" \
+
+
+#------------------- Frequent dirs -------------------------
+alias \
+    h="$HOME" \
+    sc="$HOME/.local/bin" \
+    src="$HOME/.local/src" \
+    mn="/mnt" \
+
+#------------------- Study ---------------------------------
+alias \
+    esc="$HOME/storage/study/escuela" \
+    face="$HOME/storage/study/facu" \
+
+#------------------- Code ----------------------------------
+alias \
+    js="$HOME/storage/code/js" \
+    web="$HOME/storage/code/webmaster" \

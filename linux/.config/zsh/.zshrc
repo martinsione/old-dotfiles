@@ -4,7 +4,9 @@
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/alias" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/alias"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cursor" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cursor"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/icons" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/icons"
-# [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/path" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/path"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/path" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/path"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/dirs" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/dirs"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/files" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/files"
 
 #------------------ History in chache directory ------------------------
 HISTSIZE=10000
