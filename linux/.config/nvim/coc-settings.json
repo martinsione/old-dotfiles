@@ -1,11 +1,4 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "html",
-    "javascript",
-    "json",
-    "php"
-  ],
   // html
   "html.format.wrapLineLength": 0,
   "html.autoClosingTags": true,
