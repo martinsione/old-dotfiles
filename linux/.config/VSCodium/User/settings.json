@@ -1,6 +1,40 @@
 {
+  "breadcrumbs.enabled": false,
+  "editor.cursorBlinking": "solid",
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.overviewRulerBorder": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "git.autofetch": true,
+  "keyboard.dispatch": "keyCode",
+  "terminal.external.linuxExec": "/usr/bin/alacritty",
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "window.menuBarVisibility": "hidden",
+  "window.zoomLevel": 1,
+  "workbench.activityBar.visible": false,
+  "workbench.editor.showTabs": true,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.list.automaticKeyboardNavigation": false,
+  // Colorscheme configuration
+  "workbench.colorCustomizations": {
+    "[Default Dark+]": {
+      "statusBar.background": "#2E2E2E",
+      "statusBar.foreground": "#8C8C8C",
+      "statusBarItem.remoteBackground": "#2E2E2E",
+      "statusBarItem.remoteForeground": "#8C8C8C",
+      "activityBar.background": "#2E2E2E",
+      "tab.inactiveBackground": "#2E2E2E"
+    }
+  },
+  // Neovim configuration
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+  "vscode-neovim.useWSL": true,
+  // Which Key configuration
   "whichkey.sortOrder": "alphabetically",
   "whichkey.delay": 0,
   "whichkey.bindings": [
@@ -587,47 +621,6 @@
           "command": "workbench.action.closeAllGroups"
         }
       ]
-    },
-  ],
-
-  "workbench.colorCustomizations": {
-    "[Default Dark+]": {
-      "statusBar.background": "#2E2E2E",
-      "statusBar.foreground": "#8C8C8C",
-      "statusBarItem.remoteBackground": "#2E2E2E",
-      "statusBarItem.remoteForeground": "#8C8C8C",
-      "activityBar.background": "#2E2E2E",
-      "tab.inactiveBackground": "#2E2E2E"
     }
-  },
-
-  "breadcrumbs.enabled": false,
-  "editor.cursorBlinking": "solid",
-  "editor.fontFamily": "FiraCode Nerd Font",
-  "editor.fontSize": 16,
-  "editor.formatOnSave": true,
-  "editor.lineNumbers": "relative",
-  "editor.minimap.enabled": false,
-  "editor.overviewRulerBorder": true,
-  "editor.scrollBeyondLastLine": false,
-  // "editor.snippetSuggestions": "bottom",
-  // "editor.suggestSelection": "first",
-  "git.autofetch": true,
-  "keyboard.dispatch": "keyCode",
-  "material-icon-theme.showWelcomeMessage": false,
-  "terminal.external.linuxExec": "/usr/bin/alacritty",
-  "terminal.integrated.shell.linux": "/bin/zsh",
-  "window.menuBarVisibility": "hidden",
-  "window.zoomLevel": 1,
-  "workbench.activityBar.visible": true,
-  "workbench.editor.showTabs": true,
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.list.automaticKeyboardNavigation": false,
-  "workbench.startupEditor": "newUntitledFile",
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  }
+  ]
 }
