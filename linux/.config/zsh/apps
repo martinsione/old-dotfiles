@@ -2,8 +2,7 @@
 
 #---------------------------- Default Apps -----------------------------
 
-export EDITOR="nvim"
-export EDITOR="~/./nvim.appimage"
+export EDITOR="/usr/bin/nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
 export READER="zathura"
