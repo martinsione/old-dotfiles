@@ -14,6 +14,11 @@ xnoremap J :move '>+1<CR>gv-gv
 nnoremap <silent> s :noh <CR>
 
 
+"-------------------- Which key ----------------------------------------
+nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
+xnoremap <silent> <Space> :<C-u>call <SID>openWhichKeyInVisualMode()<CR>
+xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>
+
 "-------------------- Better navigation --------------------------------
 nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
 xnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
@@ -26,16 +31,10 @@ xnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
 
 nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
 
+
 " Bind C-/ to vscode commentary since calling from vscode produces double comments due to multiple cursors
 xnoremap <expr> <C-/> <SID>vscodeCommentary()
 nnoremap <expr> <C-/> <SID>vscodeCommentary() . '_'
-
-nnoremap <silent> <C-w>_ :<C-u>call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>
-
-nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
-xnoremap <silent> <Space> :<C-u>call <SID>openWhichKeyInVisualMode()<CR>
-
-xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>
 
 " Commentary
 xmap gc  <Plug>VSCodeCommentary
@@ -47,6 +46,9 @@ nmap gcc <Plug>VSCodeCommentaryLine
 "-------------------- General ------------------------------------------
 " Show commands
 nnoremap <silent> <space>; :call VSCodeNotify('workbench.action.showCommands')<CR>
+
+" Toggle activity bar
+nnoremap <silent> <space>ua :call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<CR>
 
 " Show minimap
 nnoremap <silent> <space>m :call VSCodeNotify('editor.action.toggleMinimap')<CR>
@@ -66,10 +68,10 @@ nnoremap <silent> <space>bb :call VSCodeNotify('workbench.action.showAllEditors'
 nnoremap <silent> <space>bd :call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
 
 " Move buffers
-nnoremap <silent> <space>bh :call VSCodeNotify('workbench.action.moveEditorToLeftGroup')<CR>
-nnoremap <silent> <space>bj :call VSCodeNotify('workbench.action.moveEditorToBelowGroup')<CR>
-nnoremap <silent> <space>bk :call VSCodeNotify('workbench.action.moveEditorToAboveGroup')<CR>
-nnoremap <silent> <space>bl :call VSCodeNotify('workbench.action.moveEditorToRightGroup')<CR>
+nnoremap <silent> <space>h :call VSCodeNotify('workbench.action.moveEditorToLeftGroup')<CR>
+nnoremap <silent> <space>j :call VSCodeNotify('workbench.action.moveEditorToBelowGroup')<CR>
+nnoremap <silent> <space>k :call VSCodeNotify('workbench.action.moveEditorToAboveGroup')<CR>
+nnoremap <silent> <space>l :call VSCodeNotify('workbench.action.moveEditorToRightGroup')<CR>
 
 "Reopen closed buffer
 nnoremap <silent> <space>bu :call VSCodeNotify('workbench.action.reopenClosedEditor')<CR>
@@ -108,11 +110,20 @@ nnoremap <silent> <space>sr :call VSCodeNotify('workbench.view.remote')<CR>
 nnoremap <silent> <space>st :call VSCodeNotify('workbench.view.extension.test')<CR>
 
 " Show extensions
-nnoremap <silent> <space>sp :call VSCodeNotify('workbench.view.extensions')<CR>
+nnoremap <silent> <space>sx :call VSCodeNotify('workbench.view.extensions')<CR>
 
 "-------------------- Splits -------------------------------------------
-nnoremap <silent> <space>h :call VSCodeNotify('workbench.action.splitEditorDown')<CR>
+nnoremap <silent> <space>- :call VSCodeNotify('workbench.action.splitEditorDown')<CR>
 nnoremap <silent> <space>v :call VSCodeNotify('workbench.action.splitEditor')<CR>
+"-------------------- Windows -------------------------------------------
+nnoremap <silent> <space>= :call VSCodeNotify('workbench.action.evenEditorWidths')<CR>
+nnoremap <silent> <space>wh :call VSCodeNotify('workbench.action.moveActiveEditorGroupLeft')<CR>
+nnoremap <silent> <space>wj :call VSCodeNotify('workbench.action.moveActiveEditorGroupDown')<CR>
+nnoremap <silent> <space>wk :call VSCodeNotify('workbench.action.moveActiveEditorGroupDown')<CR>
+nnoremap <silent> <space>wl :call VSCodeNotify('workbench.action.moveActiveEditorGroupRight')<CR>
+nnoremap <silent> <space>wx :call VSCodeNotify('workbench.action.closeAllGroups')<CR>
+
+nnoremap <silent> <C-w>_ :<C-u>call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>
 
 "-------------------- Open ---------------------------------------------
 nnoremap <silent> <space>od :call VSCodeNotify('workbench.action.files.openFolder')<CR>

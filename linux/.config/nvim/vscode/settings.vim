@@ -15,13 +15,6 @@ set smartcase                           " Unless they contain at least one capit
 set path+=**                            " Search down into subfolders provides tab-completion for all file-related tasks
 set wildmenu                            " Display all matching files when we tab complete
 
-" Tabs
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-set expandtab                           " Insert spaces instead of tab characters.
-set smarttab                            " Insert spaces or tabs to go to the next indent of the next tabstop when the cursor is at the beginning of a line
-
 " Highlight yanked text
 augroup highlight_yank
     autocmd!
