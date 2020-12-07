@@ -17,10 +17,11 @@
   "terminal.integrated.shell.linux": "/bin/zsh",
   "window.menuBarVisibility": "hidden",
   "window.zoomLevel": 1,
-  "workbench.activityBar.visible": true,
+  "workbench.activityBar.visible": false,
   "workbench.editor.showTabs": true,
   "workbench.iconTheme": "vscode-icons",
   "workbench.list.automaticKeyboardNavigation": false,
+  "workbench.startupEditor": "newUntitledFile",
   // Colorscheme configuration
   "workbench.colorCustomizations": {
     "[Default Dark+]": {
@@ -455,172 +456,6 @@
           "name": "Show All Symbols",
           "type": "command",
           "command": "workbench.action.showAllSymbols"
-        }
-      ]
-    },
-    {
-      "key": "o",
-      "name": "Open...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "d",
-          "name": "Directory",
-          "type": "command",
-          "command": "workbench.action.files.openFolder"
-        },
-        {
-          "key": "r",
-          "name": "Recent",
-          "type": "command",
-          "command": "workbench.action.openRecent"
-        },
-        {
-          "key": "f",
-          "name": "File",
-          "type": "command",
-          "command": "workbench.action.files.openFile"
-        }
-      ]
-    },
-    {
-      "key": "s",
-      "name": "Show...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "d",
-          "name": "Show debug console",
-          "type": "command",
-          "command": "workbench.debug.action.toggleRepl"
-        },
-        {
-          "key": "e",
-          "name": "Show explorer",
-          "type": "command",
-          "command": "workbench.view.explorer"
-        },
-        {
-          "key": "g",
-          "name": "Show source control",
-          "type": "command",
-          "command": "workbench.view.scm"
-        },
-        {
-          "key": "o",
-          "name": "Show output",
-          "type": "command",
-          "command": "workbench.action.output.toggleOutput"
-        },
-        {
-          "key": "p",
-          "name": "Show problem",
-          "type": "command",
-          "command": "workbench.actions.view.problems"
-        },
-        {
-          "key": "r",
-          "name": "Show remote explorer",
-          "type": "command",
-          "command": "workbench.view.remote"
-        },
-        {
-          "key": "S",
-          "name": "Show settings.json",
-          "type": "command",
-          "command": "workbench.action.openSettingsJson"
-        },
-        {
-          "key": "t",
-          "name": "Show test",
-          "type": "command",
-          "command": "workbench.view.extension.test"
-        },
-        {
-          "key": "x",
-          "name": "Show extensions",
-          "type": "command",
-          "command": "workbench.view.extensions"
-        }
-      ]
-    },
-    {
-      "key": "u",
-      "name": "UI toggles...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "a",
-          "name": "Toggle tool/activity bar visibility",
-          "type": "command",
-          "command": "workbench.action.toggleActivityBarVisibility"
-        },
-        {
-          "key": "j",
-          "name": "Toggle panel visibility",
-          "type": "command",
-          "command": "workbench.action.togglePanel"
-        },
-        {
-          "key": "f",
-          "name": "Toggle full screen",
-          "type": "command",
-          "command": "workbench.action.toggleFullScreen"
-        },
-        {
-          "key": "m",
-          "name": "Toggle Menu bar",
-          "type": "command",
-          "command": "workbench.action.toggleMenuBar"
-        },
-        {
-          "key": "s",
-          "name": "Select theme",
-          "type": "command",
-          "command": "workbench.action.selectTheme"
-        }
-      ]
-    },
-    {
-      "key": "w",
-      "name": "Window...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "=",
-          "name": "Reset editor group sizes",
-          "type": "command",
-          "command": "workbench.action.evenEditorWidths"
-        },
-        {
-          "key": "h",
-          "name": "Move editor group left",
-          "type": "command",
-          "command": "workbench.action.moveActiveEditorGroupLeft"
-        },
-        {
-          "key": "j",
-          "name": "Move editor group down",
-          "type": "command",
-          "command": "workbench.action.moveActiveEditorGroupDown"
-        },
-        {
-          "key": "k",
-          "name": "Move editor group up",
-          "type": "command",
-          "command": "workbench.action.moveActiveEditorGroupUp"
-        },
-        {
-          "key": "l",
-          "name": "Move editor group right",
-          "type": "command",
-          "command": "workbench.action.moveActiveEditorGroupRight"
-        },
-        {
-          "key": "x",
-          "name": "Close all editor groups",
-          "type": "command",
-          "command": "workbench.action.closeAllGroups"
         }
       ]
     }

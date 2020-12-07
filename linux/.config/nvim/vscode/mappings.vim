@@ -32,34 +32,6 @@ xnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
 nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
 
 
-" Bind C-/ to vscode commentary since calling from vscode produces double comments due to multiple cursors
-xnoremap <expr> <C-/> <SID>vscodeCommentary()
-nnoremap <expr> <C-/> <SID>vscodeCommentary() . '_'
-
-" Commentary
-xmap gc  <Plug>VSCodeCommentary
-nmap gc  <Plug>VSCodeCommentary
-omap gc  <Plug>VSCodeCommentary
-nmap gcc <Plug>VSCodeCommentaryLine
-
-
-"-------------------- General ------------------------------------------
-" Show commands
-nnoremap <silent> <space>; :call VSCodeNotify('workbench.action.showCommands')<CR>
-
-" Toggle activity bar
-nnoremap <silent> <space>ua :call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<CR>
-
-" Show minimap
-nnoremap <silent> <space>m :call VSCodeNotify('editor.action.toggleMinimap')<CR>
-
-" Search files
-nnoremap <silent> <space>p :call VSCodeNotify('workbench.action.quickOpen')<CR>
-
-" Zen mode
-nnoremap <silent> <space>z :call VSCodeNotify('workbench.action.toggleZenMode')<CR>
-
-
 "-------------------- Buffers ------------------------------------------
 " View all open buffers
 nnoremap <silent> <space>bb :call VSCodeNotify('workbench.action.showAllEditors')<CR>
@@ -84,17 +56,34 @@ nnoremap <silent> <S-TAB> :call VSCodeNotify('workbench.action.previousEditor')<
 nnoremap <silent> <TAB> :call VSCodeNotify('workbench.action.nextEditor')<CR>
 
 
-"-------------------- Sidebar ------------------------------------------
-" Toggle sidebar
+"-------------------- Commentary ---------------------------------------
+xmap gc  <Plug>VSCodeCommentary
+nmap gc  <Plug>VSCodeCommentary
+omap gc  <Plug>VSCodeCommentary
+nmap gcc <Plug>VSCodeCommentaryLine
+
+" Bind C-/ to vscode commentary since calling from vscode produces double comments due to multiple cursors
+xnoremap <expr> <C-/> <SID>vscodeCommentary()
+nnoremap <expr> <C-/> <SID>vscodeCommentary() . '_'
+
+"-------------------- General ------------------------------------------
+nnoremap <silent> <space>; :call VSCodeNotify('workbench.action.showCommands')<CR>
+nnoremap <silent> <space>m :call VSCodeNotify('editor.action.toggleMinimap')<CR>
+nnoremap <silent> <space>p :call VSCodeNotify('workbench.action.quickOpen')<CR>
+nnoremap <silent> <space>z :call VSCodeNotify('workbench.action.toggleZenMode')<CR>
+
+"-------------------- Sidebar & panel ----------------------------------
 nnoremap <silent> <space>e :call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
+nnoremap <silent> <space>tt :call VSCodeNotify('workbench.action.togglePanel')<CR>
+
+"-------------------- Show ---------------------------------------------
+" Show debug console
+nnoremap <silent> <space>sd :call VSCodeNotify('workbench.debug.action.toggleRepl')<CR>
 
 " Show file explorer
 nnoremap <silent> <space>se :call VSCodeNotify('workbench.view.explorer')<CR>
 
-" Show debug console
-nnoremap <silent> <space>sd :call VSCodeNotify('workbench.debug.action.toggleRepl')<CR>
-
-" Show souce control
+" Show source control
 nnoremap <silent> <space>sg :call VSCodeNotify('workbench.view.scm')<CR>
 
 " Show output
@@ -106,8 +95,8 @@ nnoremap <silent> <space>sp :call VSCodeNotify('workbench.actions.view.problems'
 " Show remote explorer
 nnoremap <silent> <space>sr :call VSCodeNotify('workbench.view.remote')<CR>
 
-" Show test
-nnoremap <silent> <space>st :call VSCodeNotify('workbench.view.extension.test')<CR>
+" Show terminal
+nnoremap <silent> <space>st :call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
 
 " Show extensions
 nnoremap <silent> <space>sx :call VSCodeNotify('workbench.view.extensions')<CR>
@@ -115,7 +104,8 @@ nnoremap <silent> <space>sx :call VSCodeNotify('workbench.view.extensions')<CR>
 "-------------------- Splits -------------------------------------------
 nnoremap <silent> <space>- :call VSCodeNotify('workbench.action.splitEditorDown')<CR>
 nnoremap <silent> <space>v :call VSCodeNotify('workbench.action.splitEditor')<CR>
-"-------------------- Windows -------------------------------------------
+
+"-------------------- Windows ------------------------------------------
 nnoremap <silent> <space>= :call VSCodeNotify('workbench.action.evenEditorWidths')<CR>
 nnoremap <silent> <space>wh :call VSCodeNotify('workbench.action.moveActiveEditorGroupLeft')<CR>
 nnoremap <silent> <space>wj :call VSCodeNotify('workbench.action.moveActiveEditorGroupDown')<CR>
@@ -123,16 +113,12 @@ nnoremap <silent> <space>wk :call VSCodeNotify('workbench.action.moveActiveEdito
 nnoremap <silent> <space>wl :call VSCodeNotify('workbench.action.moveActiveEditorGroupRight')<CR>
 nnoremap <silent> <space>wx :call VSCodeNotify('workbench.action.closeAllGroups')<CR>
 
-nnoremap <silent> <C-w>_ :<C-u>call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>
-
 "-------------------- Open ---------------------------------------------
 nnoremap <silent> <space>od :call VSCodeNotify('workbench.action.files.openFolder')<CR>
 nnoremap <silent> <space>of :call VSCodeNotify('workbench.action.files.openFile')<CR>
 nnoremap <silent> <space>or :call VSCodeNotify('workbench.action.openRecent')<CR>
 
-"-------------------- Terminal ------------------------------------------
-" Show terminal
-nnoremap <silent> <space>tt :call VSCodeNotify('workbench.action.togglePanel')<CR>
-
-" Focus the terminal
-nnoremap <silent> <space>tT :call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
+"-------------------- UI toggles ---------------------------------------
+nnoremap <silent> <space>ua :call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<CR>
+nnoremap <silent> <space>uf :call VSCodeNotify('workbench.action.toggleFullScreen')<CR>
+nnoremap <silent> <space>us :call VSCodeNotify('workbench.action.selectTheme')<CR>
