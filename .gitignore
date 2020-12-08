@@ -4,6 +4,7 @@ linux/.config/pcmanfm/default/pcmanfm.conf
 linux/.local/src/dwm/dwm
 linux/.local/src/dwmblocks/dwmblocks
 linux/.local/src/st/st
+linux/.config/zsh/.zcompdump
 *.o
 *.pkg.tar.xz
 *.orig

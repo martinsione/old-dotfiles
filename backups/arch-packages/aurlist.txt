@@ -2,9 +2,9 @@ brave-bin
 lf
 libxft-bgra-git
 neovim-nightly
-nerd-fonts-ubuntu-mono
 otf-nerd-fonts-fira-code
 vscodium-bin
 xampp
 yay-git
 zoom
+zsh-theme-powerlevel10k-git

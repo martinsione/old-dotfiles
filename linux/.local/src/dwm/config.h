@@ -14,9 +14,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 // Fonts
-/* static const char *fonts[]          = {"UbuntuMono Nerd Font:size=12:antialias=true:autohint:true", "fontawesome:size=8", "JoyPixels:size=8:antialias=true:autohint=true"}; */
 static const char *fonts[]          = {"UbuntuMono:size=12:antialias=true:autohint:true", "JoyPixels:size=8:antialias=true:autohint=true"};
-static const char dmenufont[]       = "UbuntuMono Nerd Font:size=12:antialias=true:autohint:true";
+static const char dmenufont[]       = "UbuntuMono:size=12:antialias=true:autohint:true";
 
 // Opacity
 static const unsigned int baralpha = 0xc0;

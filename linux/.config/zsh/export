@@ -2,6 +2,19 @@
 #----------------------------- Set encoding ----------------------------
 export LANG=en_US.UTF-8
 
+#----------------------------- Path ------------------------------------
+export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
+export PATH="$PATH:$(du "$HOME/.local/bin/statusbar" | cut -f2 | paste -sd ':')"
+
+#----------------------------- Default Programs ------------------------
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export BROWSER="brave"
+export READER="zathura"
+export FILE="ranger"
+export GUIFILE="pcmanfm"
+export MAIL="thunderbird"
+
 #----------------------------- Exports ---------------------------------
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -11,7 +24,7 @@ export NOTMUCH_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/notmuch-config"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
 export LESSHISTFILE="-"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
-export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
+export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/inputrc"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"

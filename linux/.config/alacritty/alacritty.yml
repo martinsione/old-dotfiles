@@ -30,12 +30,10 @@ colors:
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
 
-background_opacity: .8
+background_opacity: .9
 
 
 font:
-
-# UbuntuMono
   normal:
     family: "FiraCode Nerd Font"
     style: Regular
@@ -54,12 +52,12 @@ font:
   # offset is spacing between characters
   offset:
     x: 0
-    y: 2
+    y: 0
 
 window:
   padding:
-    x: 2
-    y: 2
+    x: 4
+    y: 4
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.

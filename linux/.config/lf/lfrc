@@ -9,8 +9,7 @@ set incsearch
 
 #----------------------------------------------------------------------
 
-# cmds/functions
-cmd open ${{
+# cmds/functions cmd open ${{
     case $(file --mime-type $f -b) in
 	image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
         text/*) $EDITOR $fx;;
@@ -63,7 +62,7 @@ map <c-y> up
 map <c-r> reload
 map <esc> reload
 map <enter> shell
-map . set hidden!
+map . set hidden
 
 # Visualize images
 map - $~/.config/lf/draw_img "$f"
@@ -81,9 +80,9 @@ map i push r<a-b><a-b><a-f>			# before extention
 
 # Movement
 map gtr cd ~/.local/share/Trash/files
-map gd cd ~/dl
-map gD cd ~/dotfiles
+map gD cd ~/dl
+map gd cd ~/dotfiles
 map gc cd ~/.config
 map gl cd ~/.local
 map gs cd ~/.local/bin/statusbar
-map gesc cd ~/storage/study/escuela
+map gesc cd /mnt/storage/study/escuela
