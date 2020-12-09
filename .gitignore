@@ -1,4 +1,4 @@
-linux/.config/nvim/autoload/plugged/*
+linux/.config/nvim/autoload/*
 linux/.config/pcmanfm/default/pcmanfm.conf
 linux/.local/src/dwm/dwm
 linux/.local/src/dwmblocks/dwmblocks

@@ -56,10 +56,10 @@ nnoremap <silent> <leader>z :Goyo <CR>
 "-----------------------------------------------------------------------
 
 " Better window navigation
-nnoremap <silent> <C-h> <C-w>h
-nnoremap <silent> <C-j> <C-w>j
-nnoremap <silent> <C-k> <C-w>k
-nnoremap <silent> <C-l> <C-w>l
+" nnoremap <silent> <C-h> <C-w>h
+" nnoremap <silent> <C-j> <C-w>j
+" nnoremap <silent> <C-k> <C-w>k
+" nnoremap <silent> <C-l> <C-w>l
 
 " Resize buffers with arrows
 nnoremap <silent> <Up> :resize -2<CR>

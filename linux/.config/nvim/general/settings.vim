@@ -19,7 +19,7 @@ set ttyfast                             " Make vim go faster
 set nocompatible                        " Is set by default in neovim
 
 " Searching
-set hlsearch                            " Don't Highlight matches
+set nohlsearch                            " Don't Highlight matches
 set incsearch                           " Allow vim to start searching before pressing enter
 set ignorecase                          " Searches are case insensitive
 set smartcase                           " Unless they contain at least one capital letter
@@ -34,15 +34,14 @@ set expandtab                           " Insert spaces instead of tab character
 set smarttab                            " Insert spaces or tabs to go to the next indent of the next tabstop when the cursor is at the beginning of a line
 
 " Appearance
-" set guicursor=                          " Set the cursor to block always
 set cursorline                          " Enable highlighting of the current line
 set nowrap                              " Display long lines as just one line
-set whichwrap+=<,>,[,],h,l
 set number relativenumber               " Relative line numbers
 set pumheight=10                        " Makes popup menu smaller
-set ruler              		            " Show the cursor position all the time
+set ruler              		              " Show the cursor position all the time
 set termguicolors                       " Required by colorizer and other themes
 set title                               " Change the window title
+set whichwrap+=<,>,[,],h,l
 set t_Co=256
 set t_ut=
 

@@ -6,9 +6,6 @@ colors:
   cursor:
     text: "#191919"
     cursor: "#d8dee9"
-  selection:
-    text: '#282828'
-    background: '#ebdbb2'
 
 # Gruvbox dark
   primary:

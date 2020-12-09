@@ -50,17 +50,17 @@ static const Rule rules[] = {
 	 */
 	/* class			instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Brave-browser",	NULL,     NULL,           1 << 1,		0,          0,           0,        -1 },
-	{ "zoom",			NULL,     NULL,           1 << 2,		0,          0,           0,        -1 },
-	{ "mpv",			NULL,     NULL,           1 << 2,		0,          0,           0,        -1 },
-	{ "VSCodium",		NULL,     NULL,           1 << 3,		0,          0,           0,        -1 },
-	{ "Pcmanfm",		NULL,     NULL,           1 << 4,		0,          0,           0,        -1 },
-	{ "Thunderbird",	NULL,     NULL,           1 << 4,		0,          0,           0,        -1 },
-	{ "Gimp",			NULL,     NULL,           1 << 4,		0,          0,           0,        -1 },
-	{ "Steam",			NULL,     NULL,           1 << 7,		0,          0,           0,        -1 },
-	{ "discord",		NULL,     NULL,           1 << 8,		0,          0,           0,        -1 },
-	{ "St",				NULL,     NULL,           0,			0,          1,           0,        -1 },
-	{ "Alacritty",		NULL,     NULL,           0,			0,          1,           0,        -1 },
-	{ NULL,				NULL,     "Event Tester", 0,			0,          0,           1,        -1 }, /* xev */
+	{ "zoom",			      NULL,     NULL,           1 << 2,		0,          0,           0,        -1 },
+	{ "mpv",			      NULL,     NULL,           1 << 2,		0,          0,           0,        -1 },
+	{ "VSCodium",		    NULL,     NULL,           1 << 3,		0,          0,           0,        -1 },
+	{ "Pcmanfm",		    NULL,     NULL,           1 << 4,		0,          0,           0,        -1 },
+	{ "Thunderbird",	  NULL,     NULL,           1 << 4,		0,          0,           0,        -1 },
+	{ "Gimp",			      NULL,     NULL,           1 << 4,		0,          0,           0,        -1 },
+	{ "Steam",			    NULL,     NULL,           1 << 7,		0,          0,           0,        -1 },
+	{ "discord",		    NULL,     NULL,           1 << 8,		0,          0,           0,        -1 },
+	{ "St",				      NULL,     NULL,           0,			  0,          1,           0,        -1 },
+	{ "Alacritty",		  NULL,     NULL,           0,			  0,          1,           0,        -1 },
+	{ NULL,				      NULL,     "Event Tester", 0,			  0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -110,10 +110,10 @@ static const Layout layouts[] = {
 /* key definitions */
 #define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
-	{ ControlMask,                  KEY,      view,           {.ui = 1 << TAG} }, \
+	{ MODKEY,                 KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|Mod4Mask,				KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,			KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	{ MODKEY|ShiftMask,       KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -149,7 +149,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_o,      setcfact,       {.f =  0.00} },
 
 	// Toggle status bar
-	{ MODKEY,                       XK_f,      togglebar,      {0} },
+	{ MODKEY,                       XK_b,      togglebar,      {0} },
 
 	// Toggle client to master place
 	{ MODKEY,                       XK_space,  zoom,           {0} },
@@ -158,14 +158,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 
 	// Kill a client
-	{ MODKEY,					    XK_q,      killclient,     {0} },
+	{ MODKEY,					              XK_q,      killclient,     {0} },
 
 	// Exit dwm
-	{ MODKEY|ControlMask,			XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask,			      XK_q,      quit,           {0} },
 
 	// Screenshot
-	{ 0,							XK_Print,  spawn,	 	   SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png") },
-	{ ShiftMask,					XK_Print,  spawn,	 	   SHCMD("maim ~/img/$(date '+%y%m%d-%H%M-%S').png") },
+	{ 0,							              XK_Print,  spawn,	 	   SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png") },
+	{ ShiftMask,					          XK_Print,  spawn,	 	   SHCMD("maim ~/img/$(date '+%y%m%d-%H%M-%S').png") },
 
 
 	//-------------------------- Layouts -------------------------------
@@ -174,14 +174,14 @@ static Key keys[] = {
 	/* { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} }, */
 
 	// Toggle layout / toggle floating
-	{ MODKEY|ShiftMask,			    XK_space,  setlayout,      {0} },
-	{ MODKEY|ControlMask,			XK_space,  togglefloating, {0} },
+	{ MODKEY|ShiftMask,			        XK_space,  setlayout,      {0} },
+	{ MODKEY|ControlMask,			      XK_space,  togglefloating, {0} },
 
 	// Toggle fullscreen
-	{ ControlMask,					XK_f,      togglefullscr,  {0} },
+	{ MODKEY,					              XK_f,      togglefullscr,  {0} },
 
 	// View tags
-	/* { ControlMask,                  XK_0,      view,           {.ui = ~0 } }, */
+	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	/* { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } }, */
 
 	// Multiple monitors
@@ -206,7 +206,7 @@ static Key keys[] = {
 
 	//-------------------------- Gaps ----------------------------------
 
-	{ Mod1Mask,						XK_0,      togglegaps,     {0} },
+	{ Mod4Mask,						          XK_0,      togglegaps,     {0} },
 	/* { MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } }, */
@@ -227,7 +227,7 @@ static Key keys[] = {
 	//-------------------------- Apps ----------------------------------
 
 	// Alt + Key
-	{ MODKEY,					    XK_Return, spawn,	 	   SHCMD("$TERMINAL") },
+	{ MODKEY,					              XK_Return, spawn,	 	   SHCMD("$TERMINAL") },
 	{ MODKEY,                       XK_p, 	   spawn,		   {.v = dmenucmd } },
 	{ MODKEY,                       XK_d, 	   spawn,		   {.v = discord } },
 	{ MODKEY,                       XK_w,      spawn,	 	   SHCMD("$BROWSER") },
@@ -237,15 +237,15 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
 
 	// Ctrl + Alt + Key
-	{ MODKEY|ControlMask,			XK_p,      spawn,	 	   SHCMD("pavucontrol") },
-	{ MODKEY|ControlMask,			XK_r ,     spawn,	 	   SHCMD(TERMINAL " -e htop") },
-	{ MODKEY|ControlMask,			XK_e,      spawn,	 	   SHCMD(TERMINAL " -e alsamixer") },
+	{ MODKEY|ControlMask,			      XK_p,      spawn,	 	   SHCMD("pavucontrol") },
+	{ MODKEY|ControlMask,			      XK_r ,     spawn,	 	   SHCMD(TERMINAL " -e htop") },
+	{ MODKEY|ControlMask,			      XK_e,      spawn,	 	   SHCMD(TERMINAL " -e alsamixer") },
 
 
 	//-------------------------- Hardware ------------------------------
-	{ 0, XF86XK_AudioMute,			spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioMute,			    spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,	  spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,	  spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
 
 
 };
