@@ -15,9 +15,9 @@ nnoremap <silent> s :noh <CR>
 
 
 "-------------------- Which key ----------------------------------------
-nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
-xnoremap <silent> <Space> :<C-u>call <SID>openWhichKeyInVisualMode()<CR>
-xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>
+" nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
+" xnoremap <silent> <Space> :<C-u>call <SID>openWhichKeyInVisualMode()<CR>
+" xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>
 
 "-------------------- Better navigation --------------------------------
 nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
@@ -67,6 +67,7 @@ xnoremap <expr> <C-/> <SID>vscodeCommentary()
 nnoremap <expr> <C-/> <SID>vscodeCommentary() . '_'
 
 "-------------------- General ------------------------------------------
+nnoremap <silent> <space>. :call VSCodeNotify('workbench.action.openSettingsJson')<CR>
 nnoremap <silent> <space>; :call VSCodeNotify('workbench.action.showCommands')<CR>
 nnoremap <silent> <space>m :call VSCodeNotify('editor.action.toggleMinimap')<CR>
 nnoremap <silent> <space>p :call VSCodeNotify('workbench.action.quickOpen')<CR>

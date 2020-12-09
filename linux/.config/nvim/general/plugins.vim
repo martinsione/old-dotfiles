@@ -22,11 +22,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'liuchengxu/vim-which-key'         " See what keys do
     Plug 'luochen1990/rainbow'              " Rainbow brackets
     Plug 'tweekmonster/startuptime.vim'     " Test Startup time
+  " Treesitter
+    Plug 'nvim-treesitter/nvim-treesitter'
   " Appearance
     Plug 'junegunn/goyo.vim'                " Zen mode
     Plug 'ryanoasis/vim-devicons'           " Cool Icons
-    Plug 'itchyny/lightline.vim'            " Status Line
-    Plug 'morhetz/gruvbox'                  " Gruvbox color plugin
+    Plug 'morhetz/gruvbox'                  " Gruvbox theme
+    Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
 
   " Plugins I don't use anymore
@@ -35,7 +37,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'psliwka/vim-smoothie'             " Smooth scroll
     " Plug 'sheerun/vim-polyglot'             " Better syntax highlighting
     " Plug 'tomasiser/vim-code-dark'          " VsCode color plugin
+  " Status line
     " Plug 'vim-airline/vim-airline'          " Status line
+    " Plug 'itchyny/lightline.vim'            " Status Line
+  " Lsp
     " Plug 'neovim/nvim-lspconfig'
     " Plug 'nvim-lua/completion-nvim'
 

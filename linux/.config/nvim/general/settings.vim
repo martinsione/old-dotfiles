@@ -2,10 +2,9 @@
 syntax enable                           " Enable syntax highlighing
 set autoindent                          " Copy the indentation from previous line
 set clipboard=unnamedplus               " Set to your default clipboard
-set cmdheight=1                         " Change command height
+set cmdheight=2                         " Change command height
 set encoding=utf-8
 set fileencoding=utf-8                  " The encoding written to file
-set formatoptions+=cro                  " Stop newline continution of comments
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set nobackup                            " Recommended by coc
@@ -28,9 +27,9 @@ set path+=**                            " Search down into subfolders provides t
 set wildmenu                            " Display all matching files when we tab complete
 
 " Tabs
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab                           " Insert spaces instead of tab characters.
 set smarttab                            " Insert spaces or tabs to go to the next indent of the next tabstop when the cursor is at the beginning of a line
 

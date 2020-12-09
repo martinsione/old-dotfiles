@@ -36,7 +36,6 @@
   // Neovim configuration
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
-  "vscode-neovim.useWSL": true,
   // Which Key configuration
   "whichkey.sortOrder": "alphabetically",
   "whichkey.delay": 0,

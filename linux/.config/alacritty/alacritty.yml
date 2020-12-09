@@ -6,6 +6,9 @@ colors:
   cursor:
     text: "#191919"
     cursor: "#d8dee9"
+  selection:
+    text: '#282828'
+    background: '#ebdbb2'
 
 # Gruvbox dark
   primary:
@@ -30,8 +33,7 @@ colors:
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
 
-background_opacity: .9
-
+background_opacity: .95
 
 font:
   normal:

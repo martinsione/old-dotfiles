@@ -18,7 +18,7 @@ static const char *fonts[]          = {"UbuntuMono:size=12:antialias=true:autohi
 static const char dmenufont[]       = "UbuntuMono:size=12:antialias=true:autohint:true";
 
 // Opacity
-static const unsigned int baralpha = 0xc0;
+static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 
 // Colorscheme

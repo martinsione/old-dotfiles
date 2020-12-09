@@ -8,7 +8,7 @@ endfunction
 set statusline+=%{GitStatus()}
 
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'powerline',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly'],
