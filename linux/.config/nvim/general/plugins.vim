@@ -24,7 +24,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tweekmonster/startuptime.vim'     " Test Startup time
   " Treesitter
     Plug 'sheerun/vim-polyglot'             " Better syntax highlighting
-    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " So the parsers get updated
   " Appearance
     Plug 'junegunn/goyo.vim'                " Zen mode
     Plug 'itchyny/lightline.vim'            " Status Line

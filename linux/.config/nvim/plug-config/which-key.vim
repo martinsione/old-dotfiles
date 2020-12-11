@@ -1,5 +1,5 @@
 " Timeout
-let g:which_key_timeout = 100
+let g:which_key_timeout = 0
 
 let g:which_key_display_names = {'<CR>': '↵', '<TAB>': '⇆'}
 

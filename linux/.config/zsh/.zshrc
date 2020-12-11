@@ -14,7 +14,6 @@ fi
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cursor" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cursor"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/icons" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/icons"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/path" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/path"
-
 #------------------ History in chache directory ------------------------
 HISTSIZE=10000
 SAVEHIST=10000
@@ -22,7 +21,7 @@ HISTFILE=~/.cache/zsh/history
 
 #------------------ Enable colors and change prompt --------------------
 autoload -U colors && colors	    # Load colors
-setopt autocd		                # Automatically cd into typed directory.
+setopt autocd		                  # Automatically cd into typed directory.
 
 # Basic auto/tab complete:
 autoload -U compinit

@@ -22,3 +22,5 @@ let g:lightline = {
       \   'showdiff': 'GitStatus'
       \ }
       \ }
+
+

@@ -63,5 +63,4 @@ augroup netrw_mappings
 		autocmd filetype netrw call NetrwMappings()
 augroup END
 
-
 " noremap <silent> <space>e :call ToggleNetrw()<CR>
