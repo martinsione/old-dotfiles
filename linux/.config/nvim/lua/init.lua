@@ -1,0 +1,8 @@
+vim.cmd('colo nvcode')
+-- require ('settings')
+-- require ('plugins')
+-- require('nvim-tree')
+require('nvcodeline')
+require('plug-colorizer')
+require('treesitter')
+require('web-devicons')

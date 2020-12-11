@@ -10,26 +10,30 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'mhinz/vim-startify'               " Start Screen
     Plug 'airblade/vim-gitgutter'           " GIT integration
     Plug 'tpope/vim-fugitive'               " GIT integration
     Plug 'tpope/vim-commentary'             " Better Comments
     Plug 'tpope/vim-surround'               " Change sorrounding tags
+  " Lua
     Plug 'norcalli/nvim-colorizer.lua'      " Colorizer
-    Plug 'mhinz/vim-startify'               " Start Screen
+    Plug 'kyazdani42/nvim-tree.lua'         " NERDTree in lua
+    Plug 'glepnir/galaxyline.nvim'          " Lua status line
+    Plug 'kyazdani42/nvim-web-devicons'     " Devicons fork in lua
+  " Treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " So the parsers get updated
+    Plug 'sheerun/vim-polyglot'             " Better syntax highlighting
   "General
     Plug 'AndrewRadev/tagalong.vim'         " Auto change HTML tags
-    Plug 'liuchengxu/vim-which-key'         " See what keys do
+    " Plug 'liuchengxu/vim-which-key'         " See what keys do
     Plug 'christoomey/vim-tmux-navigator'   " Navigate between tmux panes
     Plug 'luochen1990/rainbow'              " Rainbow brackets
     Plug 'tweekmonster/startuptime.vim'     " Test Startup time
-  " Treesitter
-    Plug 'sheerun/vim-polyglot'             " Better syntax highlighting
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " So the parsers get updated
   " Appearance
+    " Plug 'itchyny/lightline.vim'            " Status Line
+    " Plug 'ryanoasis/vim-devicons'           " Cool Icons
     Plug 'junegunn/goyo.vim'                " Zen mode
-    Plug 'itchyny/lightline.vim'            " Status Line
-    Plug 'ryanoasis/vim-devicons'           " Cool Icons
-    Plug 'morhetz/gruvbox'                  " Gruvbox theme
+    " Plug 'morhetz/gruvbox'                  " Gruvbox theme
     Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
 call plug#end()

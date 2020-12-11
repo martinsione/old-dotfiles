@@ -11,20 +11,17 @@ else
 
   " Themes
   " source $HOME/.config/nvim/plug-config/themes/gruvbox.vim
-  colorscheme nvcode
 
   "Plugin configuration
   source $HOME/.config/nvim/plug-config/gitgutter.vim
-  source $HOME/.config/nvim/plug-config/lightline.vim
   source $HOME/.config/nvim/plug-config/netrw.vim
   source $HOME/.config/nvim/plug-config/rainbow.vim
   source $HOME/.config/nvim/plug-config/start-screen.vim
-  source $HOME/.config/nvim/plug-config/which-key.vim
+  source $HOME/.config/nvim/plug-config/tree.vim
   source $HOME/.config/nvim/plug-config/coc.vim
-  luafile $HOME/.config/nvim/lua/treesitter.lua
-  luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+  lua require 'init'
 
-  " luafile $HOME/.config/nvim/lua/statusline.lua
-  " lua require 'statusline'.setup()
+  " source $HOME/.config/nvim/plug-config/lightline.vim
+  " source $HOME/.config/nvim/plug-config/which-key.vim
 
 endif
