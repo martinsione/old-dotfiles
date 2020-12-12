@@ -1,4 +1,4 @@
-vim.cmd('colo nvcode')
+-- vim.cmd('colo nvcode')
 -- require ('settings')
 -- require ('plugins')
 -- require('nvim-tree')

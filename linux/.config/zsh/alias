@@ -36,7 +36,7 @@ alias \
 	gcl="git clone" \
 	gp='git push'  \
 	gP='git pull'  \
-	gitup="git add . && git commit && git push" \
+	gitup="git add . && git commit -m 'Updates.' && git push" \
 
 #------------------- Tmux commands -------------------------------------
 alias \

@@ -11,6 +11,7 @@ else
 
   " Themes
   " source $HOME/.config/nvim/plug-config/themes/gruvbox.vim
+  colorscheme nvcode
 
   "Plugin configuration
   source $HOME/.config/nvim/plug-config/gitgutter.vim
