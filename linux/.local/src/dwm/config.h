@@ -230,9 +230,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
 
 	// Alt + Ctrl + Key
-	{ MODKEY|ControlMask,           XK_p,      spawn,	 	   SHCMD("pavucontrol") },
 	{ MODKEY|ControlMask,           XK_r ,     spawn,	 	   SHCMD(TERMINAL " -e htop") },
 	{ MODKEY|ControlMask,           XK_e,      spawn,	 	   SHCMD(TERMINAL " -e alsamixer") },
+	{ MODKEY|ControlMask,           XK_p ,     spawn,	 	   SHCMD(TERMINAL " -e pulsemixer") },
 
 	// Screenshot
 	{ 0,                            XK_Print,  spawn,       SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png") },

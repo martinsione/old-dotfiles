@@ -1,15 +1,24 @@
-set previewer ~/.config/lf/preview
 # Basic Settings
-# set color256 true
+set shell bash
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 10
+# set color256
 set icons
-set preview true
-set drawbox true
-set ignorecase true
+set preview
+set drawbox
+set ignorecase
 set incsearch
+set period 1
+set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
 
 #----------------------------------------------------------------------
 
-# cmds/functions cmd open ${{
+# Vars that depend on environmental variables
+$lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"
+
+# cmds/functions
+cmd open ${{
     case $(file --mime-type $f -b) in
 	image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
         text/*) $EDITOR $fx;;
@@ -28,41 +37,54 @@ cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 
 #----------------------------------------------------------------------
 
-# Trash cli bindings
-cmd trash ${{
-  files=$(printf "$fx" | tr '\n' ';')
-  while [ "$files" ]; do
-    # extract the substring from start of string up to delimiter.
-    # this is the first "element" of the string.
-    file=${files%%;*}
-
-    trash-put "$(basename "$file")"
-    # if there's only one element left, set `files` to an empty string.
-    # this causes us to exit this `while` loop.
-    # else, we delete the first "element" of the string from files, and move onto the next.
-    if [ "$files" = "$file" ]; then
-      files=''
-    else
-      files="${files#*;}"
-    fi
-  done
+cmd delete ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "delete?[y/N]"
+	read ans
+	[ $ans = "y" ] && rm -rf $fx
 }}
 
-cmd clear_trash %trash-empty
+cmd moveto ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	clear; echo "Move to where?"
+	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf | sed 's|~|$HOME|' )" &&
+	for x in $fx; do
+		eval mv -iv \"$x\" \"$dest\"
+	done &&
+	notify-send "🚚 File(s) moved." "File(s) moved to $dest."
+}}
 
-cmd restore_trash ${{
-  trash-restore
+cmd copyto ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	clear; echo "Copy to where?"
+	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf | sed 's|~|$HOME|' )" &&
+	for x in $fx; do
+		eval cp -ivr \"$x\" \"$dest\"
+	done &&
+	notify-send "📋 File(s) copied." "File(s) copies to $dest."
 }}
 
 #----------------------------------------------------------------------
 
 # General bindings
+map <esc>
 map <c-e> down
 map <c-y> up
 map <c-r> reload
-map <esc> reload
 map <enter> shell
-map . set hidden
+map <c-f> $lf -remote "send $id select '$(fzf)'"
+map <c-n> push :mkdir<space>
+map J $lf -remote "send $id cd $(cut -d'	' -f2 ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)"
+map D delete
+map C copyto
+map M moveto
+map V push :!nvim<space>
+map .
+map . set hidden!
 
 # Visualize images
 map - $~/.config/lf/draw_img "$f"
@@ -73,10 +95,11 @@ map tc clear_trash
 map tr restore_trash
 
 # Cmd bindings
-map A push :mkdir<space>
-map C push r<c-u>					# new rename
-map I push r<c-a>					# at the very beginning
-map i push r<a-b><a-b><a-f>			# before extention
+map A rename # at the very end
+map c push A<c-u> # new rename
+map I push A<c-a> # at the very beginning
+map i push A<a-b><a-b><a-f> # before extention
+map a push A<a-b> # after extention
 
 # Movement
 map gtr cd ~/.local/share/Trash/files
