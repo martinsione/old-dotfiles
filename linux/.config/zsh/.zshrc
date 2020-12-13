@@ -18,6 +18,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
+
+
 # Options section
 setopt appendhistory                                            # Immediately append history instead of overwriting
 setopt autocd                                                   # if only directory path is entered, cd there.
@@ -30,6 +32,7 @@ setopt nocaseglob                                               # Case insensiti
 setopt nocheckjobs                                              # Don't warn about running processes when exiting
 setopt numericglobsort                                          # Sort filenames numerically when it makes sense
 setopt rcexpandparam                                            # Array expension with parameters
+WORDCHARS=${WORDCHARS//\/[&.;]}
 
 # Completions
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
