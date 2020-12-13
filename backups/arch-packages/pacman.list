@@ -1,5 +1,4 @@
 alacritty
-alsa-utils
 amd-ucode
 autoconf
 automake
@@ -33,7 +32,6 @@ libva-vdpau-driver
 linux-firmware
 linux-headers
 linux-lts
-lxappearance
 lxsession
 m4
 maim
@@ -56,11 +54,10 @@ os-prober
 pamixer
 papirus-icon-theme
 patch
-pavucontrol
 pcmanfm
 pkgconf
-psensor
-pulseaudio
+pulseaudio-alsa
+pulsemixer
 python-pip
 python-pynvim
 qemu
@@ -75,11 +72,11 @@ tmux
 trash-cli
 tree
 ttf-dejavu
-ttf-font-awesome
 ttf-joypixels
 ttf-liberation
 ttf-ubuntu-font-family
 ueberzug
+unclutter
 unrar
 unzip
 virt-manager
@@ -87,11 +84,11 @@ which
 wmname
 xclip
 xcompmgr
-xdg-user-dirs
-xdg-utils
 xdotool
 xorg-server
+xorg-xdpyinfo
 xorg-xinit
+xorg-xwininfo
 xsel
 xsensors
 yarn

@@ -1,11 +1,12 @@
 #!/bin/sh
 
-remap &					# Key remappings
-xcompmgr &				# Compositor
-lxsession &				# Polkit
-dunst &					# Notifications
+remap &					      # Key remappings
+xcompmgr &				    # Compositor
+lxsession &				    # Polkit
+dunst &					      # Notifications
+unclutter &           # Remove mouse when idle
 nitrogen --restore &	# Wallpaper
-dwmblocks &				# status bar
+dwmblocks &				    # status bar
 
 # Loop
 while true; do

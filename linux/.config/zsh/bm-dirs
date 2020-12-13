@@ -3,11 +3,11 @@
 alias \
     cac="${XDG_CACHE_HOME:-$HOME/.cache}" \
     cf="${XDG_CONFIG_HOME:-$HOME/.config}" \
-    D="${XDG_DOWNLOAD_DIR:-$HOME/Downloads}" \
     d="${XDG_DOCUMENTS_DIR:-$HOME/Documents}" \
-    dp="${XDG_PICTURES_DIR:-$HOME/Pictures}" \
-    ms="${XDG_MUSIC_DIR:-$HOME/Music}" \
-    vv="${XDG_VIDEOS_DIR:-$HOME/Videos}" \
+    D="${XDG_DOWNLOAD_DIR:-$HOME/Downloads}" \
+    P="${XDG_PICTURES_DIR:-$HOME/Pictures}" \
+    M="${XDG_MUSIC_DIR:-$HOME/Music}" \
+    V="${XDG_VIDEOS_DIR:-$HOME/Videos}" \
     ds="${XDG_DATA_HOME:-$HOME/.local/share}" \
     h="$HOME" \
     gd="$HOME/dotfiles" \

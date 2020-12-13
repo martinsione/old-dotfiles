@@ -8,3 +8,6 @@ cd ~/.local/src/dwmblocks && make && sudo make clean install &&
 cd ~/.local/src/st && make && sudo make clean install &&
 chsh -s $(which zsh) &&
 . ~/.zprofile
+
+# I don't know how to automatice this yet
+# UUID=0492de4e-821d-48d4-970f-7a7ccb869fe0	/mnt/storage	ext4		rw,relatime	0 2

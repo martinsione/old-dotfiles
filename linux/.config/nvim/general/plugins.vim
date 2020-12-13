@@ -33,9 +33,12 @@
       Plug 'morhetz/gruvbox'                  " Gruvbox theme
       Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
-  " Unused plugins
-    " Plug 'liuchengxu/vim-which-key'         " See what keys do
-    " Plug 'itchyny/lightline.vim'            " Status Line
-    " Plug 'ryanoasis/vim-devicons'           " Cool Icons
+    " Unused plugins
+      " Plug 'liuchengxu/vim-which-key'         " See what keys do
+      " Plug 'itchyny/lightline.vim'            " Status Line
+      " Plug 'ryanoasis/vim-devicons'           " Cool Icons
+    " Not in the mood of taking care of lsp
+      " Plug 'neovim/nvim-lspconfig'            " Lsp
+      " Plug 'nvim-lua/completion-nvim'         " Autocompletion
 
 call plug#end()
