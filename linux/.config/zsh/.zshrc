@@ -18,7 +18,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
-## Options section
+# Options section
 setopt appendhistory                                            # Immediately append history instead of overwriting
 setopt autocd                                                   # if only directory path is entered, cd there.
 setopt correct                                                  # Auto correct mistakes
