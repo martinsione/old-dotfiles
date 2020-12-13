@@ -123,7 +123,6 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *discord[] = { "discord", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -162,10 +161,6 @@ static Key keys[] = {
 	// Exit dwm
 	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
 
-	// Screenshot
-	{ 0,                            XK_Print,  spawn,	 	   SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png") },
-	{ ShiftMask,                    XK_Print,  spawn,	 	   SHCMD("maim ~/Pictures/$(date '+%y%m%d-%H%M-%S').png") },
-
 
 	//-------------------------- Layouts -------------------------------
 	/* { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, */
@@ -173,8 +168,8 @@ static Key keys[] = {
 	/* { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} }, */
 
 	// Toggle layout / toggle floating
-	{ MODKEY|ShiftMask,			        XK_space,  setlayout,      {0} },
-	{ MODKEY|ControlMask,			      XK_space,  togglefloating, {0} },
+	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
+	{ MODKEY|ControlMask,           XK_space,  togglefloating, {0} },
 
 	// Toggle fullscreen
 	{ MODKEY,					              XK_f,      togglefullscr,  {0} },
@@ -188,7 +183,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-
 
 
 	//-------------------------- Tags ----------------------------------
@@ -228,23 +222,26 @@ static Key keys[] = {
 	// Alt + Key
 	{ MODKEY,                       XK_Return, spawn,	 	   SHCMD("$TERMINAL") },
 	{ MODKEY,                       XK_p, 	   spawn,		   {.v = dmenucmd } },
-	{ MODKEY,                       XK_d, 	   spawn,		   {.v = discord } },
+	{ MODKEY,                       XK_d,      spawn,	 	   SHCMD("discord") },
 	{ MODKEY,                       XK_w,      spawn,	 	   SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_v,      spawn,	 	   SHCMD("code") },
 	{ MODKEY,                       XK_e,      spawn,	 	   SHCMD("$GUIFILE") },
 	{ MODKEY,                       XK_m,      spawn,	 	   SHCMD("$MAIL") },
 	{ MODKEY,                       XK_r,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },
 
-	// Ctrl + Alt + Key
+	// Alt + Ctrl + Key
 	{ MODKEY|ControlMask,           XK_p,      spawn,	 	   SHCMD("pavucontrol") },
 	{ MODKEY|ControlMask,           XK_r ,     spawn,	 	   SHCMD(TERMINAL " -e htop") },
 	{ MODKEY|ControlMask,           XK_e,      spawn,	 	   SHCMD(TERMINAL " -e alsamixer") },
 
+	// Screenshot
+	{ 0,                            XK_Print,  spawn,       SHCMD("maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png") },
+	{ ShiftMask,                    XK_Print,  spawn,       SHCMD("maim ~/Pictures/$(date '+%y%m%d-%H%M-%S').png") },
 
 	//-------------------------- Hardware ------------------------------
-	{ 0, XF86XK_AudioMute,			    spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	  spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,	  spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioMute,          spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,   spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,   spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
 
 
 };
