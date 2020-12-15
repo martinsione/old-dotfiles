@@ -2,22 +2,19 @@
 
 #------------------- Default settings ----------------------------------
 alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
-	mkd="mkdir -pv" \
 	bld="make && sudo make clean install" \
+	ccat="highlight --out-format=ansi" \
+	cp="cp -iv" \
+	diff="diff --color=auto" \
+	grep="grep --color=auto" \
 	ka="killall" \
 	live="live-server" \
-	p="sudo pacman" \
-
-#------------------- Colorize commands ---------------------------------
-alias \
-	ls="ls -hN --color=auto --group-directories-first" \
 	ll="ls -a --color=auto" \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi"\
+	ls="ls -hN --color=auto --group-directories-first" \
+	mkd="mkdir -pv" \
+	mv="mv -iv" \
+	p="sudo pacman" \
+	rm="rm -vI" \
 
 #------------------- Cli apps  -----------------------------------------
 alias \

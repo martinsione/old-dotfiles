@@ -35,6 +35,7 @@ set smarttab                            " Insert spaces or tabs to go to the nex
 
 " Appearance
 set cursorline                          " Enable highlighting of the current line
+set noshowmode
 set nowrap                              " Display long lines as just one line
 set number relativenumber               " Relative line numbers
 set pumheight=10                        " Makes popup menu smaller

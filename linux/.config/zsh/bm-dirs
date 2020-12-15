@@ -10,7 +10,7 @@ alias \
     V="${XDG_VIDEOS_DIR:-$HOME/Videos}" \
     ds="${XDG_DATA_HOME:-$HOME/.local/share}" \
     h="$HOME" \
-    gd="$HOME/dotfiles" \
+    dot="$HOME/dotfiles" \
     sc="$HOME/.local/bin" \
     src="$HOME/.local/src" \
     mn="/mnt" \

@@ -1,7 +1,9 @@
 #!/bin/zsh
 
 alias \
-	cfa="cd ~/.config/zsh && $EDITOR alias" \
-	cblocks="cd ~/.local/src/dwmblocks && $EDITOR blocks.h" \
+	cfa="$EDITOR ~/.config/zsh/alias" \
+	cfd="$EDITOR ~/.config/zsh/bm-dirs" \
+	cff="$EDITOR ~/.config/zsh/bm-files" \
+	cblo="cd ~/.local/src/dwmblocks && $EDITOR blocks.h" \
 	cdwm="cd ~/.local/src/dwm && $EDITOR config.h" \
 	cst="cd ~/.local/src/st && $EDITOR config.h" \

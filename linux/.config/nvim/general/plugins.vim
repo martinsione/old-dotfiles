@@ -30,6 +30,7 @@
       Plug 'tweekmonster/startuptime.vim'     " Test Startup time
     " Appearance
       Plug 'junegunn/goyo.vim'                " Zen mode
+      Plug 'romgrk/barbar.nvim'               " Tabline
       Plug 'morhetz/gruvbox'                  " Gruvbox theme
       Plug 'christianchiarulli/nvcode-color-schemes.vim'
 

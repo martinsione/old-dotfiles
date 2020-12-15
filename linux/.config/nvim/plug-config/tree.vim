@@ -19,6 +19,9 @@ let g:lua_tree_show_icons = {
     \ }
 
 " NOTE: the 'edit' key will wrap/unwrap a folder and open a file
+
+
+
 let g:lua_tree_bindings = {
     \ 'edit':            ['<CR>', 'o'],
     \ 'edit_vsplit':     '<C-v>',
@@ -52,7 +55,8 @@ let g:lua_tree_icons = {
     \   },
     \ 'folder': {
     \   'default': "",
-    \   'open': ""
+    \   'open': "",
+    \   'symlink': "",
     \   }
     \ }
 
