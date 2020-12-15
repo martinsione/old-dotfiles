@@ -45,8 +45,8 @@ nnoremap <silent> <leader>gf :GFiles <CR>
 nnoremap <silent> <leader>bf :Buffer <CR>
 nnoremap <silent> <leader>; :Commands <CR>
 
-" Coc-Explorer
-nnoremap <silent> <leader>e :CocCommand explorer<CR>
+" Tree
+nnoremap <silent> <leader>e :LuaTreeToggle<CR>
 
 " Zen mode
 nnoremap <silent> <leader>z :Goyo <CR>

@@ -59,5 +59,3 @@ let g:lua_tree_icons = {
     \   'symlink': "",
     \   }
     \ }
-
-nnoremap <C-n> :LuaTreeToggle<CR>

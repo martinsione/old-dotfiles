@@ -2,7 +2,6 @@
     \ 'coc-css',
     \ 'coc-cssmodules',
     \ 'coc-emmet',
-    \ 'coc-explorer',
     \ 'coc-html',
     \ 'coc-json',
     \ 'coc-marketplace',
