@@ -15,8 +15,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 // Fonts
 /* static const char *fonts[]          = { "monospace:size=10", "JoyPixels:size=8:antialias=true:autohint=true" }; */
 /* static const char dmenufont[]       = "monospace:size=10"; */
-static const char *fonts[]          = {"UbuntuMono:size=12:antialias=true:autohint:true", "JoyPixels:size=8:antialias=true:autohint=true"};
-static const char dmenufont[]       = "UbuntuMono:size=12:antialias=true:autohint:true";
+static const char *fonts[]          = {"UbuntuMono:size=12:weight=bold:antialias=true:autohint:true", "JoyPixels:size=8:antialias=true:autohint=true"};
+static const char dmenufont[]       = "UbuntuMono:size=12:weight=bold:antialias=true:autohint:true";
 
 // Opacity
 static const unsigned int baralpha = 0xd0;
@@ -50,16 +50,16 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class            instance    title       tags mask     isfloating   monitor */
+	{ "VSCodium",       NULL,       NULL,       1 << 0,       0,           -1 },
 	{ "Brave-browser",  NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "zoom",           NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "mpv",            NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "VSCodium",       NULL,       NULL,       1 << 3,       0,           -1 },
-	{ "Pcmanfm",        NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Thunderbird",    NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Gimp",           NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Virt-manager",   NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "Steam",          NULL,       NULL,       1 << 7,       0,           -1 },
-	{ "discord",        NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Steam",          NULL,       NULL,       1 << 6,       0,           -1 },
+	{ "discord",        NULL,       NULL,       1 << 7,       0,           -1 },
+	{ "Pcmanfm",        NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -224,7 +224,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p, 	   spawn,		   {.v = dmenucmd } },
 	{ MODKEY,                       XK_d,      spawn,	 	   SHCMD("discord") },
 	{ MODKEY,                       XK_w,      spawn,	 	   SHCMD("$BROWSER") },
-	{ MODKEY,                       XK_v,      spawn,	 	   SHCMD("code") },
+	{ MODKEY,                       XK_v,      spawn,	 	   SHCMD("$GUIEDITOR") },
 	{ MODKEY,                       XK_e,      spawn,	 	   SHCMD("$GUIFILE") },
 	{ MODKEY,                       XK_m,      spawn,	 	   SHCMD("$MAIL") },
 	{ MODKEY,                       XK_r,      spawn,	 	   SHCMD(TERMINAL " -e $FILE") },

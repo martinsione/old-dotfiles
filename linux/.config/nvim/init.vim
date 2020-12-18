@@ -10,7 +10,7 @@ else
   source $HOME/.config/nvim/general/mappings.vim
 
   " Themes
-  " source $HOME/.config/nvim/plug-config/themes/gruvbox.vim
+  source $HOME/.config/nvim/plug-config/themes/gruvbox.vim
   colorscheme nvcode
 
   "Plugin configuration

@@ -3,6 +3,7 @@
 alias \
 	cfa="$EDITOR ~/.config/zsh/alias" \
 	cfd="$EDITOR ~/.config/zsh/bm-dirs" \
+	cfe="$EDITOR ~/.config/zsh/exports" \
 	cff="$EDITOR ~/.config/zsh/bm-files" \
 	cblo="cd ~/.local/src/dwmblocks && $EDITOR blocks.h" \
 	cdwm="cd ~/.local/src/dwm && $EDITOR config.h" \
