@@ -1,0 +1,21 @@
+INFO  2020-12-26T15:11:37.375 34683 set_init_2:754: startup runtimepath/packpath value: /home/martin/.config/nvim,/etc/xdg/nvim,/home/martin/.local/share/nvim/site,/usr/local/share/nvim/site,/usr/share/nvim/site,/usr/share/nvim/runtime,/usr/lib/nvim,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,/home/martin/.local/share/nvim/site/after,/etc/xdg/nvim/after,/home/martin/.config/nvim/after
+INFO  2020-12-26T15:11:37.377 34683 patch_terminfo_bugs:1696: Disabling smglr with TERM=xterm for non-xterm.
+INFO  2020-12-26T15:11:37.441 34683 channel_create_event:204: new channel 3 (function coc#rpc#start_server[17]..<SNR>31_start:55) : {"id": 3, "client": {}, "mode": "rpc", "stream": "job"}
+INFO  2020-12-26T15:11:37.490 34683 main:559: starting main loop
+INFO  2020-12-26T15:11:37.498 34683 on_process_exit:393: exited: pid=34692 status=0 stoptime=0
+INFO  2020-12-26T15:11:37.501 34683 on_process_exit:393: exited: pid=34693 status=0 stoptime=0
+INFO  2020-12-26T15:11:37.539 34683 channel_create_event:204: new channel 4 (function gitgutter#process_buffer[10]..<SNR>79_setup_path[3]..gitgutter#utility#set_repo_path[12]..gitgutter#async#execute:11) : {"id": 4, "mode": "bytes", "stream": "job"}
+INFO  2020-12-26T15:11:37.543 34683 on_process_exit:393: exited: pid=34694 status=0 stoptime=0
+INFO  2020-12-26T15:11:37.547 34683 on_process_exit:393: exited: pid=34695 status=0 stoptime=0
+INFO  2020-12-26T15:11:37.549 34683 channel_create_event:204: new channel 5 (function <SNR>83_on_exit_nvim[2]..1[5]..gitgutter#process_buffer[19]..gitgutter#diff#run_diff[83]..gitgutter#async#execute:11) : {"id": 5, "mode": "bytes", "stream": "job"}
+INFO  2020-12-26T15:11:37.556 34683 on_process_exit:393: exited: pid=34696 status=0 stoptime=0
+INFO  2020-12-26T15:11:41.655 34683 os_proc_tree_kill:96: sending SIGTERM to PID -34685
+INFO  2020-12-26T15:11:41.661 34683 on_process_exit:393: exited: pid=34685 status=143 stoptime=7388091740030
+INFO  2020-12-26T15:11:41.661 34683 os_exit:586: Nvim exit: 0
+INFO  2020-12-26T15:11:47.904 34724 set_init_2:754: startup runtimepath/packpath value: /home/martin/.config/nvim,/etc/xdg/nvim,/home/martin/.local/share/nvim/site,/usr/local/share/nvim/site,/usr/share/nvim/site,/usr/share/nvim/runtime,/usr/lib/nvim,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,/home/martin/.local/share/nvim/site/after,/etc/xdg/nvim/after,/home/martin/.config/nvim/after
+INFO  2020-12-26T15:11:47.905 34724 patch_terminfo_bugs:1696: Disabling smglr with TERM=xterm for non-xterm.
+INFO  2020-12-26T15:11:47.970 34724 channel_create_event:204: new channel 3 (function coc#rpc#start_server[17]..<SNR>31_start:55) : {"id": 3, "client": {}, "mode": "rpc", "stream": "job"}
+INFO  2020-12-26T15:11:48.014 34724 main:559: starting main loop
+INFO  2020-12-26T15:11:48.024 34724 on_process_exit:393: exited: pid=34733 status=0 stoptime=0
+INFO  2020-12-26T15:11:48.028 34724 on_process_exit:393: exited: pid=34734 status=0 stoptime=0
+INFO  2020-12-26T15:11:48.073 34724 channel_create_event:204: new channel 4 (function <SNR>35_on_bufenter[22]..gitgutter#process_buffer[10]..<SNR>70_setup_path[3]..gitgutter#utility#set_repo_path[12]..gitgutter#async#execute:11) : {"id": 4, "mode": "bytes", "stream": "job"}

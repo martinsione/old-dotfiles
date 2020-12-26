@@ -4,6 +4,7 @@
 alias \
 	bld="make && sudo make clean install" \
 	ccat="highlight --out-format=ansi" \
+	cl="clear" \
 	cp="cp -iv" \
 	diff="diff --color=auto" \
 	grep="grep --color=auto" \
@@ -27,12 +28,14 @@ alias \
 #------------------- Git commands -------------------------------------
 alias \
 	g="git" \
-	gs="git status" \
 	ga="git add" \
+	gb="git branch" \
 	gc="git commit" \
+	gd="git diff" \
 	gcl="git clone" \
 	gp='git push'  \
 	gP='git pull'  \
+	gst="git status" \
 	gitup="git add . && git commit -m 'Updates.' && git push" \
 
 #------------------- Tmux commands -------------------------------------

@@ -10,10 +10,14 @@ else
   source $HOME/.config/nvim/general/mappings.vim
 
   " Themes
-  source $HOME/.config/nvim/plug-config/themes/gruvbox.vim
+  " source $HOME/.config/nvim/plug-config/themes/gruvbox.vim
   colorscheme nvcode
 
+  " Transparent background
+  hi Normal guibg=NONE ctermbg=NONE
+
   "Plugin configuration
+  source $HOME/.config/nvim/plug-config/barbar.vim
   source $HOME/.config/nvim/plug-config/gitgutter.vim
   source $HOME/.config/nvim/plug-config/netrw.vim
   source $HOME/.config/nvim/plug-config/rainbow.vim
@@ -24,5 +28,4 @@ else
 
   " source $HOME/.config/nvim/plug-config/lightline.vim
   " source $HOME/.config/nvim/plug-config/which-key.vim
-
 endif
