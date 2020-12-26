@@ -1,6 +1,3 @@
--- vim.cmd('colo nvcode')
--- require ('settings')
--- require ('plugins')
 require('galaxy')
 require('plug-colorizer')
 require('treesitter')

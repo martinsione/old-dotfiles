@@ -22,7 +22,6 @@
       Plug 'kyazdani42/nvim-web-devicons'     " Devicons fork in lua
     " Treesitter
       Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " So the parsers get updated
-      Plug 'sheerun/vim-polyglot'             " Better syntax highlighting
     "General
       Plug 'AndrewRadev/tagalong.vim'         " Auto change HTML tags
       Plug 'christoomey/vim-tmux-navigator'   " Navigate between tmux panes

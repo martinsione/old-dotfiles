@@ -13,10 +13,10 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 // Fonts
-/* static const char *fonts[]          = { "monospace:size=10", "JoyPixels:size=8:antialias=true:autohint=true" }; */
-/* static const char dmenufont[]       = "monospace:size=10"; */
-static const char *fonts[]          = {"UbuntuMono:size=12:weight=bold:antialias=true:autohint:true", "JoyPixels:size=8:antialias=true:autohint=true"};
-static const char dmenufont[]       = "UbuntuMono:size=12:weight=bold:antialias=true:autohint:true";
+static const char *fonts[]          = { "monospace:size=10", "JoyPixels:size=8:antialias=true:autohint=true" };
+static const char dmenufont[]       = "monospace:size=10";
+/* static const char *fonts[]          = {"UbuntuMono:size=12:weight=bold:antialias=true:autohint:true", "JoyPixels:size=8:antialias=true:autohint=true"}; */
+/* static const char dmenufont[]       = "UbuntuMono:size=12:weight=bold:antialias=true:autohint:true"; */
 
 // Opacity
 static const unsigned int baralpha = 0xd0;

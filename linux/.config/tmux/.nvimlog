@@ -1,7 +1,0 @@
-INFO  2020-12-26T15:11:48.076 34724 on_process_exit:393: exited: pid=34735 status=0 stoptime=0
-INFO  2020-12-26T15:11:48.084 34724 on_process_exit:393: exited: pid=34736 status=0 stoptime=0
-INFO  2020-12-26T15:11:48.085 34724 channel_create_event:204: new channel 5 (function <SNR>82_on_exit_nvim[2]..1[5]..gitgutter#process_buffer[19]..gitgutter#diff#run_diff[83]..gitgutter#async#execute:11) : {"id": 5, "mode": "bytes", "stream": "job"}
-INFO  2020-12-26T15:11:48.093 34724 on_process_exit:393: exited: pid=34737 status=0 stoptime=0
-INFO  2020-12-26T15:11:51.758 34724 os_proc_tree_kill:96: sending SIGTERM to PID -34726
-INFO  2020-12-26T15:11:51.762 34724 on_process_exit:393: exited: pid=34726 status=143 stoptime=7398194813749
-INFO  2020-12-26T15:11:51.763 34724 os_exit:586: Nvim exit: 0
