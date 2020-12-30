@@ -1,0 +1,2 @@
+INFO  2020-12-30T18:53:36.023 46674 channel_create_event:204: new channel 31 (function gitgutter#all[8]..gitgutter#process_buffer[19]..gitgutter#diff#run_diff[83]..gitgutter#async#execute:11) : {"id": 31, "mode": "bytes", "stream": "job"}
+INFO  2020-12-30T18:53:36.032 46674 on_process_exit:393: exited: pid=47262 status=0 stoptime=0
