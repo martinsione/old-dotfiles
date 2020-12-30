@@ -1,111 +1,58 @@
-# Basic Settings
-set shell bash
-set shellopts '-eu'
-set ifs "\n"
-set scrolloff 10
-# set color256
-set icons
-set preview
-set drawbox
-set ignorecase
-set incsearch
-set period 1
-set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
+#!/bin/bash
 
-#----------------------------------------------------------------------
+set -C -f -u
+#IFS=$'\n'
+IFS="$(printf '%b_' '\n')"; IFS="${IFS%_}"
 
-# Vars that depend on environmental variables
-$lf -remote "send $id set previewer ${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope"
+# ANSI color codes are supported.
+# STDIN is disabled, so interactive scripts won't work properly
 
-# cmds/functions
-cmd open ${{
-    case $(file --mime-type $f -b) in
-	image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
-        text/*) $EDITOR $fx;;
-	image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
-	image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
-	audio/*) mpv --audio-display=no $f ;;
-	video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
-	application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
-        *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
+# This script is considered a configuration file and must be updated manually.
+
+# Meanings of exit codes:
+# code | meaning    | action of ranger
+# -----+------------+-------------------------------------------
+# 0    | success    | Display stdout as preview
+# 1    | no preview | Display no preview at all
+# 2    | plain text | Display the plain content of the file
+
+# Script arguments
+FILE_PATH="${1}"         # Full path of the highlighted file
+HEIGHT="${2}"
+
+#FILE_EXTENSION="${FILE_PATH##*.}"
+#FILE_EXTENSION_LOWER=$(echo ${FILE_EXTENSION} | tr '[:upper:]' '[:lower:]')
+
+# Settings
+HIGHLIGHT_SIZE_MAX=262143  # 256KiB
+HIGHLIGHT_TABWIDTH=8
+HIGHLIGHT_STYLE='pablo'
+
+
+handle_mime() {
+    local mimetype="${1}"
+    case "${mimetype}" in
+	text/html) w3m -dump "${FILE_PATH}" ;;
+	text/troff) man ./ "${FILE_PATH}" | col -b ;;
+	text/* | */xml)
+            if [ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]; then
+                exit 2
+            fi
+            if [ "$( tput colors )" -ge 256 ]; then
+                local highlight_format='xterm256'
+            else
+                local highlight_format='ansi'
+            fi
+            highlight --replace-tabs="${HIGHLIGHT_TABWIDTH}" --out-format="${highlight_format}" \
+                --style="${HIGHLIGHT_STYLE}" --force -- "${FILE_PATH}" ;;
+	application/zip) atool --list -- "${FILE_PATH}" ;;
+        image/*) chafa --fill=block --symbols=block -c 256 -s 80x"${HEIGHT}" "${FILE_PATH}" || exit 1;;
+        video/* | audio/*|application/octet-stream) mediainfo "${FILE_PATH}" || exit 1;;
+        */pdf) pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - ;;
+        *opendocument*) odt2txt "${FILE_PATH}" ;;
     esac
-}}
+}
 
-#----------------------------------------------------------------------
-
-cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
-
-#----------------------------------------------------------------------
-
-cmd delete ${{
-	clear; tput cup $(($(tput lines)/3)); tput bold
-	set -f
-	printf "%s\n\t" "$fx"
-	printf "delete?[y/N]"
-	read ans
-	[ $ans = "y" ] && rm -rf $fx
-}}
-
-cmd moveto ${{
-	clear; tput cup $(($(tput lines)/3)); tput bold
-	set -f
-	clear; echo "Move to where?"
-	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf | sed 's|~|$HOME|' )" &&
-	for x in $fx; do
-		eval mv -iv \"$x\" \"$dest\"
-	done &&
-	notify-send "🚚 File(s) moved." "File(s) moved to $dest."
-}}
-
-cmd copyto ${{
-	clear; tput cup $(($(tput lines)/3)); tput bold
-	set -f
-	clear; echo "Copy to where?"
-	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf | sed 's|~|$HOME|' )" &&
-	for x in $fx; do
-		eval cp -ivr \"$x\" \"$dest\"
-	done &&
-	notify-send "📋 File(s) copied." "File(s) copies to $dest."
-}}
-
-#----------------------------------------------------------------------
-
-# General bindings
-map <esc>
-map <c-e> down
-map <c-y> up
-map <c-r> reload
-map <enter> shell
-map <c-f> $lf -remote "send $id select '$(fzf)'"
-map <c-n> push :mkdir<space>
-map J $lf -remote "send $id cd $(cut -d'	' -f2 ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)"
-map D delete
-map C copyto
-map M moveto
-map V push :!nvim<space>
-map .
-map . set hidden!
-
-# Visualize images
-map - $~/.config/lf/draw_img "$f"
-
-# Trash Mappings
-map dd trash
-map tc clear_trash
-map tr restore_trash
-
-# Cmd bindings
-map A rename # at the very end
-map c push A<c-u> # new rename
-map I push A<c-a> # at the very beginning
-map i push A<a-b><a-b><a-f> # before extention
-map a push A<a-b> # after extention
-
-# Movement
-map gtr cd ~/.local/share/Trash/files
-map gD cd ~/dl
-map gd cd ~/dotfiles
-map gc cd ~/.config
-map gl cd ~/.local
-map gs cd ~/.local/bin/statusbar
-map gesc cd /mnt/storage/study/escuela
+MIMETYPE="$( file --dereference --brief --mime-type -- "${FILE_PATH}" )"
+handle_mime "${MIMETYPE}"
+exit 1

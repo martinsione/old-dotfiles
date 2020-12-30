@@ -63,6 +63,7 @@ python-pip
 python-pynvim
 qemu
 ranger
+ripgrep
 steam
 stow
 sudo

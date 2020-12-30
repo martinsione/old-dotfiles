@@ -19,7 +19,7 @@
   "terminal.external.linuxExec": "/usr/bin/alacritty",
   "terminal.integrated.shell.linux": "/bin/zsh",
   "window.menuBarVisibility": "hidden",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "workbench.activityBar.visible": true,
   "workbench.colorTheme": "Community Material Theme",
   "workbench.editor.showTabs": true,
