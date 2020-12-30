@@ -46,8 +46,9 @@ nnoremap <silent> <leader>bf :Buffer <CR>
 nnoremap <silent> <leader>; :Commands <CR>
 
 " Tree
-nnoremap <silent> <leader>e :LuaTreeToggle<CR>
-
+nnoremap <silent> <space>e :NvimTreeToggle<CR>
+nnoremap <silent> <space>r :NvimTreeRefresh<CR>
+nnoremap <silent> <space>n :NvimTreeFindFile<CR>
 " Zen mode
 nnoremap <silent> <leader>z :Goyo <CR>
 

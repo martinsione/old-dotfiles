@@ -1,5 +1,0 @@
-INFO  2020-12-30T18:55:06.418 46674 channel_create_event:204: new channel 32 (function gitgutter#all[8]..gitgutter#process_buffer[19]..gitgutter#diff#run_diff[83]..gitgutter#async#execute:11) : {"id": 32, "mode": "bytes", "stream": "job"}
-INFO  2020-12-30T18:55:06.427 46674 on_process_exit:393: exited: pid=47665 status=0 stoptime=0
-INFO  2020-12-30T18:55:12.680 46674 os_proc_tree_kill:96: sending SIGTERM to PID -46676
-INFO  2020-12-30T18:55:12.727 46674 on_process_exit:393: exited: pid=46676 status=143 stoptime=15994714268783
-INFO  2020-12-30T18:55:12.728 46674 os_exit:586: Nvim exit: 0

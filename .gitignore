@@ -8,3 +8,4 @@ linux/.config/zsh/.zcompdump
 *.pkg.tar.xz
 *.orig
 *.rej
+*.nvimlog
