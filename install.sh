@@ -17,7 +17,7 @@ yay -S --needed $(comm -12 <(yay -Slq | sort) <(sort backups/arch-packages/yay.l
 mkdir -p ~/.config/VSCodium/User ~/.local &&
 
 # Symlinking dotfiles
-cd ~/dotfiles
+cd ~/dotfiles &&
 stow linux &&
 
 # Installation of all source programs
@@ -29,7 +29,7 @@ cd ~/.local/src/st && make && sudo make clean install &&
 chsh -s $(which zsh) &&
 
 # Auto mount the hard drive
-echo 'UUID=0492de4e-821d-48d4-970f-7a7ccb869fe0	/mnt/storage	ext4		rw,relatime	0 2' | sudo tee -a /etc/fstab
+echo 'UUID=0492de4e-821d-48d4-970f-7a7ccb869fe0	/mnt/storage	ext4		rw,relatime	0 2' | sudo tee -a /etc/fstab &&
 
 # Finish and reboot
 reboot
