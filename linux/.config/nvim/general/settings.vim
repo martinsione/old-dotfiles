@@ -1,6 +1,7 @@
 " General
 syntax enable                           " Enable syntax highlighing
 set autoindent                          " Copy the indentation from previous line
+set mouse=a                             " Enables the mouse
 set clipboard=unnamedplus               " Set to your default clipboard
 set cmdheight=2                         " Change command height
 set encoding=utf-8

@@ -35,6 +35,9 @@ nnoremap <silent> <leader>. :e $MYVIMRC <CR>
 " Balance windows
 nnoremap <silent> <leader>= <C-W>=
 
+" Live-server
+nnoremap <silent> <leader>live :!live-server &<CR>
+
 "-----------------------------------------------------------------------
 "---------------------- Plugins Keybindings-----------------------------
 "-----------------------------------------------------------------------
@@ -49,6 +52,7 @@ nnoremap <silent> <leader>; :Commands <CR>
 nnoremap <silent> <space>e :NvimTreeToggle<CR>
 nnoremap <silent> <space>r :NvimTreeRefresh<CR>
 nnoremap <silent> <space>n :NvimTreeFindFile<CR>
+
 " Zen mode
 nnoremap <silent> <leader>z :Goyo <CR>
 
@@ -77,4 +81,4 @@ tnoremap <C-h> <C-\><C-N><C-w>h
 tnoremap <C-j> <C-\><C-N><C-w>j
 tnoremap <C-k> <C-\><C-N><C-w>k
 tnoremap <C-l> <C-\><C-N><C-w>l
-tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
+" tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
