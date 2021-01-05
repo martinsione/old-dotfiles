@@ -16,6 +16,6 @@ alias \
     mn="/mnt" \
     esc="/mnt/storage/study/escuela" \
     facu="/mnt/storage/study/facu" \
-    js="/mnt/storage/code/js" \
+    js="/mnt/storage/code/platzi/escuela-js" \
     web="/mnt/storage/code/webmaster" \
     proy="/mnt/storage/code/proyects" \
