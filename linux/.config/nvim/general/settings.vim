@@ -26,6 +26,8 @@ set ignorecase                          " Searches are case insensitive
 set smartcase                           " Unless they contain at least one capital letter
 set path+=**                            " Search down into subfolders provides tab-completion for all file-related tasks
 set wildmenu                            " Display all matching files when we tab complete
+set wildignorecase
+set wildignore+=node_modules/**
 
 " Tabs
 set shiftwidth=2

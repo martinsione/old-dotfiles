@@ -9,7 +9,7 @@ export PATH="$PATH:$(du "$HOME/.local/bin/statusbar" | cut -f2 | paste -sd ':')"
 #----------------------------- Default Programs ------------------------
 export EDITOR="nvim"
 export GUIEDITOR="codium"
-export TERMINAL="alacritty"
+export TERMINAL="kitty"
 export BROWSER="brave"
 export READER="zathura"
 export FILE="ranger"
