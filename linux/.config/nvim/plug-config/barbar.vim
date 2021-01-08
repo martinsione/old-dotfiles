@@ -1,17 +1,27 @@
+"""""""""""
+" Options "
+"""""""""""
 let bufferline = {}
 
-" Show a shadow over the editor in buffer-pick mode
-let bufferline.shadow = v:true
+" Enable/disable animations
+let bufferline.animation = v:true
 
-" Enable/disable icons
+" Enable/disable auto-hiding the tab bar when there is a single buffer
+let bufferline.auto_hide = v:false
+
+" Enable/disable icons | true(show numbers only) | both (show numbers and icons) | true(show icons)
 let bufferline.icons = v:true
 
+" Configure icons on the bufferline.
+let bufferline.icon_separator_active = '▎'
+let bufferline.icon_separator_inactive = '▎'
+let bufferline.icon_close_tab = ''
+let bufferline.icon_close_tab_modified = '●'
+
+" Enable/disable close button
+let bufferline.closable = v:true
+
 " Enables/disable clickable tabs
-"  - left-click: go to buffer
-"  - middle-click: delete buffer
-"
-" NOTE disabled by default because this might cause E541 (too many items)
-"      if you have many tabs open
 let bufferline.clickable = v:true
 
 " If set, the letters for each buffer in buffer-pick mode will be
@@ -24,8 +34,15 @@ let bufferline.semantic_letters = v:true
 " optimal for the qwerty keyboard layout but might need adjustement
 " for other layouts.
 let bufferline.letters =
-  \ 'asdfjkl;ghnmxcbziowerutyqpASDFJKLGHNMXCBZIOWERUTYQP'
+  \ 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
 
+" Sets the maximum padding width with which to surround each tab
+let bufferline.maximum_padding = 4
+
+
+""""""""""""""""
+" Highlighting "
+""""""""""""""""
 let bg_current = get(nvim_get_hl_by_name('Normal',     1), 'background', '#000000')
 let bg_visible = get(nvim_get_hl_by_name('TabLineSel', 1), 'background', '#000000')
 let bg_inactive = get(nvim_get_hl_by_name('TabLine',   1), 'background', '#000000')

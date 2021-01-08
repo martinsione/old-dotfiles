@@ -10,10 +10,8 @@ else
   source $HOME/.config/nvim/general/mappings.vim
 
   " Themes
-  " source $HOME/.config/nvim/plug-config/themes/gruvbox.vim
-  colorscheme nvcode
-
-  " Transparent background
+  source $HOME/.config/nvim/plug-config/themes/gruvbox.vim
+  " colorscheme onedark
   hi Normal guibg=NONE ctermbg=NONE
 
   "Plugin configuration
