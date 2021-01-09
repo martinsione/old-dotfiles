@@ -8,9 +8,8 @@ unclutter &           # Remove mouse when idle
 nitrogen --restore &	# Wallpaper
 dwmblocks &				    # status bar
 
-# Loop
 while true; do
 	dwm >/dev/null 2>&1
 done
 
-exec dwm
+dwm
