@@ -1,13 +1,12 @@
 " General
 syntax enable                           " Enable syntax highlighing
 set autoindent                          " Copy the indentation from previous line
-set mouse=a                             " Enables the mouse
 set clipboard=unnamedplus               " Set to your default clipboard
 set cmdheight=2                         " Change command height
-set encoding=utf-8
-set fileencoding=utf-8                  " The encoding written to file
+set encoding=utf-8 fileencoding=utf-8
 set hidden                              " Required to keep multiple buffers open multiple buffers
-set iskeyword+=-                      	" treat dash separated words as a word text object"
+set iskeyword+=-                      	" Treat dash separated words as a word text object
+set mouse=a                             " Enables the mouse
 set nobackup                            " Recommended by coc
 set nowritebackup                       " Recommended by coc
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
@@ -19,15 +18,27 @@ set updatetime=50                       " Default is set to 4000
 set ttyfast                             " Make vim go faster
 set nocompatible                        " Is set by default in neovim
 
+" Appearance
+set cursorline                          " Enable highlighting of the current line
+set noshowmode                          " Self explanatory
+set nowrap                              " Display long lines as just one line
+set number relativenumber               " Relative line numbers
+set pumheight=10                        " Makes popup menu smaller
+set ruler              		              " Show the cursor position all the time
+set termguicolors                       " Required by colorizer and other themes
+set title                               " Change the window title
+set whichwrap+=<,>,[,],h,l
+
 " Searching
-set nohlsearch                            " Don't Highlight matches
+set nohlsearch                          " Don't Highlight matches
 set incsearch                           " Allow vim to start searching before pressing enter
 set ignorecase                          " Searches are case insensitive
 set smartcase                           " Unless they contain at least one capital letter
 set path+=**                            " Search down into subfolders provides tab-completion for all file-related tasks
 set wildmenu                            " Display all matching files when we tab complete
 set wildignorecase
-set wildignore+=node_modules/**
+set wildignore+=**/node_modules/**
+set wildignore+=**/autoload/**
 
 " Tabs
 set shiftwidth=2
@@ -36,18 +47,6 @@ set tabstop=2
 set expandtab                           " Insert spaces instead of tab characters.
 set smarttab                            " Insert spaces or tabs to go to the next indent of the next tabstop when the cursor is at the beginning of a line
 
-" Appearance
-set cursorline                          " Enable highlighting of the current line
-set noshowmode
-set nowrap                              " Display long lines as just one line
-set number relativenumber               " Relative line numbers
-set pumheight=10                        " Makes popup menu smaller
-set ruler              		              " Show the cursor position all the time
-set termguicolors                       " Required by colorizer and other themes
-set title                               " Change the window title
-set whichwrap+=<,>,[,],h,l
-set t_Co=256
-set t_ut=
 
 " Highlight yanked text
 augroup highlight_yank

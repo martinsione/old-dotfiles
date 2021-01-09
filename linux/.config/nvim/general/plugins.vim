@@ -27,6 +27,7 @@
       Plug 'christoomey/vim-tmux-navigator'   " Navigate between tmux panes
       Plug 'luochen1990/rainbow'              " Rainbow brackets
       Plug 'tweekmonster/startuptime.vim'     " Test Startup time
+      Plug 'Yggdroot/indentLine'              " Show indent line
     " Appearance
       Plug 'junegunn/goyo.vim'                " Zen mode
       Plug 'romgrk/barbar.nvim'               " Tabline
