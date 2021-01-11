@@ -11,7 +11,6 @@ else
 
   " Themes
   source $HOME/.config/nvim/plug-config/themes/gruvbox.vim
-  " colorscheme onedark
   hi Normal guibg=NONE ctermbg=NONE
 
   "Plugin configuration
