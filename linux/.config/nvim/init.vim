@@ -20,7 +20,6 @@ else
   source $HOME/.config/nvim/plug-config/netrw.vim
   source $HOME/.config/nvim/plug-config/rainbow.vim
   source $HOME/.config/nvim/plug-config/start-screen.vim
-  source $HOME/.config/nvim/plug-config/nvim-tree.vim
   source $HOME/.config/nvim/plug-config/coc.vim
   lua require 'init'
 

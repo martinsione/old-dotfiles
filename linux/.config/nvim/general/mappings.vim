@@ -3,7 +3,7 @@
 "-----------------------------------------------------------------------
 
 " Leader key
-let mapleader=' '
+let mapleader=" "
 
 " <TAB>: completion.
 inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
