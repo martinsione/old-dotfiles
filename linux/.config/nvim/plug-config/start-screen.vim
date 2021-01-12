@@ -23,6 +23,7 @@ let g:startify_lists = [
 let g:startify_bookmarks = [
   \ { 'a': '~/.config/alacritty/alacritty.yml' },
   \ { 'i': '~/.config/nvim/init.vim' },
+  \ { 'k': '~/.config/kitty/kitty.conf' },
   \ { 's': '~/.config/nvim/plug-config/start-screen.vim' },
   \ { 't': '~/.config/tmux/tmux.conf' },
   \ { 'x': '~/.xinitrc' },

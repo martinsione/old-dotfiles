@@ -10,14 +10,13 @@ else
   source $HOME/.config/nvim/general/mappings.vim
 
   " Themes
-  source $HOME/.config/nvim/plug-config/themes/gruvbox.vim
+  source $HOME/.config/nvim/plug-config/gruvbox.vim
   hi Normal guibg=NONE ctermbg=NONE
 
   "Plugin configuration
   source $HOME/.config/nvim/plug-config/barbar.vim
   source $HOME/.config/nvim/plug-config/gitgutter.vim
   source $HOME/.config/nvim/plug-config/netrw.vim
-  source $HOME/.config/nvim/plug-config/rainbow.vim
   source $HOME/.config/nvim/plug-config/start-screen.vim
   source $HOME/.config/nvim/plug-config/coc.vim
   lua require 'init'

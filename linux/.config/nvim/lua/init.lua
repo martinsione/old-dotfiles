@@ -1,5 +1,5 @@
 require('galaxy')
-require('plug-colorizer')
+require('color')
 require('tree')
 require('treesitter')
 require('web-devicons')

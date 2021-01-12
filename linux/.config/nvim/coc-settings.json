@@ -1,30 +1,5 @@
 {
   // html
   "html.format.wrapLineLength": 0,
-  "html.autoClosingTags": true,
-  // explorer
-  "explorer.width": 30,
-  "explorer.previewAction.onHover": false,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.buffer.tabOnly": true,
-  "explorer.file.autoReveal": false,
-  "explorer.file.showHiddenFiles": false,
-  "explorer.debug": true,
-  "explorer.sources": [
-    {
-      "name": "buffer",
-      "expand": true
-    },
-    {
-      "name": "file",
-      "expand": true
-    }
-  ],
-  "explorer.keyMappings.global": {
-    "<cr>": ["expandable?", "expand", "open"],
-    "v": "open:vsplit",
-    "a": "addFile",
-    "A": "addDirectory",
-    "r": "rename"
-  }
+  "html.autoClosingTags": true
 }

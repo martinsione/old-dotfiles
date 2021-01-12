@@ -4,14 +4,15 @@ set autoindent                          " Copy the indentation from previous lin
 set clipboard=unnamedplus               " Share system and vim clipboard
 set cmdheight=2                         " Change cmd height
 set encoding=utf-8 fileencoding=utf-8
-set hidden                              " Required to keep multiple buffers open multiple buffers
+set hidden                              " Keep multiple buffers open
 set iskeyword+=-                      	" Treat dash separated words as a word text object
 set mouse=a                             " Enables the mouse
 set nobackup                            " Recommended by coc
 set nowritebackup                       " Recommended by coc
+set scrolloff=8                         " Scroll
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
 set signcolumn=yes                      " Always show the signcolumn
-set smartindent                         " Automatically inserts one extra level of indentation in some cases
+set smartindent                         " Inserts one extra level of indentation
 set splitbelow splitright               " Fixes splitting
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set updatetime=50                       " Default is set to 4000
@@ -32,10 +33,10 @@ set whichwrap+=<,>,[,],h,l
 
 " Searching
 set nohlsearch                          " Don't Highlight matches
-set incsearch                           " Allow vim to start searching before pressing enter
+set incsearch                           " Start searching while you are typing
 set ignorecase                          " Searches are case insensitive
 set smartcase                           " Unless they contain at least one capital letter
-set path+=**                            " Search down into subfolders provides tab-completion for all file-related tasks
+set path+=**                            " Search down into subfolders
 set wildmenu                            " Display all matching files when we tab complete
 set wildignorecase
 set wildignore+=node_modules/**

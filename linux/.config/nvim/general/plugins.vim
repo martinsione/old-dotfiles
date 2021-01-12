@@ -25,7 +25,6 @@
     "General
       Plug 'AndrewRadev/tagalong.vim'         " Auto change HTML tags
       Plug 'christoomey/vim-tmux-navigator'   " Navigate between tmux panes
-      Plug 'luochen1990/rainbow'              " Rainbow brackets
       Plug 'tweekmonster/startuptime.vim'     " Test Startup time
       Plug 'Yggdroot/indentLine'              " Show indent line
     " Appearance
@@ -33,13 +32,5 @@
       Plug 'romgrk/barbar.nvim'               " Tabline
       Plug 'morhetz/gruvbox'                  " Gruvbox theme
       Plug 'christianchiarulli/nvcode-color-schemes.vim'
-
-    " Unused plugins
-      " Plug 'liuchengxu/vim-which-key'         " See what keys do
-      " Plug 'itchyny/lightline.vim'            " Status Line
-      " Plug 'ryanoasis/vim-devicons'           " Cool Icons
-    " Not in the mood of taking care of lsp
-      " Plug 'neovim/nvim-lspconfig'            " Lsp
-      " Plug 'nvim-lua/completion-nvim'         " Autocompletion
 
 call plug#end()

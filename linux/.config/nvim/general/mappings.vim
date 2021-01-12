@@ -31,6 +31,7 @@ nnoremap <silent> <leader>bd :bdelete<CR>
 
 " Go to $MYVIMRC
 nnoremap <silent> <leader>. :e $MYVIMRC <CR>
+nnoremap <silent> <leader><CR> :so $MYVIMRC <CR>
 
 " Balance windows
 nnoremap <silent> <leader>= <C-W>=
