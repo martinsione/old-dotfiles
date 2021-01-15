@@ -73,11 +73,11 @@ font:
 
   glyph_offset:
     x: 0
-    y: 3
+    y: 0
 
   offset:
     x: 0
-    y: 6
+    y: 0
 
 window:
   padding:

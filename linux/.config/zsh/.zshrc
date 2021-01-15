@@ -64,7 +64,6 @@ sudo -n loadkeys $HOME/.local/bin/ttymaps.kmap 2>/dev/null
 
 #-------------------------- Load Plugins -------------------------------
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-[[ ! -f ~/dotfiles/linux/.config/zsh/.p10k.zsh ]] || source ~/dotfiles/linux/.config/zsh/.p10k.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

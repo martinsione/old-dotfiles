@@ -3,7 +3,7 @@ syntax enable                           " Enable syntax highlighing
 set autoindent                          " Copy the indentation from previous line
 set clipboard=unnamedplus               " Share system and vim clipboard
 set cmdheight=2                         " Change cmd height
-set encoding=utf-8 fileencoding=utf-8
+set encoding=utf-8 fileencoding=utf-8   " Sets encoding
 set hidden                              " Keep multiple buffers open
 set iskeyword+=-                      	" Treat dash separated words as a word text object
 set mouse=a                             " Enables the mouse
@@ -16,8 +16,6 @@ set smartindent                         " Inserts one extra level of indentation
 set splitbelow splitright               " Fixes splitting
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set updatetime=50                       " Default is set to 4000
-set ttyfast                             " Make vim go faster
-set nocompatible                        " Is set by default in neovim
 
 " Appearance
 set cursorline                          " Enable highlighting of the current line
