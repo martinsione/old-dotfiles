@@ -10,7 +10,6 @@
       Plug 'neoclide/coc.nvim', {'branch': 'release'}
       Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
       Plug 'junegunn/fzf.vim'
-      Plug 'mhinz/vim-startify'               " Start Screen
       Plug 'airblade/vim-gitgutter'           " GIT integration
       Plug 'tpope/vim-fugitive'               " GIT integration
       Plug 'tpope/vim-commentary'             " Better Comments
@@ -25,6 +24,7 @@
     "General
       Plug 'AndrewRadev/tagalong.vim'         " Auto change HTML tags
       Plug 'christoomey/vim-tmux-navigator'   " Navigate between tmux panes
+      " Plug 'mhinz/vim-startify'               " Start Screen
       Plug 'tweekmonster/startuptime.vim'     " Test Startup time
       Plug 'Yggdroot/indentLine'              " Show indent line
     " Appearance

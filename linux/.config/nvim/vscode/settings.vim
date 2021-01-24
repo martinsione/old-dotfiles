@@ -30,7 +30,3 @@ augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank{higroup="IncSearch", timeout=500}
 augroup END
-
-" Autocmd
-autocmd BufWritePre * %s/\s\+$//e       " Remove extra whitespace on save
-au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
