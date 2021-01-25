@@ -1,20 +1,19 @@
 #!/bin/zsh
 
-alias \
-    cac="${XDG_CACHE_HOME:-$HOME/.cache}" \
-    cf="${XDG_CONFIG_HOME:-$HOME/.config}" \
-    d="${XDG_DOCUMENTS_DIR:-$HOME/documents}" \
-    D="${XDG_DOWNLOAD_DIR:-$HOME/downloads}" \
-    P="${XDG_PICTURES_DIR:-$HOME/pictures}" \
-    M="${XDG_MUSIC_DIR:-$HOME/music}" \
-    V="${XDG_VIDEOS_DIR:-$HOME/videos}" \
-    sh="${XDG_DATA_HOME:-$HOME/.local/share}" \
-    dot="$HOME/dotfiles" \
-    sc="$HOME/.local/bin" \
-    src="$HOME/.local/src" \
-    mn="/mnt" \
-    esc="/mnt/storage/study/escuela" \
-    facu="/mnt/storage/study/facu" \
-    code="/mnt/storage/code/courses/platzi" \
-    js="/mnt/storage/code/courses/platzi/escuela-js" \
-    pro="/mnt/storage/code/proyects" \
+alias cac="${XDG_CACHE_HOME:-$HOME/.cache}"
+alias cf="${XDG_CONFIG_HOME:-$HOME/.config}"
+alias d="${XDG_DOCUMENTS_DIR:-$HOME/documents}"
+alias D="${XDG_DOWNLOAD_DIR:-$HOME/downloads}"
+alias P="${XDG_PICTURES_DIR:-$HOME/pictures}"
+alias M="${XDG_MUSIC_DIR:-$HOME/music}"
+alias V="${XDG_VIDEOS_DIR:-$HOME/videos}"
+alias sh="${XDG_DATA_HOME:-$HOME/.local/share}"
+alias dot="$HOME/dotfiles"
+alias sc="$HOME/.local/bin"
+alias src="$HOME/.local/src"
+alias mn="/mnt"
+alias esc="/mnt/storage/study/escuela"
+alias facu="/mnt/storage/study/facu"
+alias code="/mnt/storage/code/courses/platzi"
+alias js="/mnt/storage/code/courses/platzi/escuela-js"
+alias pro="/mnt/storage/code/proyects"

@@ -30,28 +30,28 @@ colors:
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
 
-# # Colorscheme
-#   primary:
-#     background: "#1E1E1E"
-#     foreground: "#D8DEE9"
-#   normal:
-#     black: "#3B4252"
-#     red: "#D54646"
-#     green: "#23D18B"
-#     yellow: "#D7BA7D"
-#     blue: "#569CD6"
-#     magenta: "#C586C0"
-#     cyan: "#29B8DB"
-#     white: "#abb2bf"
-#   bright:
-#     black: "#3B4252"
-#     red: "#D54646"
-#     green: "#23D18B"
-#     yellow: "#D7BA7D"
-#     blue: "#569CD6"
-#     magenta: "#C586C0"
-#     cyan: "#29B8DB"
-#     white: "#ECEFF4"
+colors:
+  # Normal colors
+  normal:
+    black:   '0x1c1f24'
+    red:     '0xff6c6b'
+    green:   '0x98be65'
+    yellow:  '0xda8548'
+    blue:    '0x51afef'
+    magenta: '0xc678dd'
+    cyan:    '0x5699af'
+    white:   '0x202328'
+
+  # Bright colors
+  bright:
+    black:   '0x5b6268'
+    red:     '0xda8548'
+    green:   '0x4db5bd'
+    yellow:  '0xecbe7b'
+    blue:    '0x3071db'   # This is 2257a0 in Doom Emacs but I lightened it.
+    magenta: '0xa9a1e1'
+    cyan:    '0x46d9ff'
+    white:   '0xdfdfdf'
 
 # background_opacity: 0.95
 
@@ -77,7 +77,7 @@ font:
 
   offset:
     x: 0
-    y: 0
+    y: 2
 
 window:
   padding:

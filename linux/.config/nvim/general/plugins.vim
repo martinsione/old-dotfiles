@@ -24,7 +24,7 @@
     "General
       Plug 'AndrewRadev/tagalong.vim'         " Auto change HTML tags
       Plug 'christoomey/vim-tmux-navigator'   " Navigate between tmux panes
-      " Plug 'mhinz/vim-startify'               " Start Screen
+      Plug 'mhinz/vim-startify'               " Start Screen
       Plug 'tweekmonster/startuptime.vim'     " Test Startup time
       Plug 'Yggdroot/indentLine'              " Show indent line
     " Appearance

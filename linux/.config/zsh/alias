@@ -1,46 +1,39 @@
 #!/bin/zsh
 
 #------------------- Default settings ----------------------------------
-alias \
-	bld="make && sudo make clean install" \
-	ccat="highlight --out-format=ansi" \
-	cl="clear" \
-	cp="cp -iv" \
-	diff="diff --color=auto" \
-	grep="grep --color=auto" \
-	ka="killall" \
-	live="live-server" \
-	ll="ls -a --color=auto" \
-	ls="ls -hN --color=auto --group-directories-first" \
-	mkd="mkdir -pv" \
-	mv="mv -iv" \
-	p="sudo pacman" \
-	rm="rm -vI" \
+alias bld="make && sudo make clean install"
+alias cl="clear"
+alias cp="cp -iv"
+alias diff="diff --color=auto"
+alias grep="grep --color=auto"
+alias ka="killall"
+alias ll="ls -Av"
+alias ls="ls -hN --color=auto --group-directories-first"
+alias mkd="mkdir -pv"
+alias mv="mv -iv"
+alias p="sudo pacman"
+alias rm="rm -vI"
 
 #------------------- Cli apps  -----------------------------------------
-alias \
-	f="$FILE" \
-	sf="sudo $FILE" \
-	v="$EDITOR" \
-	sv="sudo $EDITOR" \
-	z="$READER" \
+alias r="$FILE"
+alias sr="sudo $FILE"
+alias v="$EDITOR"
+alias sv="sudo $EDITOR"
 
 #------------------- Git commands -------------------------------------
-alias \
-	g="git" \
-	ga="git add" \
-	gb="git branch" \
-	gc="git commit" \
-	gd="git diff" \
-	gcl="git clone" \
-	gp='git push'  \
-	gP='git pull'  \
-	gst="git status" \
-	gitup="git add . && git commit -m 'Updates.' && git push" \
+alias g="git"
+alias ga="git add"
+alias gb="git branch"
+alias gc="git commit"
+alias gd="git diff"
+alias gcl="git clone"
+alias gp='git push'
+alias gP='git pull'
+alias gst="git status"
+alias gitup="git add . && git commit -m 'Updates.' && git push"
 
 #------------------- Tmux commands -------------------------------------
-alias \
-	t="tmux -u" \
-	ta="tmux -u a" \
-	tls="tmux ls" \
-	tks="tmux kill-session -t" \
+alias t="tmux -u"
+alias ta="tmux -u a"
+alias tls="tmux ls"
+alias tks="tmux kill-session -t"

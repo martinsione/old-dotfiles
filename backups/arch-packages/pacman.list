@@ -6,6 +6,7 @@ automake
 base
 binutils
 bison
+deno
 discord
 dmenu
 dnsmasq
@@ -26,6 +27,7 @@ groff
 grub
 gvfs
 htop
+kitty
 lib32-mesa-demos
 lib32-nvidia-utils
 libreoffice-fresh
@@ -52,6 +54,7 @@ nvidia-settings
 nvidia-utils
 obs-studio
 os-prober
+otf-cascadia-code
 pamixer
 papirus-icon-theme
 patch
@@ -69,11 +72,11 @@ stow
 sudo
 sxiv
 texinfo
-thunderbird
 tmux
 trash-cli
 tree
 ttf-dejavu
+ttf-hack
 ttf-joypixels
 ttf-liberation
 ttf-ubuntu-font-family

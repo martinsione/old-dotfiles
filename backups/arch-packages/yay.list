@@ -1,10 +1,8 @@
 brave-bin
-lf
 libxft-bgra-git
-neovim-nightly
+neovim-nightly-bin
 otf-nerd-fonts-fira-code
 vscodium-bin
-xampp
 yay-git
 zoom
 zsh-theme-powerlevel10k-git

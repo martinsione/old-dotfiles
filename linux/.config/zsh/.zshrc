@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 #----------------------------- ZSH config ------------------------------
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/exports" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/exports"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cursor" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/cursor"
@@ -19,42 +12,44 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 # Options section
-setopt appendhistory                                            # Immediately append history instead of overwriting
 setopt autocd                                                   # if only directory path is entered, cd there.
 setopt correct                                                  # Auto correct mistakes
-setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
 setopt globdots                                                 # Show hidden files
-setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
 setopt nobeep                                                   # No beep
-setopt nocaseglob                                               # Case insensitive globbing
-setopt nocheckjobs                                              # Don't warn about running processes when exiting
-setopt numericglobsort                                          # Sort filenames numerically when it makes sense
-setopt rcexpandparam                                            # Array expension with parameters
-WORDCHARS=${WORDCHARS//\/[&.;]}
+
+# setopt appendhistory                                            # Immediately append history instead of overwriting
+# setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
+# setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
+# setopt nocaseglob                                               # Case insensitive globbing
+# setopt nocheckjobs                                              # Don't warn about running processes when exiting
+# setopt numericglobsort                                          # Sort filenames numerically when it makes sense
+# setopt rcexpandparam                                            # Array expension with parameters
+# WORDCHARS=${WORDCHARS//\/[&.;]}
 
 # Completions
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
 zstyle ':completion:*' rehash true                              # automatically find new executables in path
-zstyle ':completion:*' menu select                              # Menu select
-zmodload zsh/complist                                           # To have vim keybindings on menu select
+# zstyle ':completion:*' menu select                              # Menu select
+# zmodload zsh/complist                                           # To have vim keybindings on menu select
 
 # Speed up completions
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+# zstyle ':completion:*' accept-exact '*(N)'
+# zstyle ':completion:*' use-cache on
+# zstyle ':completion:*' cache-path ~/.zsh/cache
 
 # Vi mode
 bindkey -v                          # Vi mode
 export KEYTIMEOUT=1                 # Reduce vi timeout
 
 # Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
+# bindkey -M menuselect 'h' vi-backward-char
+# bindkey -M menuselect 'k' vi-up-line-or-history
+# bindkey -M menuselect 'l' vi-forward-char
+# bindkey -M menuselect 'j' vi-down-line-or-history
 
-# Theming section
+# # Theming section
+autoload -U promptinit; promptinit
 autoload -U compinit colors zcalc
 compinit -d
 colors
