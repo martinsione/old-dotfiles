@@ -47,13 +47,11 @@ set tabstop=2
 set expandtab                           " Insert spaces instead of tab characters.
 set smarttab                            " Insert spaces or tabs to go to the next indent of the next tabstop when the cursor is at the beginning of a line
 
-" Highlight yanked text
+let g:netrw_dirhistmax = 0              " It prevents it from generating .netrwhist
 augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank{higroup="IncSearch", timeout=500}
 augroup END
-
-" Autocmd
 autocmd BufWritePre * %s/\s\+$//e       " Remove extra whitespace on save
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

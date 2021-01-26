@@ -8,8 +8,8 @@
 
     " Essentials
       Plug 'neoclide/coc.nvim', {'branch': 'release'}
-      Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-      Plug 'junegunn/fzf.vim'
+      " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+      " Plug 'junegunn/fzf.vim'
       Plug 'airblade/vim-gitgutter'           " GIT integration
       Plug 'tpope/vim-fugitive'               " GIT integration
       Plug 'tpope/vim-commentary'             " Better Comments
@@ -19,6 +19,10 @@
       Plug 'glepnir/galaxyline.nvim'          " Lua status line
       Plug 'kyazdani42/nvim-tree.lua'         " NERDTree in lua
       Plug 'kyazdani42/nvim-web-devicons'     " Devicons fork in lua
+    " Telescope
+      Plug 'nvim-lua/popup.nvim'
+      Plug 'nvim-lua/plenary.nvim'
+      Plug 'nvim-telescope/telescope.nvim'
     " Treesitter
       Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " So the parsers get updated
     "General

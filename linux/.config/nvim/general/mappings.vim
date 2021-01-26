@@ -29,7 +29,7 @@ nnoremap <silent> <C-s> :w<CR>
 " Delete a buffer with leader + bd
 nnoremap <silent> <leader>bd :bdelete<CR>
 
-" Go to $MYVIMRC
+nnoremap <silent> <leader>s :source %<CR>
 nnoremap <silent> <leader>. :e $MYVIMRC <CR>
 nnoremap <silent> <leader><CR> :so $MYVIMRC <CR>
 
@@ -43,11 +43,13 @@ nnoremap <silent> <leader>live :!live-server &<CR>
 "---------------------- Plugins Keybindings-----------------------------
 "-----------------------------------------------------------------------
 
-" Fzf
-nnoremap <silent> <leader>p :Files <CR>
-nnoremap <silent> <leader>gf :GFiles <CR>
-nnoremap <silent> <leader>bf :Buffer <CR>
-nnoremap <silent> <leader>; :Commands <CR>
+" Telescope
+nnoremap <leader>p  <cmd><cr>
+nnoremap <C-p>      <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>pg <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>ps <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>pb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>ph <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " Tree
 nnoremap <silent> <space>e :NvimTreeToggle<CR>
@@ -60,12 +62,6 @@ nnoremap <silent> <leader>z :Goyo <CR>
 "-----------------------------------------------------------------------
 "---------------------- Window Navigation ------------------------------
 "-----------------------------------------------------------------------
-
-" Better window navigation
-" nnoremap <silent> <C-h> <C-w>h
-" nnoremap <silent> <C-j> <C-w>j
-" nnoremap <silent> <C-k> <C-w>k
-" nnoremap <silent> <C-l> <C-w>l
 
 " Resize buffers with arrows
 nnoremap <silent> <Up> :resize -2<CR>

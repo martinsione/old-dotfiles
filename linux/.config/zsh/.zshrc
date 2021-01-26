@@ -12,45 +12,36 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 # Options section
-setopt autocd                                                   # if only directory path is entered, cd there.
-setopt correct                                                  # Auto correct mistakes
-setopt globdots                                                 # Show hidden files
-setopt nobeep                                                   # No beep
-
-# setopt appendhistory                                            # Immediately append history instead of overwriting
-# setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
-# setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
-# setopt nocaseglob                                               # Case insensitive globbing
-# setopt nocheckjobs                                              # Don't warn about running processes when exiting
-# setopt numericglobsort                                          # Sort filenames numerically when it makes sense
-# setopt rcexpandparam                                            # Array expension with parameters
-# WORDCHARS=${WORDCHARS//\/[&.;]}
-
-# Completions
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' rehash true                              # automatically find new executables in path
-# zstyle ':completion:*' menu select                              # Menu select
-# zmodload zsh/complist                                           # To have vim keybindings on menu select
-
-# Speed up completions
-# zstyle ':completion:*' accept-exact '*(N)'
-# zstyle ':completion:*' use-cache on
-# zstyle ':completion:*' cache-path ~/.zsh/cache
-
-# Vi mode
-bindkey -v                          # Vi mode
-export KEYTIMEOUT=1                 # Reduce vi timeout
+setopt appendhistory                                        # Immediately append history instead of overwriting
+setopt autocd                                               # if only directory path is entered, cd there.
+setopt correct                                              # Auto correct mistakes
+setopt globdots                                             # Show hidden files
+setopt nobeep                                               # No beep
 
 # Use vim keys in tab complete menu:
-# bindkey -M menuselect 'h' vi-backward-char
-# bindkey -M menuselect 'k' vi-up-line-or-history
-# bindkey -M menuselect 'l' vi-forward-char
-# bindkey -M menuselect 'j' vi-down-line-or-history
+zmodload zsh/complist                                       # To have vim keybindings on menu select
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v                                                  # Vi mode
+# export KEYTIMEOUT=1                                         # Reduce vi timeout
 
-# # Theming section
-autoload -U promptinit; promptinit
-autoload -U compinit colors zcalc
+# Completions
+zstyle ':completion:*' menu select                          # Menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # Case insensitive tab completion
+zstyle ':completion:*' rehash true                          # automatically find new executables in path
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+# Fix tab completion colors
+if [[ -z "$LS_COLORS" ]]; then
+ (( $+commands[dircolors] )) && eval "$(dircolors -b)"
+  zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+fi
+
+# Theming section
+autoload -U colors compinit promptinit zcalc
 compinit -d
 colors
 

@@ -11,6 +11,7 @@
   "editor.overviewRulerBorder": true,
   "editor.scrollBeyondLastLine": false,
   "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.scrollbar.horizontalScrollbarSize": 0,
   "editor.tabSize": 2,
   "emmet.includeLanguages": { "javascript": "javascriptreact" },
   "explorer.confirmDelete": false,
@@ -19,7 +20,7 @@
   "keyboard.dispatch": "keyCode",
   "terminal.external.linuxExec": "/usr/bin/kitty",
   "terminal.integrated.fontSize": 13,
-  "terminal.integrated.lineHeight": 1,
+  "terminal.integrated.lineHeight": 0,
   "terminal.integrated.shell.linux": "/bin/zsh",
   "window.menuBarVisibility": "hidden",
   "window.zoomLevel": 1,
@@ -61,7 +62,7 @@
     "terminal.ansiBrightWhite": "#ECEFF4"
   },
   "oneDarkPro.bold": true,
-  "oneDarkPro.editorTheme": "oneDarkPro",
+  "oneDarkPro.editorTheme": "oneDarkProFlat",
   "oneDarkPro.vivid": true,
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim"
