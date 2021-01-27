@@ -1,23 +1,23 @@
+" General
+set clipboard=unnamedplus
+set timeoutlen=500
+set ignorecase
+set nohlsearch
+set smartcase
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank{higroup="IncSearch", timeout=700}
+augroup END
+
 "-------------------- Vim mappings -------------------------------------
 " Leader key
-let mapleader=' '
+let mapleader=" "
 
 " Indent selected code with < / >
 vnoremap < <gv
 vnoremap > >gv
-
-" Move block of code in visual mode with J/K
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
-
-" Clear search highlighting
-nnoremap <silent> s :noh <CR>
-
-
-"-------------------- Which key ----------------------------------------
-" nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
-" xnoremap <silent> <Space> :<C-u>call <SID>openWhichKeyInVisualMode()<CR>
-" xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>
 
 "-------------------- Better navigation --------------------------------
 nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
@@ -29,7 +29,9 @@ xnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
 nnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
 xnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
 
-nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
+nnoremap <silent> <space> gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
+nnoremap <silent> <space> gd <cmd>call VSCodeNotify('editor.action.revealDefinition')<CR>
+nnoremap <silent> <C-w>gd <Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>
 
 
 "-------------------- Buffers ------------------------------------------

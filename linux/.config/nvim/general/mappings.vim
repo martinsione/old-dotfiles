@@ -1,47 +1,24 @@
-"-----------------------------------------------------------------------
-"---------------------- Basic Mappings ---------------------------------
-"-----------------------------------------------------------------------
-
-" Leader key
 let mapleader=" "
 
-" <TAB>: completion.
+" Tab completion
 inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-" Indent selected code with < / >
+" Move Code in Visual mode
 vnoremap < <gv
 vnoremap > >gv
-
-" Move block of code in visual mode with J/K
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
 
-" Move between buffers with <TAB>
-nnoremap <silent> <TAB> :bnext<CR>
-nnoremap <silent> <S-TAB> :bprevious<CR>
-
-" Clear search highlighting
-nnoremap <silent> s :noh <CR>
-
-" Save with Ctrl + S
-nnoremap <silent> <C-s> :w<CR>
-
-" Delete a buffer with leader + bd
-nnoremap <silent> <leader>bd :bdelete<CR>
-
-nnoremap <silent> <leader>s :source %<CR>
-nnoremap <silent> <leader>. :e $MYVIMRC <CR>
-nnoremap <silent> <leader><CR> :so $MYVIMRC <CR>
-
-" Balance windows
+" Buffers
+nnoremap <silent> <leader>bd  <cmd>bd<CR>
+nnoremap <silent> <TAB>       <cmd>bnext<CR>
+nnoremap <silent> <S-TAB>     <cmd>bprevious<CR>
 nnoremap <silent> <leader>= <C-W>=
 
-" Live-server
-nnoremap <silent> <leader>live :!live-server &<CR>
-
-"-----------------------------------------------------------------------
-"---------------------- Plugins Keybindings-----------------------------
-"-----------------------------------------------------------------------
+" Save / source
+nnoremap <silent> <C-s>         <cmd>w<CR>
+nnoremap <silent> <leader>.     <cmd>e $MYVIMRC <CR>
+nnoremap <silent> <leader><CR>  <cmd>source %<CR>
 
 " Telescope
 nnoremap <leader>p  <cmd><cr>
@@ -53,15 +30,6 @@ nnoremap <leader>ph <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " Tree
 nnoremap <silent> <space>e :NvimTreeToggle<CR>
-nnoremap <silent> <space>r :NvimTreeRefresh<CR>
-nnoremap <silent> <space>n :NvimTreeFindFile<CR>
-
-" Zen mode
-nnoremap <silent> <leader>z :Goyo <CR>
-
-"-----------------------------------------------------------------------
-"---------------------- Window Navigation ------------------------------
-"-----------------------------------------------------------------------
 
 " Resize buffers with arrows
 nnoremap <silent> <Up> :resize -2<CR>
