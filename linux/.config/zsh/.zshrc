@@ -25,7 +25,7 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v                                                  # Vi mode
-# export KEYTIMEOUT=1                                         # Reduce vi timeout
+export KEYTIMEOUT=1                                         # Reduce vi timeout
 
 # Completions
 zstyle ':completion:*' menu select                          # Menu select
@@ -40,9 +40,8 @@ if [[ -z "$LS_COLORS" ]]; then
   zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 fi
 
-# Theming section
 autoload -U colors compinit promptinit zcalc
-compinit -d
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 colors
 
 #------------------------ Change Caps to Escape ------------------------

@@ -31,8 +31,8 @@ xnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
 
 nnoremap <silent> <space> gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
 nnoremap <silent> <space> gd <cmd>call VSCodeNotify('editor.action.revealDefinition')<CR>
+nnoremap <silent> <space> qf <cmd>call VSCodeNotify('editor.action.quickFix')<CR>
 nnoremap <silent> <C-w>gd <Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>
-
 
 "-------------------- Buffers ------------------------------------------
 " View all open buffers

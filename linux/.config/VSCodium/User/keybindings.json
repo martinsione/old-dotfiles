@@ -111,6 +111,10 @@
     "key": "shift+ctrl+t",
     "command": "workbench.action.terminal.focus"
   },
+  {
+    "key": "ctrl+.",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
   // Remove default keybindings
   {
     "key": "ctrl+e",
@@ -153,5 +157,20 @@
     "key": "escape",
     "command": "-list.clear",
     "when": "listFocus && listHasSelectionOrFocus && !inputFocus"
-  }
+  },
+  {
+    "key": "ctrl+.",
+    "command": "-editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "-problems.action.showQuickFixes",
+    "when": "problemFocus"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "-settings.action.editFocusedSetting",
+    "when": "inSettingsSearch"
+  },
 ]

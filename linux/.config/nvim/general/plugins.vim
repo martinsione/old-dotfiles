@@ -12,7 +12,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'glepnir/galaxyline.nvim'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'mhinz/vim-startify'               " Start Screen
+  Plug 'mhinz/vim-startify'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

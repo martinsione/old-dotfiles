@@ -9,7 +9,7 @@ else
   colorscheme nvcode
 
   "Plugin configuration
-  source $HOME/.config/nvim/plug-config/gitgutter.vim
+  " source $HOME/.config/nvim/plug-config/gitgutter.vim
   source $HOME/.config/nvim/plug-config/start-screen.vim
   source $HOME/.config/nvim/plug-config/coc.vim
   lua require 'init'

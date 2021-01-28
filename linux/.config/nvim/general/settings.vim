@@ -11,18 +11,23 @@ set clipboard=unnamedplus
 set cmdheight=2
 set hidden
 set mouse=a
+set nobackup
+set noswapfile
+set nowritebackup
 set nu rnu
 set sb spr
 set scrolloff=8
 set shortmess+=c
 set signcolumn=yes
 set timeoutlen=500
+set updatetime=100
 
 " Searching
 set ignorecase
 set nohlsearch
 set path+=**
 set smartcase
+set wildignore+=.git/**/*
 set wildignore+=autoload/**
 set wildignore+=node_modules/**
 set wildignorecase
