@@ -37,9 +37,8 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # Fix tab completion colors
 if [[ -z "$LS_COLORS" ]]; then
  (( $+commands[dircolors] )) && eval "$(dircolors -b)"
-  zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 fi
-
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 autoload -U colors compinit promptinit zcalc
 compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 colors
