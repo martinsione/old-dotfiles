@@ -14,6 +14,4 @@ else
   source $HOME/.config/nvim/plug-config/coc.vim
   lua require 'init'
 
-  " source $HOME/.config/nvim/plug-config/lightline.vim
-  " source $HOME/.config/nvim/plug-config/which-key.vim
 endif
