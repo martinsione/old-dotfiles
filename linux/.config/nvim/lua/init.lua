@@ -1,6 +1,0 @@
-require('_colorizer')
-require('_galaxyline')
-require('_nvim-tree')
-require('_nvim-web-devicons')
-require('_telescope')
-require('_treesitter')

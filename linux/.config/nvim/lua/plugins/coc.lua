@@ -1,0 +1,16 @@
+vim.g.coc_global_extensions = {
+  'coc-css',
+  'coc-cssmodules',
+  'coc-emmet',
+  'coc-html',
+  'coc-json',
+  'coc-marketplace',
+  'coc-pairs',
+  'coc-phpls',
+  'coc-prettier',
+  'coc-sh',
+  'coc-sql',
+  'coc-tabnine',
+  'coc-tsserver',
+  'coc-vimlsp',
+}

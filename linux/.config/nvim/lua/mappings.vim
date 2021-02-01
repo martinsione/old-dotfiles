@@ -4,7 +4,8 @@ nnoremap <leader>p  <Nop>
 nnoremap <leader>s  <Nop>
 
 " Tab completion
-inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent> <expr><TAB>   pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " Move Code in Visual mode
 vnoremap < <gv
@@ -25,12 +26,12 @@ nnoremap <silent> <leader><CR>  <cmd>source %<CR>
 " Telescope
 nnoremap <silent> <C-p>      <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <silent> <leader>pg <cmd>lua require('telescope.builtin').git_files()<cr>
-nnoremap <silent> <leader>ps <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <silent> <leader>pw <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <silent> <leader>pb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <silent> <leader>ph <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " Tree
-nnoremap <silent> <space>e :NvimTreeToggle<CR>
+nnoremap <silent> <C-n> :NvimTreeToggle<CR>
 
 " Resize buffers
 nnoremap <silent> <Up>    :resize -2<CR>

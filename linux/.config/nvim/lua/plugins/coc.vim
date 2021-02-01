@@ -1,23 +1,3 @@
-  let g:coc_global_extensions = [
-    \ 'coc-css',
-    \ 'coc-cssmodules',
-    \ 'coc-emmet',
-    \ 'coc-html',
-    \ 'coc-json',
-    \ 'coc-marketplace',
-    \ 'coc-pairs',
-    \ 'coc-phpls',
-    \ 'coc-prettier',
-    \ 'coc-sh',
-    \ 'coc-sql',
-    \ 'coc-tabnine',
-    \ 'coc-tsserver',
-    \ 'coc-vimlsp',
-    \ ]
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -65,9 +45,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-xnoremap <leader>f  <Plug>(coc-format-selected)
-nnoremap <leader>f  :CocCommand prettier.formatFile<CR>
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -107,11 +86,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
-
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-" nmap <silent> <C-s> <Plug>(coc-range-select)
-" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
