@@ -38,6 +38,8 @@ vim.o.wildignorecase = true
 
 -- Buffer options
 vim.bo.expandtab  = true
+vim.o.shiftwidth = 0
+vim.o.tabstop    = 2
 vim.bo.shiftwidth = 0
 vim.bo.tabstop    = 2
 vim.bo.swapfile   = false
