@@ -1,9 +1,5 @@
 -- vim.g => global variables
--- vim.b => buffer variables
---
--- vim.o  => global options
--- vim.wo => window options
--- vim.bo => buffer options
+-- vim.b => buffer variables vim.o  => global options vim.wo => window options vim.bo => buffer options
 
 -- Appearance
 vim.o.pumheight     = 10
@@ -30,7 +26,6 @@ vim.o.updatetime  = 100
 
 -- Searching
 vim.o.ignorecase  = true
-vim.o.hlsearch    = false
 vim.o.smartcase   = true
 vim.o.wildignore  = '.git/**'
 vim.o.wildignore  = 'node_modules/**'
@@ -47,5 +42,4 @@ vim.bo.swapfile   = false
 vim.g.netrw_dirhistmax = 0
 
 vim.cmd[[autocmd BufWritePre * %s/\s\+$//e]]
-vim.cmd[[autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=500}]]
-vim.cmd[[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]]
+vim.cmd[[autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}]]

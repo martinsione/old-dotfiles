@@ -1,3 +1,4 @@
+nnoremap <silent> <leader>pr <cmd>lua require('telescope.builtin').oldfiles()<cr>
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
