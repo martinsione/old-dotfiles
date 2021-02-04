@@ -27,8 +27,7 @@ vim.o.updatetime  = 100
 -- Searching
 vim.o.ignorecase  = true
 vim.o.smartcase   = true
-vim.o.wildignore  = '.git/**'
-vim.o.wildignore  = 'node_modules/**'
+vim.o.wildignore  = '.git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**';
 vim.o.wildignorecase = true
 
 -- Buffer options

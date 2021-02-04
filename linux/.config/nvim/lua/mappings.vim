@@ -55,4 +55,32 @@ tnoremap <C-l> <C-\><C-N><C-w>l
 inoremap kj <esc>
 inoremap jk <esc>
 
-nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
+nnoremap <silent> <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
+
+
+" Map execute this line
+function! s:executor() abort
+  if &ft == 'lua'
+    call execute(printf(":lua %s", getline(".")))
+  elseif &ft == 'vim'
+    exe getline(">")
+  endif
+endfunction
+nnoremap <leader>x :call <SID>executor()<CR>
+
+vnoremap <leader>x :<C-w>exe join(getline("'<","'>"),'<Bar>')<CR>
+nnoremap <leader><leader>v :w<CR>:Vader %<CR>
+
+" Execute this file
+function! s:save_and_exec() abort
+  if &filetype == 'vim'
+    :silent! write
+    :source %
+  elseif &filetype == 'lua'
+    :silent! write
+    :luafile %
+  endif
+
+  return
+endfunction
+nnoremap <leader><leader>x :call <SID>save_and_exec()<CR>

@@ -124,7 +124,7 @@ nmap <space>d "_d
 nmap <space>c "_c
 
 " Change the working directory for everybody
-nnoremap <leader>cd :windo lcd 
+nnoremap <leader>cd :windo lcd
 
 if has('nvim')
     " Make esc leave terminal mode
